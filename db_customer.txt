@@ -1,0 +1,14 @@
+DROP DATABASE projectDB;
+
+CREATE DATABASE projectDB;
+
+USE projectDB;
+
+CREATE TABLE kunde (vat VARCHAR(255) NOT null,
+					projectID INT NOT null,
+                    companyName VARCHAR(255),
+                    street VARCHAR(255),
+                    city VARCHAR(255),
+                    country VARCHAR(255),
+					notes VARCHAR(10000),
+                    CONSTRAINT PRIMARY KEY (vat));
