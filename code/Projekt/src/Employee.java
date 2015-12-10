@@ -7,10 +7,12 @@ public class Employee {
     SimpleStringProperty name = new SimpleStringProperty();
 
     public Employee(String name) {
+
         this.name = new SimpleStringProperty(name);
     }
 
     public String getName() {
+
         return name.get();
     }
 

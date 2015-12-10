@@ -42,11 +42,13 @@ public class Main_UI extends Application
 
     public void start(final Stage primaryStage) throws Exception
     {
+
         list = new ListView<>();
 
         table = new TableView();
 
         DataBase dataBase = DataBase.getInstance();
+        dataBase.createDB();
 
         GridPane gridLayout = new GridPane();
         gridLayout.setHgap(200);
