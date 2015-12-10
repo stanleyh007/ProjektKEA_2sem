@@ -61,26 +61,26 @@ public class LoginBox extends Application
 
 
 
-        submitBtn.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-
-                if(passwordField.getText().equals("test") && usernameField.getText().equals("test")) {
-
-                    System.out.println("Loggin in");
-
-                } else
-                {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Wrong input");
-                    alert.setHeaderText("Wrong Username or Password");
-                    alert.setContentText("Hint:\n\n Username: \"test\"\n Password:  \"test\"");
-                    alert.show();
-                }
-                passwordField.setText("");
-            }
-
-        });
+//        submitBtn.setOnAction(new EventHandler<ActionEvent>() {
+//            @Override
+//            public void handle(ActionEvent event) {
+//
+//                if(passwordField.getText().equals("test") && usernameField.getText().equals("test")) {
+//
+//                    System.out.println("Loggin in");
+//
+//                } else
+//                {
+//                    Alert alert = new Alert(Alert.AlertType.ERROR);
+//                    alert.setTitle("Wrong input");
+//                    alert.setHeaderText("Wrong Username or Password");
+//                    alert.setContentText("Hint:\n\n Username: \"test\"\n Password:  \"test\"");
+//                    alert.show();
+//                }
+//                passwordField.setText("");
+//            }
+//
+//        });
 
         Group root = new Group();
         root.getChildren().addAll(
