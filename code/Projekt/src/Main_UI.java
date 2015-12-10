@@ -1,4 +1,6 @@
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
@@ -39,6 +41,17 @@ public class Main_UI extends Application
         gridLayout.setPadding(new Insets(50));
         gridLayout.setAlignment(Pos.CENTER);
 
+        ObservableList<String> options = FXCollections.observableArrayList(
+                "Add Employee",
+                "Delete Employee",
+                "Edit Employee"
+        );
+        ComboBox comboBox = new ComboBox(options);
+        comboBox.setPrefSize(180, 20);
+
+
+        gridLayout.setGridLinesVisible(true);
+
         showOverview = new Button("Show Overview");
         showOverview.setPrefSize(180, 20);
 //        showOverview.setOnAction();
@@ -49,9 +62,10 @@ public class Main_UI extends Application
 
         gridLayout.add(showOverview, 0, 1, 2, 1);
         gridLayout.add(showAllOverview, 0 ,2, 2, 1);
+        gridLayout.add(comboBox, 0, 3, 2, 1);
 
         BorderPane bp = new BorderPane();
-        bp.setStyle("-fx-background-color: dimgray");
+        bp.setStyle("-fx-background-color: deeppink");
         bp.setCenter(list);
         bp.setLeft(gridLayout);
         bp.setTop(loginLine());
