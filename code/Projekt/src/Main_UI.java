@@ -33,6 +33,8 @@ public class Main_UI extends Application
     {
         list = new ListView<>();
 
+        DataBase dataBase = DataBase.getInstance();
+
         GridPane gridLayout = new GridPane();
         gridLayout.setHgap(200);
         gridLayout.setVgap(10);
