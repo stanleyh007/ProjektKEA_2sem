@@ -19,9 +19,6 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-/**
- * Created by Stormwind on 26/11/2015.
- */
 public class Main_UI extends Application
 {
     ListView<String> list;
@@ -80,7 +77,7 @@ public class Main_UI extends Application
         gridLayout.add(comboBox, 0, 3, 2, 1);
 
         BorderPane bp = new BorderPane();
-        bp.setStyle("-fx-background-color: deeppink");
+        bp.setStyle("-fx-background-color: dimgray");
         //bp.setCenter(list);
         bp.setCenter(table);
         bp.setLeft(gridLayout);

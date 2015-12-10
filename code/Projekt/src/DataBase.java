@@ -1,8 +1,3 @@
-/**
- * Created by Lasse Jensen on 10-12-2015.
- */
-import javafx.collections.ObservableList;
-
 import java.sql.*;
 
 public class DataBase {
@@ -26,10 +21,10 @@ public class DataBase {
 
             Class.forName("com.mysql.jdbc.Driver");
 
-            String url = "jdbc:mysql://localhost:3306/dentistdb";
+            String url = "jdbc:mysql://localhost:3306/";
 
             // Connect to database
-            con = DriverManager.getConnection(url, "root", "root");
+            con = DriverManager.getConnection(url, "root", "1024Krystal");
 
             System.out.println("URL: " + url);
 
@@ -59,30 +54,30 @@ public class DataBase {
             statement.executeUpdate();
 
             //Creates employee table in DB
-            statement = con.prepareStatement ("CREATE TABLE IF NOT EXISTS employee (cpr INT UNSIGNED AUTO_INCREMENT PRIMARY KEY," +
-                    "firstname VARCHAR (30) NOT NULL, lastname VARCHAR(30) NOT NULL, telephone INT, email VARCHAR (60))");
+            statement = con.prepareStatement ("CREATE TABLE IF NOT EXISTS employee (cpr INT NOT NULL PRIMARY KEY," +
+                    "firstname VARCHAR (25) NOT NULL, lastname VARCHAR(30) NOT NULL, telephone INT, email VARCHAR (50))");
 
             statement.executeUpdate();
 
             //Creates client Table in DB
-            statement = con.prepareStatement("CREATE TABLE IF NOT EXISTS client (cvr INT UNSIGNED AUTO_INCREMENT PRIMARY KEY," +
-                    "companyname VARCHAR (30) NOT NULL, telephone INT, email VARCHAR (60))");
-
-            statement.executeUpdate();
-
-            //Creates the date table in DB
-            statement = con.prepareStatement("CREATE TABLE IF NOT EXISTS duration (date_from DATE PRIMARY KEY NOT NULL, date_to DATE)");
+            statement = con.prepareStatement("CREATE TABLE IF NOT EXISTS client (cvr INT NOT NULL PRIMARY KEY," +
+                    "companyname VARCHAR (50) NOT NULL, telephone INT, email VARCHAR (50))");
 
             statement.executeUpdate();
 
             //Creates the alloction table in DB
-            statement = con.prepareStatement("CREATE TABLE IF NOT EXISTS allocation (event_id INT UNSIGNED NOT NULL AUTO_INCREMENT," +
-                    " PRIMARY KEY (event_id), cpr INT UNSIGNED NOT NULL, cvr INT UNSIGNED NOT NULL, activity VARCHAR(40)," +
-                    " date_from DATE, notes TEXT, FOREIGN KEY (cpr) REFERENCES employee(cpr), FOREIGN KEY (cvr) " +
-                    "REFERENCES client(cvr), FOREIGN KEY (date_from) REFERENCES duration (date_from))");
+            statement = con.prepareStatement("CREATE TABLE IF NOT EXISTS allocation_Project (event_id INT UNSIGNED NOT NULL AUTO_INCREMENT, " +
+                    "cpr INT NOT NULL, cvr INT NOT NULL, " + " date_from DATE NOT NULL , dateto DATE NOT NULL, " +
+                    "notes TEXT, PRIMARY KEY (event_id), FOREIGN KEY (cpr) REFERENCES employee(cpr), FOREIGN KEY (cvr) REFERENCES client(cvr))");
 
             statement.executeUpdate();
 
+            //Creates the date table in DB
+            statement = con.prepareStatement("CREATE TABLE IF NOT EXISTS allocation_OtherActivity(event_id INT UNSIGNED NOT NULL AUTO_INCREMENT," +
+                    "otheractivity ENUM ('Ferie', 'Skoleopholdet', 'Sygdom', 'Øvrigt', ''), datefrom DATE NOT NULL, " +
+                    "dateto DATE NOT NULL, PRIMARY KEY (event_id), FOREIGN KEY (event_id) REFERENCES allocation_Project(event_id))");
+
+            statement.executeUpdate();
 
 
         } catch (SQLException e) {
@@ -94,7 +89,7 @@ public class DataBase {
     {
         try {
             statement = con.prepareStatement("CREATE TABLE Employees (id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY," +
-                    "firstname VARCHAR (30) NOT NULL, lastname VARCHAR(30) NOT NULL");
+                    "firstname VARCHAR (30) NOT NULL, lastname VARCHAR(30) NOT NULL)");
 
 
         } catch (SQLException e) {
