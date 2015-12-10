@@ -22,39 +22,27 @@ public class NewClientForm extends Application {
         gridPane.setHgap(10);
         gridPane.setVgap(10);
 
-        Label titleLbl = new Label("                  Insert Client Information");
+        Label titleLbl = new Label("              Insert Client Information");
         gridPane.setHalignment(titleLbl, HPos.LEFT);
         gridPane.setColumnSpan(titleLbl, 4);
         titleLbl.setFont(Font.font("Verdana", FontWeight.BOLD, 14));
 
-        Label companyRegNoLbl = new Label("Company VAT Number:");
+        Label companyRegNoLbl = new Label("Company CVR:");
         gridPane.setHalignment(companyRegNoLbl, HPos.RIGHT);
         TextField companyRegTxtField = new TextField();
-        companyRegTxtField.setPromptText("ABC1234");
+        companyRegTxtField.setPromptText("12345678");
 
         Label companyNameLbl = new Label("Company Name:");
         gridPane.setHalignment(companyNameLbl, HPos.RIGHT);
         TextField companyNameTxtFld = new TextField();
 
-        Label companyStreetLbl = new Label("Street:");
-        gridPane.setHalignment(companyStreetLbl, HPos.RIGHT);
-        TextField companyStreetTxtFld= new TextField();
+        Label phoneLbl = new Label("Phone:");
+        gridPane.setHalignment(phoneLbl, HPos.RIGHT);
+        TextField phoneTxtFld= new TextField();
 
-        Label companyCityLbl = new Label("City:");
-        gridPane.setHalignment(companyCityLbl, HPos.RIGHT);
-        TextField companyCityTxtFld = new TextField();
-
-        Label companyCountryLbl = new Label("Country:");
-        gridPane.setHalignment(companyCountryLbl, HPos.RIGHT);
-        TextField companyCountryTxtFld = new TextField();
-
-        Label notesLbl = new Label("Notes:");
-        gridPane.setHalignment(notesLbl, HPos.RIGHT);
-        TextArea notesTxtArea = new TextArea();
-        notesTxtArea.setPrefColumnCount(5);
-        notesTxtArea.setPrefRowCount(5);
-        gridPane.setColumnSpan(notesTxtArea, 1);
-        gridPane.setRowSpan(notesTxtArea, 2);
+        Label emailLbl = new Label("Email:");
+        gridPane.setHalignment(emailLbl, HPos.RIGHT);
+        TextField emailTxtFld = new TextField();
 
         Button submitBtn = new Button("Submit");
         gridPane.setHalignment(submitBtn, HPos.LEFT);
@@ -66,25 +54,18 @@ public class NewClientForm extends Application {
 
         submitBtn.setOnAction(event -> {
 
-            if      (companyRegTxtField.getText().isEmpty() ||
-                    companyNameTxtFld.getText().isEmpty() ||
-                    companyCityTxtFld.getText().isEmpty() ||
-                    companyStreetTxtFld.getText().isEmpty() ||
-                    companyCountryTxtFld.getText().isEmpty()) {
+            if (companyRegTxtField.getText().isEmpty() || companyNameTxtFld.getText().isEmpty()) {
 
-                setAlert("Input erro", "All fields must contain data");
+                setAlert("Input error", "All mandatory fields must contain data");
 
             } else if
-                    (isVatValid(companyRegTxtField) &&
-                            !companyNameTxtFld.getText().isEmpty() &&
-                            !companyCityTxtFld.getText().isEmpty() &&
-                            !companyStreetTxtFld.getText().isEmpty() &&
-                            !companyCountryTxtFld.getText().isEmpty())
+                    (isCVRValid(companyRegTxtField) && !companyNameTxtFld.getText().isEmpty())
             {
                 setAlert("Saved", "Company has been stored");
 
-            } else if(isVatValid(companyRegTxtField) == false) {
-                setAlert("Input error", "VAT no must be in the correct format");
+            } else if(isCVRValid(companyRegTxtField) == false) {
+
+                setAlert("Input error", "CVR no must be in the correct format");
             }
 
         });
@@ -95,52 +76,50 @@ public class NewClientForm extends Application {
         gridPane.add(companyRegTxtField, 1, 5);
         gridPane.add(companyNameLbl, 0,6);
         gridPane.add(companyNameTxtFld, 1, 6);
-        gridPane.add(companyStreetLbl, 0, 7);
-        gridPane.add(companyStreetTxtFld, 1, 7);
-        gridPane.add(companyCityLbl, 0, 8);
-        gridPane.add(companyCityTxtFld, 1, 8);
-        gridPane.add(companyCountryLbl, 0, 9);
-        gridPane.add(companyCountryTxtFld, 1, 9);
-        gridPane.add(notesLbl, 0, 10);
-        gridPane.add(notesTxtArea, 1, 10);
-        gridPane.add(submitBtn, 1, 12);
-        gridPane.add(cancelBtn, 2, 14);
+        gridPane.add(phoneLbl, 0, 7);
+        gridPane.add(phoneTxtFld, 1, 7);
+        gridPane.add(emailLbl, 0, 8);
+        gridPane.add(emailTxtFld, 1, 8);
+        gridPane.add(submitBtn, 1, 9);
+        gridPane.add(cancelBtn, 2, 13);
 
-        Scene scene = new Scene(gridPane, 438, 500);
+        Scene scene = new Scene(gridPane, 400, 375);
         primaryStage.setScene(scene);
-        companyCityLbl.requestFocus();
+        submitBtn.requestFocus(); // Workaround to disable focus default
         primaryStage.show();
         primaryStage.setTitle("New Client");
         primaryStage.setResizable(false);
     }
 
-    public boolean isVatValid(TextField textField)
+    public boolean isCVRValid(TextField textField)
     {
-        Boolean isVatValid = false;
-        Boolean vatLenghtValid = false;
-        String firstThree = null;
-        String lastFour = null;
+        Boolean isCvrNumeric = true;
+        Boolean isCvrLenghtValid;
+        Boolean cvrValidation = false;
 
-        if(textField.getText().length() == 7) {
+        if(textField.getText().length() == 8) {
 
-            vatLenghtValid = true;
-            firstThree = textField.getText().substring(0, 3);
-            lastFour = textField.getText().substring(3, 7);
+            isCvrLenghtValid = true;
 
         } else {
 
-            isVatValid = false;
+            isCvrLenghtValid = false;
         }
 
-        if(vatLenghtValid && firstThree.matches("[a-z]*") && lastFour.matches("[0-9]+"))
+        try {
+            Integer.parseInt(textField.getText());
+
+        } catch (Exception e) {
+
+            isCvrNumeric = false;
+        }
+
+        if(isCvrNumeric == true && isCvrLenghtValid == true)
         {
-            isVatValid = true;
-            String firstThreeToUpper = firstThree.toUpperCase();
-            String companyCVR = firstThreeToUpper + lastFour;
-            System.out.println(companyCVR);
+            cvrValidation = true;
         }
 
-        return isVatValid;
+        return cvrValidation;
     }
 
     public static void setAlert(String titleText,String headerText)

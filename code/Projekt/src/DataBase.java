@@ -24,7 +24,7 @@ public class DataBase {
             String url = "jdbc:mysql://localhost:3306/";
 
             // Connect to database
-            con = DriverManager.getConnection(url, "root", "1024Krystal");
+            con = DriverManager.getConnection(url, "root", "root");
 
             System.out.println("URL: " + url);
 
@@ -66,15 +66,15 @@ public class DataBase {
             statement.executeUpdate();
 
             //Creates the alloction table in DB
-            statement = con.prepareStatement("CREATE TABLE IF NOT EXISTS allocation_Project (event_id INT UNSIGNED NOT NULL AUTO_INCREMENT, " +
+            statement = con.prepareStatement("CREATE TABLE IF NOT EXISTS allocation_project (event_id INT UNSIGNED NOT NULL AUTO_INCREMENT, " +
                     "cpr INT NOT NULL, cvr INT NOT NULL, " + " date_from DATE NOT NULL , dateto DATE NOT NULL, " +
                     "notes TEXT, PRIMARY KEY (event_id), FOREIGN KEY (cpr) REFERENCES employee(cpr), FOREIGN KEY (cvr) REFERENCES client(cvr))");
 
             statement.executeUpdate();
 
             //Creates the date table in DB
-            statement = con.prepareStatement("CREATE TABLE IF NOT EXISTS allocation_OtherActivity(event_id INT UNSIGNED NOT NULL AUTO_INCREMENT," +
-                    "otheractivity ENUM ('Ferie', 'Skoleopholdet', 'Sygdom', 'Øvrigt', ''), datefrom DATE NOT NULL, " +
+            statement = con.prepareStatement("CREATE TABLE IF NOT EXISTS allocation_otherActivity (event_id INT UNSIGNED NOT NULL AUTO_INCREMENT," +
+                    "otheractivity ENUM ('Ferie', 'Kursus', 'Sygdom', 'Øvrigt', ''), datefrom DATE NOT NULL, " +
                     "dateto DATE NOT NULL, PRIMARY KEY (event_id), FOREIGN KEY (event_id) REFERENCES allocation_Project(event_id))");
 
             statement.executeUpdate();

@@ -45,21 +45,13 @@ public class EmployeeForm extends Application {
         TextField lastNameTxtFld = new TextField();
 
 
-        Label cityLbl = new Label("City:");
-        gridPane.setHalignment(cityLbl, HPos.RIGHT);
-        TextField cityTxtFld = new TextField();;
+        Label phoneLbl = new Label("Phone:");
+        gridPane.setHalignment(phoneLbl, HPos.RIGHT);
+        TextField phoneTxtFld = new TextField();;
 
-        Label streetNameLbl = new Label("Street:");
-        gridPane.setHalignment(streetNameLbl, HPos.RIGHT);
-        TextField streetNameTxtFld = new TextField();
-
-        Label notesLbl = new Label("Notes:");
-        gridPane.setHalignment(notesLbl, HPos.RIGHT);
-        TextArea notesTxtArea = new TextArea();
-        notesTxtArea.setPrefColumnCount(5);
-        notesTxtArea.setPrefRowCount(5);
-        gridPane.setColumnSpan(notesTxtArea, 1);
-        gridPane.setRowSpan(notesTxtArea, 2);
+        Label emailLbl = new Label("Email:");
+        gridPane.setHalignment(emailLbl, HPos.RIGHT);
+        TextField emailTxtFld = new TextField();
 
         Button submitBtn = new Button("Submit");
         gridPane.setHalignment(submitBtn, HPos.LEFT);
@@ -73,9 +65,7 @@ public class EmployeeForm extends Application {
 
             if (cprTxtField.getText().isEmpty() ||
                     firstNameTxtFld.getText().isEmpty() ||
-                    lastNameTxtFld.getText().isEmpty() ||
-                    streetNameTxtFld.getText().isEmpty() ||
-                    cityTxtFld.getText().isEmpty())
+                    lastNameTxtFld.getText().isEmpty())
 
             {
                 setAlert("Input error", "You need to fill out all mandatory fields");
@@ -101,17 +91,15 @@ public class EmployeeForm extends Application {
         gridPane.add(firstNameTxtFld, 1,6);
         gridPane.add(lastNameLbl, 0,7);
         gridPane.add(lastNameTxtFld, 1,7);
-        gridPane.add(cityLbl, 0, 8);
-        gridPane.add(cityTxtFld, 1,8);
-        gridPane.add(streetNameLbl, 0, 9);
-        gridPane.add(streetNameTxtFld, 1, 9);
-        gridPane.add(notesLbl, 0, 10);
-        gridPane.add(notesTxtArea, 1, 10);
-        gridPane.add(submitBtn, 1, 12);
+        gridPane.add(phoneLbl, 0, 8);
+        gridPane.add(phoneTxtFld, 1,8);
+        gridPane.add(emailLbl, 0, 9);
+        gridPane.add(emailTxtFld, 1, 9);
+        gridPane.add(submitBtn, 1, 10);
         gridPane.add(cancelBtn, 3, 14);
 
 
-        Scene scene = new Scene(gridPane, 400, 500);
+        Scene scene = new Scene(gridPane, 400, 410);
         primaryStage.setScene(scene);
         primaryStage.show();
         primaryStage.setTitle("Opret ny medarbejder");
