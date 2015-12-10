@@ -6,6 +6,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -24,6 +25,14 @@ import javafx.stage.Stage;
 public class Main_UI extends Application
 {
     ListView<String> list;
+
+    // Tableview and collumn objects
+    TableView<Employee> table;
+    TableColumn employeeName = new TableColumn("Name");
+
+    // Observablelist for TableView
+    ObservableList<Employee> employeeList = FXCollections.observableArrayList();
+
     Button showOverview, showAllOverview, login, exit;
 
     public static void main(String[] args)
@@ -34,6 +43,8 @@ public class Main_UI extends Application
     public void start(final Stage primaryStage) throws Exception
     {
         list = new ListView<>();
+
+        table = new TableView();
 
         DataBase dataBase = DataBase.getInstance();
 
@@ -68,10 +79,22 @@ public class Main_UI extends Application
 
         BorderPane bp = new BorderPane();
         bp.setStyle("-fx-background-color: deeppink");
-        bp.setCenter(list);
+        //bp.setCenter(list);
+        bp.setCenter(table);
         bp.setLeft(gridLayout);
         bp.setTop(loginLine());
         bp.setBottom(bottomLine());
+
+        // Add collumns to TableView
+        table.getColumns().add(employeeName);
+
+        // Set items for TableView
+        table.setItems(employeeList);
+
+        // Set tablecolluns to update from observablelist
+        employeeName.setCellValueFactory(new PropertyValueFactory<>("name"));
+
+        employeeList.add(new Employee("Peter"));
 
         Scene scene = new Scene(bp, 1000, 800);
         primaryStage.setScene(scene);
