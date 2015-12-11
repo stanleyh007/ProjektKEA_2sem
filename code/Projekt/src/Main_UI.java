@@ -23,12 +23,18 @@ public class Main_UI extends Application
 {
     ListView<String> list;
 
-    // Tableview and collumn objects
-    TableView<Employee> table;
-    TableColumn employeeName = new TableColumn("Name");
+    // TableView and column objects
+    TableView<Allocation> table;
 
-    // Observablelist for TableView
-    ObservableList<Employee> employeeList = FXCollections.observableArrayList();
+    TableColumn employeeFirstName = new TableColumn("first name");
+    TableColumn employeeLastName = new TableColumn("Last name");
+    TableColumn client = new TableColumn("Client");
+    TableColumn dateFrom = new TableColumn("Date from");
+    TableColumn dateTo = new TableColumn("Date to");
+    TableColumn notes = new TableColumn("Notes");
+
+    // ObservableList for TableView
+    ObservableList<Allocation> allocationList = FXCollections.observableArrayList();
 
     Button showOverview, showAllOverview, login, exit;
 
@@ -46,6 +52,9 @@ public class Main_UI extends Application
 
         DataBase dataBase = DataBase.getInstance();
         dataBase.createDB();
+
+        // Load allocations from database into ObservableList
+        dataBase.getAllocations(allocationList);
 
         GridPane gridLayout = new GridPane();
         gridLayout.setHgap(200);
@@ -85,15 +94,23 @@ public class Main_UI extends Application
         bp.setBottom(bottomLine());
 
         // Add collumns to TableView
-        table.getColumns().add(employeeName);
+        table.getColumns().add(employeeFirstName);
+        table.getColumns().add(employeeLastName);
+        table.getColumns().add(client);
+        table.getColumns().add(dateFrom);
+        table.getColumns().add(dateTo);
+        table.getColumns().add(notes);
 
-        // Set items for TableView
-        table.setItems(employeeList);
+        // Set items for TableViev (ObservableList)
+        table.setItems(allocationList);
 
-        // Set tablecolluns to update from observablelist
-        employeeName.setCellValueFactory(new PropertyValueFactory<>("name"));
-
-        employeeList.add(new Employee("Peter"));
+        // Set tablecolluns to update from ObservableList
+        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("employeeFirstName"));
+        employeeLastName.setCellValueFactory(new PropertyValueFactory<>("employeeLastName"));
+        client.setCellValueFactory(new PropertyValueFactory<>("client"));
+        dateFrom.setCellValueFactory(new PropertyValueFactory<>("dateFrom"));
+        dateTo.setCellValueFactory(new PropertyValueFactory<>("dateTo"));
+        notes.setCellValueFactory(new PropertyValueFactory<>("notes"));
 
         Scene scene = new Scene(bp, 1000, 800);
         primaryStage.setScene(scene);

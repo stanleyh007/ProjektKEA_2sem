@@ -1,3 +1,5 @@
+import javafx.collections.ObservableList;
+
 import java.sql.*;
 
 public class DataBase {
@@ -93,11 +95,24 @@ public class DataBase {
 
 
         } catch (SQLException e) {
-        e.printStackTrace();
+            e.printStackTrace();
+        }
+
     }
+
+    public void getAllocations(ObservableList<Allocation> allocationList) {
+        try {
+            statement = con.prepareStatement("SELECT * FROM allocation_project JOIN employee, client WHERE allocation_project.cpr=employee.cpr" +
+                                                " AND allocation_project.cvr=client.cvr");
+            resultset = statement.executeQuery();
+
+            while (resultset.next()) {
+                allocationList.add(new Allocation(resultset.getString("firstname"), resultset.getString("lastname"), resultset.getString("companyname"), resultset.getString("date_from"), resultset.getString("dateto"), resultset.getString("notes")));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-
-
-
 
 }
