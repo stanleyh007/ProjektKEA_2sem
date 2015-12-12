@@ -3,12 +3,13 @@ import javafx.collections.ObservableList;
 import java.sql.*;
 
 public class DataBase {
+
     private static DataBase dataBaseInstance = new DataBase();
-
-
     private Connection con;   // Connection for database
     private PreparedStatement statement;
     private ResultSet resultset;
+
+
 
     public static DataBase getInstance() {
 
@@ -87,17 +88,53 @@ public class DataBase {
         }
     }
 
-    public void createTable()
+    public void addEmployeeToDb(int cpr, String firstname, String lastname, int phone, String email) throws SQLException
     {
+
         try {
-            statement = con.prepareStatement("CREATE TABLE Employees (id INT(3) UNSIGNED AUTO_INCREMENT PRIMARY KEY," +
-                    "firstname VARCHAR (30) NOT NULL, lastname VARCHAR(30) NOT NULL)");
+            statement = con.prepareStatement("USE appstract_db");
 
+            statement.executeUpdate();
 
-        } catch (SQLException e) {
-            e.printStackTrace();
+            statement = con.prepareStatement("INSERT INTO employee VALUES (?, ?, ?, ?, ?)");
+
+        } catch (SQLException e1) {
+            e1.printStackTrace();
         }
+            statement.setInt(1, cpr);
+            statement.setString(2, firstname);
+            statement.setString(3, lastname);
+            statement.setInt(4, phone);
+            statement.setString(5, email);
 
+            statement.executeUpdate();
+
+
+            System.out.println("Employee :" + firstname + " " + lastname + " inserted into database");
+    }
+
+    public void addClientToDb(int cvr, String companyname, int phone, String email) throws SQLException
+    {
+
+        try {
+            statement = con.prepareStatement("USE appstract_db");
+
+            statement.executeUpdate();
+
+            statement = con.prepareStatement("INSERT INTO client VALUES (?, ?, ?, ?)");
+
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+        statement.setInt(1, cvr);
+        statement.setString(2, companyname);
+        statement.setInt(3, phone);
+        statement.setString(4, email);
+
+        statement.executeUpdate();
+
+
+        System.out.println("Client : " + companyname + " inserted into database");
     }
 
     public void getAllocations(ObservableList<Allocation> allocationList) {

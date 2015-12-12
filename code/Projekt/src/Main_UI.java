@@ -26,8 +26,8 @@ public class Main_UI extends Application
     // TableView and column objects
     TableView<Allocation> table;
 
-    TableColumn employeeFirstName = new TableColumn("first name");
-    TableColumn employeeLastName = new TableColumn("Last name");
+    TableColumn employeeFirstName = new TableColumn("First Name");
+    TableColumn employeeLastName = new TableColumn("Last Name");
     TableColumn client = new TableColumn("Client");
     TableColumn dateFrom = new TableColumn("Date from");
     TableColumn dateTo = new TableColumn("Date to");
@@ -35,7 +35,6 @@ public class Main_UI extends Application
 
     // ObservableList for TableView
     ObservableList<Allocation> allocationList = FXCollections.observableArrayList();
-
     Button showOverview, showAllOverview, login, exit;
 
     public static void main(String[] args)
@@ -69,9 +68,6 @@ public class Main_UI extends Application
         );
         ComboBox comboBox = new ComboBox(options);
         comboBox.setPrefSize(180, 20);
-
-
-        gridLayout.setGridLinesVisible(true);
 
         showOverview = new Button("Show Overview");
         showOverview.setPrefSize(180, 20);

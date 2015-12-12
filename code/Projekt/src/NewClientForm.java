@@ -8,12 +8,20 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
+import java.sql.SQLException;
+
 /**
  * Created by peterzohdy on 30/11/2015.
  */
-public class NewClientForm extends Application {
-    @Override
 
+public class NewClientForm extends Application {
+
+    TextField cvrTextField = new TextField();
+    TextField companyNameTextField = new TextField();
+    TextField phoneTextField = new TextField();
+    TextField emailTextField = new TextField();
+
+    @Override
     public void start(Stage primaryStage) throws Exception {
 
 
@@ -29,20 +37,16 @@ public class NewClientForm extends Application {
 
         Label companyRegNoLbl = new Label("Company CVR:");
         gridPane.setHalignment(companyRegNoLbl, HPos.RIGHT);
-        TextField companyRegTxtField = new TextField();
-        companyRegTxtField.setPromptText("12345678");
+        cvrTextField.setPromptText("12345678");
 
         Label companyNameLbl = new Label("Company Name:");
         gridPane.setHalignment(companyNameLbl, HPos.RIGHT);
-        TextField companyNameTxtFld = new TextField();
 
         Label phoneLbl = new Label("Phone:");
         gridPane.setHalignment(phoneLbl, HPos.RIGHT);
-        TextField phoneTxtFld= new TextField();
 
         Label emailLbl = new Label("Email:");
         gridPane.setHalignment(emailLbl, HPos.RIGHT);
-        TextField emailTxtFld = new TextField();
 
         Button submitBtn = new Button("Submit");
         gridPane.setHalignment(submitBtn, HPos.LEFT);
@@ -54,16 +58,21 @@ public class NewClientForm extends Application {
 
         submitBtn.setOnAction(event -> {
 
-            if (companyRegTxtField.getText().isEmpty() || companyNameTxtFld.getText().isEmpty()) {
+            if (cvrTextField.getText().isEmpty() || companyNameTextField.getText().isEmpty()) {
 
                 setAlert("Input error", "All mandatory fields must contain data");
 
             } else if
-                    (isCVRValid(companyRegTxtField) && !companyNameTxtFld.getText().isEmpty())
+                    (isCVRValid(cvrTextField) && !companyNameTextField.getText().isEmpty())
             {
                 setAlert("Saved", "Company has been stored");
+                try {
+                    submitBtnPressed();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
 
-            } else if(isCVRValid(companyRegTxtField) == false) {
+            } else if(isCVRValid(cvrTextField) == false) {
 
                 setAlert("Input error", "CVR no must be in the correct format");
             }
@@ -73,13 +82,13 @@ public class NewClientForm extends Application {
 
         gridPane.add(titleLbl, 0, 0);
         gridPane.add(companyRegNoLbl, 0, 5);
-        gridPane.add(companyRegTxtField, 1, 5);
+        gridPane.add(cvrTextField, 1, 5);
         gridPane.add(companyNameLbl, 0,6);
-        gridPane.add(companyNameTxtFld, 1, 6);
+        gridPane.add(companyNameTextField, 1, 6);
         gridPane.add(phoneLbl, 0, 7);
-        gridPane.add(phoneTxtFld, 1, 7);
+        gridPane.add(phoneTextField, 1, 7);
         gridPane.add(emailLbl, 0, 8);
-        gridPane.add(emailTxtFld, 1, 8);
+        gridPane.add(emailTextField, 1, 8);
         gridPane.add(submitBtn, 1, 9);
         gridPane.add(cancelBtn, 2, 13);
 
@@ -130,5 +139,16 @@ public class NewClientForm extends Application {
         alert.setHeaderText(headerText);
         alert.show();
 
+    }
+
+    public void submitBtnPressed() throws SQLException {
+
+        int cvr = Integer.parseInt(cvrTextField.getText());
+        String firstName = companyNameTextField.getText();
+        int phone = Integer.parseInt(phoneTextField.getText());
+        String email = emailTextField.getText();
+
+        //Calls addEmployee method in DB class and inserts the entered input as parameters
+        DataBase.getInstance().addClientToDb(cvr, firstName, phone, email);
     }
 }

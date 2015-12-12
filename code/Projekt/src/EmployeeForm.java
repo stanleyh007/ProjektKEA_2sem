@@ -8,16 +8,24 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
+import java.sql.SQLException;
+
 /**
  * Created by peterzohdy on 28/11/2015.
  */
 
 public class EmployeeForm extends Application {
 
+    TextField cprTextField = new TextField();
+    TextField firstNameTextField = new TextField();
+    TextField lastNameTextField = new TextField();
+    TextField phoneTextFiled = new TextField();
+    TextField emailTextField = new TextField();
 
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
 
 
         GridPane gridPane = new GridPane();
@@ -32,26 +40,21 @@ public class EmployeeForm extends Application {
 
         Label cprLbl = new Label("CPR No:");
         gridPane.setHalignment(cprLbl, HPos.RIGHT);
-        TextField cprTxtField = new TextField();
-        cprTxtField.setPromptText("DDMMYYYYXXXX");
+        cprTextField.setPromptText("DDMMYYYYXXXX");
 
         Label firstNameLbl = new Label("Firstname:");
         gridPane.setHalignment(firstNameLbl, HPos.RIGHT);
-        TextField firstNameTxtFld = new TextField();
 
 
         Label lastNameLbl = new Label("Lastname:");
         gridPane.setHalignment(lastNameLbl, HPos.RIGHT);
-        TextField lastNameTxtFld = new TextField();
 
 
         Label phoneLbl = new Label("Phone:");
         gridPane.setHalignment(phoneLbl, HPos.RIGHT);
-        TextField phoneTxtFld = new TextField();;
 
         Label emailLbl = new Label("Email:");
         gridPane.setHalignment(emailLbl, HPos.RIGHT);
-        TextField emailTxtFld = new TextField();
 
         Button submitBtn = new Button("Submit");
         gridPane.setHalignment(submitBtn, HPos.LEFT);
@@ -61,40 +64,18 @@ public class EmployeeForm extends Application {
         Button cancelBtn = new Button("Cancel");
         gridPane.setHalignment(cancelBtn, HPos.RIGHT);
 
-        submitBtn.setOnAction(event -> {
-
-            if (cprTxtField.getText().isEmpty() ||
-                    firstNameTxtFld.getText().isEmpty() ||
-                    lastNameTxtFld.getText().isEmpty())
-
-            {
-                setAlert("Input error", "You need to fill out all mandatory fields");
-
-            } else if (isNumeric(cprTxtField) == false) {
-
-                setAlert("Input error", "CPR must be numeric values");
-
-            } else if (isNumeric(cprTxtField)) {
-
-                String cprAsString = cprTxtField.getText();
-                int cprAsInt = Integer.parseInt(cprAsString);
-
-                System.out.println(cprAsInt);
-            }
-        });
-
 
         gridPane.add(titleLbl, 0, 0);
         gridPane.add(cprLbl, 0, 5);
-        gridPane.add(cprTxtField, 1, 5);
+        gridPane.add(cprTextField, 1, 5);
         gridPane.add(firstNameLbl, 0, 6);
-        gridPane.add(firstNameTxtFld, 1,6);
+        gridPane.add(firstNameTextField, 1,6);
         gridPane.add(lastNameLbl, 0,7);
-        gridPane.add(lastNameTxtFld, 1,7);
+        gridPane.add(lastNameTextField, 1,7);
         gridPane.add(phoneLbl, 0, 8);
-        gridPane.add(phoneTxtFld, 1,8);
+        gridPane.add(phoneTextFiled, 1,8);
         gridPane.add(emailLbl, 0, 9);
-        gridPane.add(emailTxtFld, 1, 9);
+        gridPane.add(emailTextField, 1, 9);
         gridPane.add(submitBtn, 1, 10);
         gridPane.add(cancelBtn, 3, 14);
 
@@ -105,6 +86,28 @@ public class EmployeeForm extends Application {
         primaryStage.setTitle("Opret ny medarbejder");
         primaryStage.setResizable(false);
         firstNameLbl.requestFocus();
+
+        submitBtn.setOnAction(e -> {
+        if (    cprTextField.getText().isEmpty() ||
+                firstNameTextField.getText().isEmpty() ||
+                lastNameTextField.getText().isEmpty())
+        {
+            setAlert("Input error", "You need to fill out all mandatory fields");
+
+        } else if (isNumeric(cprTextField) == false) {
+
+            setAlert("Input error", "CPR must be numeric values");
+
+        } else {
+
+            try {
+                //If inputfields are entered correctly call submitbuttonpressed();
+                submitButtonPressed();
+            } catch (SQLException e1) {
+                e1.printStackTrace();
+            }
+        }
+    });
 
 
     }
@@ -132,6 +135,19 @@ public class EmployeeForm extends Application {
         }
 
         return isNumeric;
+    }
+
+    public void submitButtonPressed() throws SQLException
+    {
+
+        int cpr = Integer.parseInt(cprTextField.getText());
+        String firstName = firstNameTextField.getText();
+        String lastName = lastNameTextField.getText();
+        int phone = Integer.parseInt(phoneTextFiled.getText());
+        String email = emailTextField.getText();
+
+        //Calls addEmployee method in DB class and inserts the entered input as parameters
+        DataBase.getInstance().addEmployeeToDb(cpr, firstName, lastName, phone, email);
     }
 
 }
