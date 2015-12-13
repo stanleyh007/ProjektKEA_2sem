@@ -1,6 +1,8 @@
 import javafx.collections.ObservableList;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DataBase {
 
@@ -151,6 +153,56 @@ public class DataBase {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public ArrayList<Employee> employeesToArrayList()
+    {
+        ArrayList<Employee> employees = new ArrayList();
+
+        try {
+            statement = con.prepareStatement("USE appstract_db");
+            statement.executeUpdate();
+
+            statement = con.prepareStatement("SELECT * FROM employee");
+            resultset = statement.executeQuery();
+
+            while (resultset.next())
+            {
+                //add all employees from DB to arraylist
+                employees.add(new Employee(resultset.getInt("cpr"), resultset.getString("firstname"), resultset.getString("lastname"),
+                        resultset.getInt("telephone"), resultset.getString("email")));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return employees;
+    }
+
+    public ArrayList<Client> clientsToArrayList()
+    {
+        ArrayList<Client> clients = new ArrayList();
+
+        try {
+            statement = con.prepareStatement("USE appstract_db");
+            statement.executeUpdate();
+
+            statement = con.prepareStatement("SELECT * FROM client");
+            resultset = statement.executeQuery();
+
+            while (resultset.next())
+            {
+                //add all clients from DB to arraylist
+                clients.add(new Client(resultset.getInt("cvr"), resultset.getString("companyname"),
+                        resultset.getInt("telephone"), resultset.getString("email")));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return clients;
     }
 
 }

@@ -21,19 +21,16 @@ import java.util.List;
  */
 public class AllocateEmployeeFrom extends Application
 {
-    public static void main(String[] args)
-    {
-        launch(args);
-    }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
 
         List<String> list = new ArrayList<>();
-        list.add("Project Allocation");
-        list.add("Vacation");
-        list.add("Other");
-        list.add("Test");
+        list.add("PROJECT ALLOCATION");
+        list.add("---Vacation---");
+        list.add("---Education---");
+        list.add("---Maternity leave---");
+        list.add("---Other---");
 
         ObservableList<String> observableList = FXCollections.observableArrayList(list);
 
@@ -75,32 +72,24 @@ public class AllocateEmployeeFrom extends Application
         backBtn.setLayoutX(325);
         backBtn.setLayoutY(455);
 
+
         ComboBox employeesCbox = new ComboBox();
-        employeesCbox.getItems().addAll(
-                "Peter Zohdy",
-                "Xinhai Lee",
-                "Lasse Jørgensen"
-        );
+        employeesCbox.getItems().addAll(getNamesOfEmployee());
 
 
         ComboBox clientCBox = new ComboBox();
+        clientCBox.getItems().addAll(getClientsOfEmployee());
         clientCBox.setDisable(true);
 
 
-        clientCBox.getItems().addAll(
-
-                "Not available",
-                "HM",
-                "Dataløn",
-                "KEA"
-        );
-
         ComboBox<String> activityCbox = new ComboBox<String>(observableList);
+        activityCbox.setPrefWidth(155);
+
         activityCbox.valueProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 System.out.println(newValue);
-                if(newValue.equals("Project Allocation"))
+                if(newValue.equals("PROJECT ALLOCATION"))
                 {
                     clientCBox.setDisable(false);
                 } else {
@@ -178,6 +167,34 @@ public class AllocateEmployeeFrom extends Application
         primaryStage.setScene(new Scene(root, 400, 500));
         primaryStage.setResizable(false);
         primaryStage.show();
+    }
+
+    //Uses method in DB for getting all employee data. Takes the data and extracts the name of each employee and
+    //uses a new arraylist to store the names.
+    public ArrayList<String> getNamesOfEmployee()
+    {
+        ArrayList<String> employeeNames = new ArrayList<>();
+
+        for (Employee employee : DataBase.getInstance().employeesToArrayList())
+        {
+            employeeNames.add(employee.getFirstName() + " " + employee.getLastName());
+        }
+        return employeeNames;
+
+    }
+
+    //Uses method in DB for getting all client data. Takes the data and extracts the name of each client and
+    //uses a new arraylist to store the names.
+    public ArrayList<String> getClientsOfEmployee()
+    {
+        ArrayList<String> companyNames = new ArrayList<>();
+
+        for (Client client : DataBase.getInstance().clientsToArrayList())
+        {
+            companyNames.add(client.getCompanyName());
+        }
+        return companyNames;
+
     }
 }
 
