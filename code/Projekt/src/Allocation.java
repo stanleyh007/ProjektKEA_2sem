@@ -4,6 +4,7 @@ import javafx.beans.property.SimpleStringProperty;
  * Created by Lasse Jensen on 11-12-2015.
  */
 public class Allocation {
+
     SimpleStringProperty employeeFirstname = new SimpleStringProperty();
     SimpleStringProperty employeeLastName = new SimpleStringProperty();
     SimpleStringProperty client = new SimpleStringProperty();

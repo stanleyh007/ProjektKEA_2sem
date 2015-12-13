@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f47adb9c-b1fb-490a-8673-5965c70b3e92" name="Default" comment=" New employee + allocate gui forms">
+    <list default="true" id="f47adb9c-b1fb-490a-8673-5965c70b3e92" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Client.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AllocateEmployee.java" afterPath="$PROJECT_DIR$/src/AllocateEmployeeFrom.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/EmployeeForm.java" afterPath="$PROJECT_DIR$/src/AddNewEmployeeForm.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/NewClientForm.java" afterPath="$PROJECT_DIR$/src/AddNewClientForm.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Allocation.java" afterPath="$PROJECT_DIR$/src/Allocation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DataBase.java" afterPath="$PROJECT_DIR$/src/DataBase.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Employee.java" afterPath="$PROJECT_DIR$/src/Employee.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/EmployeeForm.java" afterPath="$PROJECT_DIR$/src/EmployeeForm.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main_UI.java" afterPath="$PROJECT_DIR$/src/Main_UI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NewClientForm.java" afterPath="$PROJECT_DIR$/src/NewClientForm.java" />
     </list>
     <ignored path="Projekt.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,13 +50,83 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="AllocateEmployeeFrom.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AllocateEmployeeFrom.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Main_UI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main_UI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.8110237">
-              <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+            <state vertical-scroll-proportion="-0.10236221">
+              <caret line="98" column="36" selection-start-line="98" selection-start-column="36" selection-end-line="98" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Employee.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Employee.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="17" column="2" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#904#905#0" expanded="true" />
+                <element signature="e#936#937#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Allocation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Allocation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Client.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#764#765#0" expanded="true" />
+                <element signature="e#796#797#0" expanded="true" />
+                <element signature="e#846#847#0" expanded="true" />
+                <element signature="e#872#873#0" expanded="true" />
+                <element signature="e#907#908#0" expanded="true" />
+                <element signature="e#940#941#0" expanded="true" />
+                <element signature="e#978#979#0" expanded="true" />
+                <element signature="e#1018#1019#0" expanded="true" />
+                <element signature="e#1075#1076#0" expanded="true" />
+                <element signature="e#1109#1110#0" expanded="true" />
+                <element signature="e#1163#1164#0" expanded="true" />
+                <element signature="e#1212#1213#0" expanded="true" />
+                <element signature="e#1241#1242#0" expanded="true" />
+                <element signature="e#1275#1276#0" expanded="true" />
+                <element signature="e#1327#1328#0" expanded="true" />
+                <element signature="e#1355#1356#0" expanded="true" />
+                <element signature="e#1394#1395#0" expanded="true" />
+                <element signature="e#1431#1432#0" expanded="true" />
+                <element signature="e#1463#1464#0" expanded="true" />
+                <element signature="e#1497#1498#0" expanded="true" />
+                <element signature="e#1548#1549#0" expanded="true" />
+                <element signature="e#1576#1577#0" expanded="true" />
+                <element signature="e#1618#1619#0" expanded="true" />
+                <element signature="e#1655#1656#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -62,24 +135,24 @@
       <file leaf-file-name="DataBase.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DataBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.7777777">
-              <caret line="123" column="64" selection-start-line="123" selection-start-column="64" selection-end-line="123" selection-end-column="64" />
+            <state vertical-scroll-proportion="25.0">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1449947239000" expanded="true" signature="1486:1675" placeholder="CREATE TABLE..IF..." />
-                <marker date="1449947239000" expanded="true" signature="1807:1965" placeholder="CREATE TABLE..IF..." />
-                <marker date="1449947239000" expanded="true" signature="2104:2459" placeholder="CREATE TABLE..IF..." />
-                <marker date="1449947239000" expanded="true" signature="2593:2939" placeholder="CREATE TABLE..IF..." />
-                <marker date="1449947239000" expanded="true" signature="3365:3408" placeholder="INSERT INTO employee..." />
-                <marker date="1449947239000" expanded="true" signature="4137:4175" placeholder="INSERT INTO employee..." />
-                <marker date="1449947239000" expanded="true" signature="4678:4865" placeholder="SELECT * FRO..allocation_project..." />
+                <marker date="1449977308000" expanded="true" signature="1486:1675" placeholder="CREATE TABLE..IF..." />
+                <marker date="1449977308000" expanded="true" signature="1807:1965" placeholder="CREATE TABLE..IF..." />
+                <marker date="1449977308000" expanded="true" signature="2104:2459" placeholder="CREATE TABLE..IF..." />
+                <marker date="1449977308000" expanded="true" signature="2593:2939" placeholder="CREATE TABLE..IF..." />
+                <marker date="1449977308000" expanded="true" signature="3365:3408" placeholder="INSERT INTO employee..." />
+                <marker date="1449977308000" expanded="true" signature="4118:4156" placeholder="INSERT INTO employee..." />
+                <marker date="1449977308000" expanded="true" signature="4677:4864" placeholder="SELECT * FRO..allocation_project..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewClientForm.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/NewClientForm.java">
+      <file leaf-file-name="AddNewClientForm.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AddNewClientForm.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="66" column="13" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
@@ -116,11 +189,14 @@
       <list>
         <option value="$PROJECT_DIR$/src/Test.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/755c26bb-553c-43b8-bc54-81475b968be8/console.sql" />
-        <option value="$PROJECT_DIR$/src/Main_UI.java" />
-        <option value="$PROJECT_DIR$/src/Employee.java" />
-        <option value="$PROJECT_DIR$/src/DataBase.java" />
         <option value="$PROJECT_DIR$/src/EmployeeForm.java" />
         <option value="$PROJECT_DIR$/src/NewClientForm.java" />
+        <option value="$PROJECT_DIR$/src/DataBase.java" />
+        <option value="$PROJECT_DIR$/src/Employee.java" />
+        <option value="$PROJECT_DIR$/src/Client.java" />
+        <option value="$PROJECT_DIR$/src/Allocation.java" />
+        <option value="$PROJECT_DIR$/src/AllocateEmployeeFrom.java" />
+        <option value="$PROJECT_DIR$/src/Main_UI.java" />
       </list>
     </option>
   </component>
@@ -322,7 +398,7 @@
       </FILE-GROUP>
     </UpdatedFiles>
   </component>
-  <component name="RunManager" selected="Application.NewClientForm">
+  <component name="RunManager" selected="Application.AddNewClientForm">
     <configuration default="false" name="Main_UI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="Main_UI" />
@@ -338,9 +414,9 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="EmployeeForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="AddNewEmployeeForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="EmployeeForm" />
+      <option name="MAIN_CLASS_NAME" value="AddNewEmployeeForm" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -353,9 +429,9 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="NewClientForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="AddNewClientForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="NewClientForm" />
+      <option name="MAIN_CLASS_NAME" value="AddNewClientForm" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -368,9 +444,9 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="AllocateEmployee" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="AllocateEmployeeFrom" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="AllocateEmployee" />
+      <option name="MAIN_CLASS_NAME" value="AllocateEmployeeFrom" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -795,16 +871,16 @@
     </configuration>
     <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Application.Main_UI" />
-      <item index="1" class="java.lang.String" itemvalue="Application.EmployeeForm" />
-      <item index="2" class="java.lang.String" itemvalue="Application.NewClientForm" />
-      <item index="3" class="java.lang.String" itemvalue="Application.AllocateEmployee" />
+      <item index="1" class="java.lang.String" itemvalue="Application.AddNewEmployeeForm" />
+      <item index="2" class="java.lang.String" itemvalue="Application.AddNewClientForm" />
+      <item index="3" class="java.lang.String" itemvalue="Application.AllocateEmployeeFrom" />
     </list>
     <recent_temporary>
       <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Application.NewClientForm" />
-        <item index="1" class="java.lang.String" itemvalue="Application.EmployeeForm" />
+        <item index="0" class="java.lang.String" itemvalue="Application.AddNewClientForm" />
+        <item index="1" class="java.lang.String" itemvalue="Application.AddNewEmployeeForm" />
         <item index="2" class="java.lang.String" itemvalue="Application.Main_UI" />
-        <item index="3" class="java.lang.String" itemvalue="Application.AllocateEmployee" />
+        <item index="3" class="java.lang.String" itemvalue="Application.AllocateEmployeeFrom" />
       </list>
     </recent_temporary>
   </component>
@@ -822,7 +898,7 @@
       <workItem from="1449783309919" duration="3438000" />
       <workItem from="1449788095235" duration="5451000" />
       <workItem from="1449838315849" duration="1222000" />
-      <workItem from="1449926008587" duration="14724000" />
+      <workItem from="1449926008587" duration="17151000" />
     </task>
     <task id="LOCAL-00001" summary="hej venner">
       <created>1449745524129</created>
@@ -842,11 +918,17 @@
       <option name="project" value="LOCAL" />
       <updated>1449791369385</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Når der oprettes clients eller employees i forms bliver de nu indsat i databasen">
+      <created>1449947985432</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1449947985432</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28778000" />
+    <option name="totallyTimeSpent" value="31205000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="22" y="35" width="1280" height="726" extended-state="0" />
@@ -919,7 +1001,8 @@
     <MESSAGE value="hej venner" />
     <MESSAGE value="New" />
     <MESSAGE value=" New employee + allocate gui forms" />
-    <option name="LAST_COMMIT_MESSAGE" value=" New employee + allocate gui forms" />
+    <MESSAGE value="Når der oprettes clients eller employees i forms bliver de nu indsat i databasen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Når der oprettes clients eller employees i forms bliver de nu indsat i databasen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -932,7 +1015,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/AllocateEmployee.java">
+    <entry file="file://$PROJECT_DIR$/src/AllocateEmployeeFrom.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -940,7 +1023,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EmployeeForm.java">
+    <entry file="file://$PROJECT_DIR$/src/AddNewEmployeeForm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="124" column="8" selection-start-line="124" selection-start-column="8" selection-end-line="131" selection-end-column="9" />
@@ -948,7 +1031,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/NewClientForm.java">
+    <entry file="file://$PROJECT_DIR$/src/AddNewClientForm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="124" column="67" selection-start-line="124" selection-start-column="67" selection-end-line="124" selection-end-column="67" />
@@ -972,40 +1055,13 @@
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1000#1001#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
-            <element signature="e#1076#1077#0" expanded="true" />
-            <element signature="e#1111#1112#0" expanded="true" />
-            <element signature="e#1144#1145#0" expanded="true" />
-            <element signature="e#1180#1181#0" expanded="true" />
-            <element signature="e#1218#1219#0" expanded="true" />
-            <element signature="e#1273#1274#0" expanded="true" />
-            <element signature="e#1305#1306#0" expanded="true" />
-            <element signature="e#1355#1356#0" expanded="true" />
-            <element signature="e#1400#1401#0" expanded="true" />
-            <element signature="e#1435#1436#0" expanded="true" />
-            <element signature="e#1472#1473#0" expanded="true" />
-            <element signature="e#1526#1527#0" expanded="true" />
-            <element signature="e#1557#1558#0" expanded="true" />
-            <element signature="e#1605#1606#0" expanded="true" />
-            <element signature="e#1648#1649#0" expanded="true" />
-            <element signature="e#1677#1678#0" expanded="true" />
-            <element signature="e#1711#1712#0" expanded="true" />
-            <element signature="e#1763#1764#0" expanded="true" />
-            <element signature="e#1791#1792#0" expanded="true" />
-            <element signature="e#1830#1831#0" expanded="true" />
-            <element signature="e#1867#1868#0" expanded="true" />
-            <element signature="e#1899#1900#0" expanded="true" />
-            <element signature="e#1933#1934#0" expanded="true" />
-            <element signature="e#1984#1985#0" expanded="true" />
-            <element signature="e#2012#2013#0" expanded="true" />
-            <element signature="e#2054#2055#0" expanded="true" />
-            <element signature="e#2091#2092#0" expanded="true" />
+            <element signature="e#904#905#0" expanded="true" />
+            <element signature="e#936#937#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllocateEmployee.java">
+    <entry file="file://$PROJECT_DIR$/src/AllocateEmployeeFrom.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
@@ -1013,7 +1069,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EmployeeForm.java">
+    <entry file="file://$PROJECT_DIR$/src/AddNewEmployeeForm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="124" column="8" selection-start-line="124" selection-start-column="8" selection-end-line="131" selection-end-column="9" />
@@ -1021,7 +1077,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/NewClientForm.java">
+    <entry file="file://$PROJECT_DIR$/src/AddNewClientForm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="124" column="67" selection-start-line="124" selection-start-column="67" selection-end-line="124" selection-end-column="67" />
@@ -1045,35 +1101,8 @@
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1000#1001#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
-            <element signature="e#1076#1077#0" expanded="true" />
-            <element signature="e#1111#1112#0" expanded="true" />
-            <element signature="e#1144#1145#0" expanded="true" />
-            <element signature="e#1180#1181#0" expanded="true" />
-            <element signature="e#1218#1219#0" expanded="true" />
-            <element signature="e#1273#1274#0" expanded="true" />
-            <element signature="e#1305#1306#0" expanded="true" />
-            <element signature="e#1355#1356#0" expanded="true" />
-            <element signature="e#1400#1401#0" expanded="true" />
-            <element signature="e#1435#1436#0" expanded="true" />
-            <element signature="e#1472#1473#0" expanded="true" />
-            <element signature="e#1526#1527#0" expanded="true" />
-            <element signature="e#1557#1558#0" expanded="true" />
-            <element signature="e#1605#1606#0" expanded="true" />
-            <element signature="e#1648#1649#0" expanded="true" />
-            <element signature="e#1677#1678#0" expanded="true" />
-            <element signature="e#1711#1712#0" expanded="true" />
-            <element signature="e#1763#1764#0" expanded="true" />
-            <element signature="e#1791#1792#0" expanded="true" />
-            <element signature="e#1830#1831#0" expanded="true" />
-            <element signature="e#1867#1868#0" expanded="true" />
-            <element signature="e#1899#1900#0" expanded="true" />
-            <element signature="e#1933#1934#0" expanded="true" />
-            <element signature="e#1984#1985#0" expanded="true" />
-            <element signature="e#2012#2013#0" expanded="true" />
-            <element signature="e#2054#2055#0" expanded="true" />
-            <element signature="e#2091#2092#0" expanded="true" />
+            <element signature="e#904#905#0" expanded="true" />
+            <element signature="e#936#937#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1084,18 +1113,18 @@
           <caret line="76" column="76" selection-start-line="76" selection-start-column="76" selection-end-line="76" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1449947239000" expanded="true" signature="1486:1675" placeholder="CREATE TABLE..IF..." />
-            <marker date="1449947239000" expanded="true" signature="1807:1965" placeholder="CREATE TABLE..IF..." />
-            <marker date="1449947239000" expanded="true" signature="2104:2459" placeholder="CREATE TABLE..IF..." />
-            <marker date="1449947239000" expanded="true" signature="2593:2939" placeholder="CREATE TABLE..IF..." />
-            <marker date="1449947239000" expanded="true" signature="3365:3408" placeholder="INSERT INTO employee..." />
-            <marker date="1449947239000" expanded="true" signature="4137:4175" placeholder="INSERT INTO employee..." />
-            <marker date="1449947239000" expanded="true" signature="4678:4865" placeholder="SELECT * FRO..allocation_project..." />
+            <marker date="1449977308000" expanded="true" signature="1486:1675" placeholder="CREATE TABLE..IF..." />
+            <marker date="1449977308000" expanded="true" signature="1807:1965" placeholder="CREATE TABLE..IF..." />
+            <marker date="1449977308000" expanded="true" signature="2104:2459" placeholder="CREATE TABLE..IF..." />
+            <marker date="1449977308000" expanded="true" signature="2593:2939" placeholder="CREATE TABLE..IF..." />
+            <marker date="1449977308000" expanded="true" signature="3365:3408" placeholder="INSERT INTO employee..." />
+            <marker date="1449977308000" expanded="true" signature="4118:4156" placeholder="INSERT INTO employee..." />
+            <marker date="1449977308000" expanded="true" signature="4677:4864" placeholder="SELECT * FRO..allocation_project..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllocateEmployee.java">
+    <entry file="file://$PROJECT_DIR$/src/AllocateEmployeeFrom.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
@@ -1119,35 +1148,8 @@
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1000#1001#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
-            <element signature="e#1076#1077#0" expanded="true" />
-            <element signature="e#1111#1112#0" expanded="true" />
-            <element signature="e#1144#1145#0" expanded="true" />
-            <element signature="e#1180#1181#0" expanded="true" />
-            <element signature="e#1218#1219#0" expanded="true" />
-            <element signature="e#1273#1274#0" expanded="true" />
-            <element signature="e#1305#1306#0" expanded="true" />
-            <element signature="e#1355#1356#0" expanded="true" />
-            <element signature="e#1400#1401#0" expanded="true" />
-            <element signature="e#1435#1436#0" expanded="true" />
-            <element signature="e#1472#1473#0" expanded="true" />
-            <element signature="e#1526#1527#0" expanded="true" />
-            <element signature="e#1557#1558#0" expanded="true" />
-            <element signature="e#1605#1606#0" expanded="true" />
-            <element signature="e#1648#1649#0" expanded="true" />
-            <element signature="e#1677#1678#0" expanded="true" />
-            <element signature="e#1711#1712#0" expanded="true" />
-            <element signature="e#1763#1764#0" expanded="true" />
-            <element signature="e#1791#1792#0" expanded="true" />
-            <element signature="e#1830#1831#0" expanded="true" />
-            <element signature="e#1867#1868#0" expanded="true" />
-            <element signature="e#1899#1900#0" expanded="true" />
-            <element signature="e#1933#1934#0" expanded="true" />
-            <element signature="e#1984#1985#0" expanded="true" />
-            <element signature="e#2012#2013#0" expanded="true" />
-            <element signature="e#2054#2055#0" expanded="true" />
-            <element signature="e#2091#2092#0" expanded="true" />
+            <element signature="e#904#905#0" expanded="true" />
+            <element signature="e#936#937#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1158,18 +1160,18 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1449947239000" expanded="true" signature="1486:1675" placeholder="CREATE TABLE..IF..." />
-            <marker date="1449947239000" expanded="true" signature="1807:1965" placeholder="CREATE TABLE..IF..." />
-            <marker date="1449947239000" expanded="true" signature="2104:2459" placeholder="CREATE TABLE..IF..." />
-            <marker date="1449947239000" expanded="true" signature="2593:2939" placeholder="CREATE TABLE..IF..." />
-            <marker date="1449947239000" expanded="true" signature="3365:3408" placeholder="INSERT INTO employee..." />
-            <marker date="1449947239000" expanded="true" signature="4137:4175" placeholder="INSERT INTO employee..." />
-            <marker date="1449947239000" expanded="true" signature="4678:4865" placeholder="SELECT * FRO..allocation_project..." />
+            <marker date="1449977308000" expanded="true" signature="1486:1675" placeholder="CREATE TABLE..IF..." />
+            <marker date="1449977308000" expanded="true" signature="1807:1965" placeholder="CREATE TABLE..IF..." />
+            <marker date="1449977308000" expanded="true" signature="2104:2459" placeholder="CREATE TABLE..IF..." />
+            <marker date="1449977308000" expanded="true" signature="2593:2939" placeholder="CREATE TABLE..IF..." />
+            <marker date="1449977308000" expanded="true" signature="3365:3408" placeholder="INSERT INTO employee..." />
+            <marker date="1449977308000" expanded="true" signature="4118:4156" placeholder="INSERT INTO employee..." />
+            <marker date="1449977308000" expanded="true" signature="4677:4864" placeholder="SELECT * FRO..allocation_project..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllocateEmployee.java">
+    <entry file="file://$PROJECT_DIR$/src/AllocateEmployeeFrom.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1193,35 +1195,8 @@
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1000#1001#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
-            <element signature="e#1076#1077#0" expanded="true" />
-            <element signature="e#1111#1112#0" expanded="true" />
-            <element signature="e#1144#1145#0" expanded="true" />
-            <element signature="e#1180#1181#0" expanded="true" />
-            <element signature="e#1218#1219#0" expanded="true" />
-            <element signature="e#1273#1274#0" expanded="true" />
-            <element signature="e#1305#1306#0" expanded="true" />
-            <element signature="e#1355#1356#0" expanded="true" />
-            <element signature="e#1400#1401#0" expanded="true" />
-            <element signature="e#1435#1436#0" expanded="true" />
-            <element signature="e#1472#1473#0" expanded="true" />
-            <element signature="e#1526#1527#0" expanded="true" />
-            <element signature="e#1557#1558#0" expanded="true" />
-            <element signature="e#1605#1606#0" expanded="true" />
-            <element signature="e#1648#1649#0" expanded="true" />
-            <element signature="e#1677#1678#0" expanded="true" />
-            <element signature="e#1711#1712#0" expanded="true" />
-            <element signature="e#1763#1764#0" expanded="true" />
-            <element signature="e#1791#1792#0" expanded="true" />
-            <element signature="e#1830#1831#0" expanded="true" />
-            <element signature="e#1867#1868#0" expanded="true" />
-            <element signature="e#1899#1900#0" expanded="true" />
-            <element signature="e#1933#1934#0" expanded="true" />
-            <element signature="e#1984#1985#0" expanded="true" />
-            <element signature="e#2012#2013#0" expanded="true" />
-            <element signature="e#2054#2055#0" expanded="true" />
-            <element signature="e#2091#2092#0" expanded="true" />
+            <element signature="e#904#905#0" expanded="true" />
+            <element signature="e#936#937#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1232,18 +1207,18 @@
           <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1449947239000" expanded="true" signature="1486:1675" placeholder="CREATE TABLE..IF..." />
-            <marker date="1449947239000" expanded="true" signature="1807:1965" placeholder="CREATE TABLE..IF..." />
-            <marker date="1449947239000" expanded="true" signature="2104:2459" placeholder="CREATE TABLE..IF..." />
-            <marker date="1449947239000" expanded="true" signature="2593:2939" placeholder="CREATE TABLE..IF..." />
-            <marker date="1449947239000" expanded="true" signature="3365:3408" placeholder="INSERT INTO employee..." />
-            <marker date="1449947239000" expanded="true" signature="4137:4175" placeholder="INSERT INTO employee..." />
-            <marker date="1449947239000" expanded="true" signature="4678:4865" placeholder="SELECT * FRO..allocation_project..." />
+            <marker date="1449977308000" expanded="true" signature="1486:1675" placeholder="CREATE TABLE..IF..." />
+            <marker date="1449977308000" expanded="true" signature="1807:1965" placeholder="CREATE TABLE..IF..." />
+            <marker date="1449977308000" expanded="true" signature="2104:2459" placeholder="CREATE TABLE..IF..." />
+            <marker date="1449977308000" expanded="true" signature="2593:2939" placeholder="CREATE TABLE..IF..." />
+            <marker date="1449977308000" expanded="true" signature="3365:3408" placeholder="INSERT INTO employee..." />
+            <marker date="1449977308000" expanded="true" signature="4118:4156" placeholder="INSERT INTO employee..." />
+            <marker date="1449977308000" expanded="true" signature="4677:4864" placeholder="SELECT * FRO..allocation_project..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllocateEmployee.java">
+    <entry file="file://$PROJECT_DIR$/src/AllocateEmployeeFrom.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
@@ -1267,35 +1242,8 @@
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1000#1001#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
-            <element signature="e#1076#1077#0" expanded="true" />
-            <element signature="e#1111#1112#0" expanded="true" />
-            <element signature="e#1144#1145#0" expanded="true" />
-            <element signature="e#1180#1181#0" expanded="true" />
-            <element signature="e#1218#1219#0" expanded="true" />
-            <element signature="e#1273#1274#0" expanded="true" />
-            <element signature="e#1305#1306#0" expanded="true" />
-            <element signature="e#1355#1356#0" expanded="true" />
-            <element signature="e#1400#1401#0" expanded="true" />
-            <element signature="e#1435#1436#0" expanded="true" />
-            <element signature="e#1472#1473#0" expanded="true" />
-            <element signature="e#1526#1527#0" expanded="true" />
-            <element signature="e#1557#1558#0" expanded="true" />
-            <element signature="e#1605#1606#0" expanded="true" />
-            <element signature="e#1648#1649#0" expanded="true" />
-            <element signature="e#1677#1678#0" expanded="true" />
-            <element signature="e#1711#1712#0" expanded="true" />
-            <element signature="e#1763#1764#0" expanded="true" />
-            <element signature="e#1791#1792#0" expanded="true" />
-            <element signature="e#1830#1831#0" expanded="true" />
-            <element signature="e#1867#1868#0" expanded="true" />
-            <element signature="e#1899#1900#0" expanded="true" />
-            <element signature="e#1933#1934#0" expanded="true" />
-            <element signature="e#1984#1985#0" expanded="true" />
-            <element signature="e#2012#2013#0" expanded="true" />
-            <element signature="e#2054#2055#0" expanded="true" />
-            <element signature="e#2091#2092#0" expanded="true" />
+            <element signature="e#904#905#0" expanded="true" />
+            <element signature="e#936#937#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1306,18 +1254,18 @@
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1449947239000" expanded="true" signature="1486:1675" placeholder="CREATE TABLE..IF..." />
-            <marker date="1449947239000" expanded="true" signature="1807:1965" placeholder="CREATE TABLE..IF..." />
-            <marker date="1449947239000" expanded="true" signature="2104:2459" placeholder="CREATE TABLE..IF..." />
-            <marker date="1449947239000" expanded="true" signature="2593:2939" placeholder="CREATE TABLE..IF..." />
-            <marker date="1449947239000" expanded="true" signature="3365:3408" placeholder="INSERT INTO employee..." />
-            <marker date="1449947239000" expanded="true" signature="4137:4175" placeholder="INSERT INTO employee..." />
-            <marker date="1449947239000" expanded="true" signature="4678:4865" placeholder="SELECT * FRO..allocation_project..." />
+            <marker date="1449977308000" expanded="true" signature="1486:1675" placeholder="CREATE TABLE..IF..." />
+            <marker date="1449977308000" expanded="true" signature="1807:1965" placeholder="CREATE TABLE..IF..." />
+            <marker date="1449977308000" expanded="true" signature="2104:2459" placeholder="CREATE TABLE..IF..." />
+            <marker date="1449977308000" expanded="true" signature="2593:2939" placeholder="CREATE TABLE..IF..." />
+            <marker date="1449977308000" expanded="true" signature="3365:3408" placeholder="INSERT INTO employee..." />
+            <marker date="1449977308000" expanded="true" signature="4118:4156" placeholder="INSERT INTO employee..." />
+            <marker date="1449977308000" expanded="true" signature="4677:4864" placeholder="SELECT * FRO..allocation_project..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllocateEmployee.java">
+    <entry file="file://$PROJECT_DIR$/src/AllocateEmployeeFrom.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
@@ -1335,40 +1283,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllocateEmployee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.1811023">
-          <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Allocation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.7777777">
-          <caret line="123" column="64" selection-start-line="123" selection-start-column="64" selection-end-line="123" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1449947239000" expanded="true" signature="1486:1675" placeholder="CREATE TABLE..IF..." />
-            <marker date="1449947239000" expanded="true" signature="1807:1965" placeholder="CREATE TABLE..IF..." />
-            <marker date="1449947239000" expanded="true" signature="2104:2459" placeholder="CREATE TABLE..IF..." />
-            <marker date="1449947239000" expanded="true" signature="2593:2939" placeholder="CREATE TABLE..IF..." />
-            <marker date="1449947239000" expanded="true" signature="3365:3408" placeholder="INSERT INTO employee..." />
-            <marker date="1449947239000" expanded="true" signature="4137:4175" placeholder="INSERT INTO employee..." />
-            <marker date="1449947239000" expanded="true" signature="4678:4865" placeholder="SELECT * FRO..allocation_project..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EmployeeForm.java">
+    <entry file="file://$PROJECT_DIR$/src/AddNewEmployeeForm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="5.1968503">
           <caret line="142" column="7" selection-start-line="142" selection-start-column="7" selection-end-line="149" selection-end-column="87" />
@@ -1376,46 +1291,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Employee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0629921">
-          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1000#1001#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
-            <element signature="e#1076#1077#0" expanded="true" />
-            <element signature="e#1111#1112#0" expanded="true" />
-            <element signature="e#1144#1145#0" expanded="true" />
-            <element signature="e#1180#1181#0" expanded="true" />
-            <element signature="e#1218#1219#0" expanded="true" />
-            <element signature="e#1273#1274#0" expanded="true" />
-            <element signature="e#1305#1306#0" expanded="true" />
-            <element signature="e#1355#1356#0" expanded="true" />
-            <element signature="e#1400#1401#0" expanded="true" />
-            <element signature="e#1435#1436#0" expanded="true" />
-            <element signature="e#1472#1473#0" expanded="true" />
-            <element signature="e#1526#1527#0" expanded="true" />
-            <element signature="e#1557#1558#0" expanded="true" />
-            <element signature="e#1605#1606#0" expanded="true" />
-            <element signature="e#1648#1649#0" expanded="true" />
-            <element signature="e#1677#1678#0" expanded="true" />
-            <element signature="e#1711#1712#0" expanded="true" />
-            <element signature="e#1763#1764#0" expanded="true" />
-            <element signature="e#1791#1792#0" expanded="true" />
-            <element signature="e#1830#1831#0" expanded="true" />
-            <element signature="e#1867#1868#0" expanded="true" />
-            <element signature="e#1899#1900#0" expanded="true" />
-            <element signature="e#1933#1934#0" expanded="true" />
-            <element signature="e#1984#1985#0" expanded="true" />
-            <element signature="e#2012#2013#0" expanded="true" />
-            <element signature="e#2054#2055#0" expanded="true" />
-            <element signature="e#2091#2092#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NewClientForm.java">
+    <entry file="file://$PROJECT_DIR$/src/AddNewClientForm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="66" column="13" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
@@ -1423,10 +1299,89 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="25.0">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1449977308000" expanded="true" signature="1486:1675" placeholder="CREATE TABLE..IF..." />
+            <marker date="1449977308000" expanded="true" signature="1807:1965" placeholder="CREATE TABLE..IF..." />
+            <marker date="1449977308000" expanded="true" signature="2104:2459" placeholder="CREATE TABLE..IF..." />
+            <marker date="1449977308000" expanded="true" signature="2593:2939" placeholder="CREATE TABLE..IF..." />
+            <marker date="1449977308000" expanded="true" signature="3365:3408" placeholder="INSERT INTO employee..." />
+            <marker date="1449977308000" expanded="true" signature="4118:4156" placeholder="INSERT INTO employee..." />
+            <marker date="1449977308000" expanded="true" signature="4677:4864" placeholder="SELECT * FRO..allocation_project..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#764#765#0" expanded="true" />
+            <element signature="e#796#797#0" expanded="true" />
+            <element signature="e#846#847#0" expanded="true" />
+            <element signature="e#872#873#0" expanded="true" />
+            <element signature="e#907#908#0" expanded="true" />
+            <element signature="e#940#941#0" expanded="true" />
+            <element signature="e#978#979#0" expanded="true" />
+            <element signature="e#1018#1019#0" expanded="true" />
+            <element signature="e#1075#1076#0" expanded="true" />
+            <element signature="e#1109#1110#0" expanded="true" />
+            <element signature="e#1163#1164#0" expanded="true" />
+            <element signature="e#1212#1213#0" expanded="true" />
+            <element signature="e#1241#1242#0" expanded="true" />
+            <element signature="e#1275#1276#0" expanded="true" />
+            <element signature="e#1327#1328#0" expanded="true" />
+            <element signature="e#1355#1356#0" expanded="true" />
+            <element signature="e#1394#1395#0" expanded="true" />
+            <element signature="e#1431#1432#0" expanded="true" />
+            <element signature="e#1463#1464#0" expanded="true" />
+            <element signature="e#1497#1498#0" expanded="true" />
+            <element signature="e#1548#1549#0" expanded="true" />
+            <element signature="e#1576#1577#0" expanded="true" />
+            <element signature="e#1618#1619#0" expanded="true" />
+            <element signature="e#1655#1656#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Allocation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllocateEmployeeFrom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Employee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="2" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#904#905#0" expanded="true" />
+            <element signature="e#936#937#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main_UI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8110237">
-          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.10236221">
+          <caret line="98" column="36" selection-start-line="98" selection-start-column="36" selection-end-line="98" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

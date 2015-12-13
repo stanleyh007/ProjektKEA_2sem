@@ -14,7 +14,7 @@ import java.sql.SQLException;
  * Created by peterzohdy on 28/11/2015.
  */
 
-public class EmployeeForm extends Application {
+public class AddNewEmployeeForm extends Application {
 
     TextField cprTextField = new TextField();
     TextField firstNameTextField = new TextField();

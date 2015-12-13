@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * Created by peterzohdy on 26/11/2015.
  */
-public class AllocateEmployee extends Application
+public class AllocateEmployeeFrom extends Application
 {
     public static void main(String[] args)
     {

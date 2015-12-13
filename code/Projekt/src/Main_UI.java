@@ -46,7 +46,6 @@ public class Main_UI extends Application
     {
 
         list = new ListView<>();
-
         table = new TableView();
 
         DataBase dataBase = DataBase.getInstance();
@@ -100,7 +99,7 @@ public class Main_UI extends Application
         // Set items for TableViev (ObservableList)
         table.setItems(allocationList);
 
-        // Set tablecolluns to update from ObservableList
+        // Set table columns to update from ObservableList
         employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("employeeFirstName"));
         employeeLastName.setCellValueFactory(new PropertyValueFactory<>("employeeLastName"));
         client.setCellValueFactory(new PropertyValueFactory<>("client"));

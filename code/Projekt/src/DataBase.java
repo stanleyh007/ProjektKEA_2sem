@@ -98,9 +98,6 @@ public class DataBase {
 
             statement = con.prepareStatement("INSERT INTO employee VALUES (?, ?, ?, ?, ?)");
 
-        } catch (SQLException e1) {
-            e1.printStackTrace();
-        }
             statement.setInt(1, cpr);
             statement.setString(2, firstname);
             statement.setString(3, lastname);
@@ -109,30 +106,34 @@ public class DataBase {
 
             statement.executeUpdate();
 
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
 
             System.out.println("Employee :" + firstname + " " + lastname + " inserted into database");
     }
 
-    public void addClientToDb(int cvr, String companyname, int phone, String email) throws SQLException
+    public void addClientToDb(int cvr, String companyname, int phone, String email)
     {
 
         try {
+
             statement = con.prepareStatement("USE appstract_db");
 
             statement.executeUpdate();
 
             statement = con.prepareStatement("INSERT INTO client VALUES (?, ?, ?, ?)");
 
-        } catch (SQLException e1) {
-            e1.printStackTrace();
+            statement.setInt(1, cvr);
+            statement.setString(2, companyname);
+            statement.setInt(3, phone);
+            statement.setString(4, email);
+
+            statement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        statement.setInt(1, cvr);
-        statement.setString(2, companyname);
-        statement.setInt(3, phone);
-        statement.setString(4, email);
-
-        statement.executeUpdate();
-
 
         System.out.println("Client : " + companyname + " inserted into database");
     }

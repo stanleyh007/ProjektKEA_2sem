@@ -14,7 +14,7 @@ import java.sql.SQLException;
  * Created by peterzohdy on 30/11/2015.
  */
 
-public class NewClientForm extends Application {
+public class AddNewClientForm extends Application {
 
     TextField cvrTextField = new TextField();
     TextField companyNameTextField = new TextField();
