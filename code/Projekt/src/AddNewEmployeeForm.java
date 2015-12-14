@@ -151,7 +151,6 @@ public class AddNewEmployeeForm
 
     public void submitButtonPressed() throws SQLException
     {
-
         int cpr = Integer.parseInt(cprTextField.getText());
         String firstName = firstNameTextField.getText();
         String lastName = lastNameTextField.getText();

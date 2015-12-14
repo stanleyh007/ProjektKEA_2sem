@@ -40,7 +40,7 @@ public class Main_UI extends Application
     // ObservableList for TableView
     ObservableList<Allocation> allocationList = FXCollections.observableArrayList();
     Button showOverview, showAllOverview, login, logout, exit, edit, addEmployee, addClient, addProject, addLogin;
-    GridPane gridLayout;
+    GridPane gridLayout, blankLayout;
     BorderPane bp;
     Scene scene;
     Stage theStage;
@@ -73,7 +73,7 @@ public class Main_UI extends Application
 
         scene = new Scene(setMainLayout(), 1200, 800);
         theStage.setScene(scene);
-        theStage.setTitle("Projekt Allokerings System ");
+        theStage.setTitle("Project Allocation System");
         theStage.show();
         return scene;
     }
@@ -98,9 +98,18 @@ public class Main_UI extends Application
         bp.setStyle("-fx-background-color: dimgray");
         bp.setCenter(tabPane);
         bp.setLeft(gridLayout);
+        bp.setRight(setBlankPane());
         bp.setTop(loginLine());
         bp.setBottom(bottomLine());
         return bp;
+    }
+
+    public Pane setBlankPane()
+    {
+         blankLayout = new GridPane();
+        blankLayout.setPadding(new Insets(0, 15, 50, 0));
+        blankLayout.setAlignment(Pos.CENTER);
+        return blankLayout;
     }
 
     public void setTabPane()
@@ -375,7 +384,7 @@ public class Main_UI extends Application
 
         scene = new Scene(bp, 1200, 800);
         theStage.setScene(scene);
-        theStage.setTitle("Projekt Allokerings System ");
+        theStage.setTitle("Project Allocation System");
         theStage.show();
         return scene;
     }
@@ -411,6 +420,7 @@ public class Main_UI extends Application
         bp.setStyle("-fx-background-color: dimgray");
         bp.setCenter(tabPane);
         bp.setLeft(gridLayout);
+        bp.setRight(blankLayout);
         bp.setTop(loginLine2());
         bp.setBottom(bottomLine2());
         return bp;
