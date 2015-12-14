@@ -16,7 +16,6 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
 import java.sql.SQLException;
 
 public class Main_UI extends Application
@@ -42,12 +41,11 @@ public class Main_UI extends Application
 
     // ObservableList for TableView
     ObservableList<Allocation> allocationList = FXCollections.observableArrayList();
-    Button showOverview, showAllOverview, login, logout, exit, edit;
+    Button showOverview, showAllOverview, login, logout, exit, edit, addEmployee, addClient, addProject, addLogin;
     GridPane gridLayout;
     BorderPane bp;
     Scene scene;
     Stage theStage;
-    ComboBox cb1, cb2 ,cb3, cb4;
     TextField cprTextField, firstNameTextField, lastNameTextField, phoneTextFiled, emailTextField;
 
     public static void main(String[] args)
@@ -76,12 +74,10 @@ public class Main_UI extends Application
         setTabPane();
         setMainLayout();
 
-
-        Scene scene = new Scene(setMainLayout(), 1200, 800);
+        scene = new Scene(setMainLayout(), 1200, 800);
         theStage.setScene(scene);
         theStage.setTitle("Projekt Allokerings System ");
         theStage.show();
-
         return scene;
     }
 
@@ -92,7 +88,6 @@ public class Main_UI extends Application
 
         showAllOverview = new Button("Show Full Overview");
         showAllOverview.setPrefSize(150, 20);
-
 
         gridLayout = new GridPane();
         gridLayout.setHgap(200);
@@ -109,7 +104,6 @@ public class Main_UI extends Application
         bp.setLeft(gridLayout);
         bp.setTop(loginLine());
         bp.setBottom(bottomLine());
-
         return bp;
     }
 
@@ -202,9 +196,6 @@ public class Main_UI extends Application
 
         // Set items for TableViev (ObservableList)
         allocationTable.setItems(allocationList);
-
-
-        return scene;
     }
 
     public void newScene(Scene nextScene)
@@ -228,12 +219,12 @@ public class Main_UI extends Application
         return hBox;
     }
 
-    public HBox bottomLine1()
+    public HBox bottomLine2()
     {
         HBox hBox = new HBox();
         hBox.setPadding(new Insets(15, 12, 15, 12));
-        hBox.setSpacing(10);
-        hBox.setAlignment(Pos.CENTER);
+        hBox.setSpacing(500);
+        hBox.setAlignment(Pos.CENTER_LEFT);
 
         exit = new Button("Exit");
         exit.setPrefSize(100, 20);
@@ -375,11 +366,37 @@ public class Main_UI extends Application
 
     public Scene AdminStage()
     {
-        table = new TableView();
-
         DataBase dataBase = DataBase.getInstance();
 
         dataBase.getAllocations(allocationList);
+
+        setAllocationTable();
+        setEmployeeTable();
+        setClientTable();
+
+        setTabPane();
+        setAdminLayout();
+
+        scene = new Scene(bp, 1200, 800);
+        theStage.setScene(scene);
+        theStage.setTitle("Projekt Allokerings System ");
+        theStage.show();
+        return scene;
+    }
+
+    public Pane setAdminLayout()
+    {
+        addClient = new Button("Add Client");
+        addClient.setPrefSize(150, 20);
+
+        addEmployee = new Button("Add Employee");
+        addEmployee.setPrefSize(150, 20);
+
+        addProject = new Button("Project Allocate");
+        addProject.setPrefSize(150, 20);
+
+        addLogin = new Button("New Login");
+        addLogin.setPrefSize(150, 20);
 
         gridLayout = new GridPane();
         gridLayout.setHgap(200);
@@ -387,86 +404,18 @@ public class Main_UI extends Application
         gridLayout.setPadding(new Insets(50));
         gridLayout.setAlignment(Pos.CENTER);
 
-        ObservableList<String> employee = FXCollections.observableArrayList(
-                "Add Employee",
-                "Delete Employee",
-                "Edit Employee"
-        );
-        ObservableList<String> clients = FXCollections.observableArrayList(
-                "Add Client",
-                "Delete Client",
-                "Edit Client"
-        );
-        ObservableList<String> project = FXCollections.observableArrayList(
-                "Add Project",
-                "Delete project",
-                "Edit Project"
-        );
-        ObservableList<String> admin = FXCollections.observableArrayList(
-                "Add Admin",
-                "Delete Admin"
-        );
-
-        cb1 = new ComboBox(employee);
-        cb1.setPrefSize(200, 20);
-        cb1.setOnAction(event1 ->
-        {
-            if(cb1.getValue() == "Add Employee")
-            {
-                cb1.setOnAction(event -> addNewEmployee());
-            }
-        });
-        cb1.setPromptText("Employee");
-        cb2 = new ComboBox(clients);
-        cb2.setPromptText("Client");
-        cb2.setPrefSize(200, 20);
-        cb3 = new ComboBox(project);
-        cb3.setPromptText("Project");
-        cb3.setPrefSize(200, 20);
-        cb4 = new ComboBox(admin);
-        cb4.setPromptText("Login");
-        cb4.setPrefSize(200, 20);
-
-        gridLayout.add(cb1, 0, 1, 2, 1);
-        gridLayout.add(cb2, 0, 2, 2, 1);
-        gridLayout.add(cb3, 0, 3, 2, 1);
-        gridLayout.add(cb4, 0, 4, 2, 1);
+        gridLayout.add(addProject, 0, 1, 2, 1);
+        gridLayout.add(addEmployee, 0 ,2, 2, 1);
+        gridLayout.add(addClient, 0, 3, 2, 1);
+        gridLayout.add(addLogin, 0, 4, 2, 1);
 
         bp = new BorderPane();
         bp.setStyle("-fx-background-color: dimgray");
-        bp.setCenter(table);
+        bp.setCenter(tabPane);
         bp.setLeft(gridLayout);
         bp.setTop(loginLine2());
-        bp.setBottom(bottomLine());
-
-        table.getColumns().add(employeeFirstName);
-        employeeFirstName.setPrefWidth(100);
-        table.getColumns().add(employeeLastName);
-        employeeLastName.setPrefWidth(100);
-        table.getColumns().add(client);
-        client.setPrefWidth(100);
-        table.getColumns().add(dateFrom);
-        dateFrom.setPrefWidth(100);
-        table.getColumns().add(dateTo);
-        dateTo.setPrefWidth(100);
-        table.getColumns().add(notes);
-        notes.setPrefWidth(400);
-
-        table.setItems(allocationList);
-
-        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("employeeFirstName"));
-        employeeLastName.setCellValueFactory(new PropertyValueFactory<>("employeeLastName"));
-        client.setCellValueFactory(new PropertyValueFactory<>("client"));
-        dateFrom.setCellValueFactory(new PropertyValueFactory<>("dateFrom"));
-        dateTo.setCellValueFactory(new PropertyValueFactory<>("dateTo"));
-        notes.setCellValueFactory(new PropertyValueFactory<>("notes"));
-
-        scene = new Scene(bp, 1200, 800);
-        theStage.setScene(scene);
-        theStage.setTitle("Projekt Allokerings System ");
-        theStage.show();
-
-        return scene;
+        bp.setBottom(bottomLine2());
+        return bp;
     }
 
     public void addNewEmployee()
