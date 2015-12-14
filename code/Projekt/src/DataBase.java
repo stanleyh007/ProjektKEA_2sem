@@ -78,7 +78,7 @@ public class DataBase {
             statement.executeUpdate();
 
             //Creates the date table in DB
-            statement = con.prepareStatement("CREATE TABLE IF NOT EXISTS allocation_otherActivity (event_id INT UNSIGNED NOT NULL AUTO_INCREMENT," +
+            statement = con.prepareStatement("CREATE TABLE IF NOT EXISTS allocation_other_activity (event_id INT UNSIGNED NOT NULL AUTO_INCREMENT," +
                     "otheractivity ENUM ('Ferie', 'Kursus', 'Sygdom', 'Øvrigt', ''), datefrom DATE NOT NULL, " +
                     "dateto DATE NOT NULL, PRIMARY KEY (event_id), FOREIGN KEY (event_id) REFERENCES allocation_Project(event_id))");
 
