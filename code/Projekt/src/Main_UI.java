@@ -1,7 +1,6 @@
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
@@ -16,7 +15,6 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import java.sql.SQLException;
 
 public class Main_UI extends Application
 {
@@ -46,7 +44,6 @@ public class Main_UI extends Application
     BorderPane bp;
     Scene scene;
     Stage theStage;
-    TextField cprTextField, firstNameTextField, lastNameTextField, phoneTextFiled, emailTextField;
 
     public static void main(String[] args)
     {
@@ -90,10 +87,9 @@ public class Main_UI extends Application
         showAllOverview.setPrefSize(150, 20);
 
         gridLayout = new GridPane();
-        gridLayout.setHgap(200);
         gridLayout.setVgap(10);
-        gridLayout.setPadding(new Insets(50));
-        gridLayout.setAlignment(Pos.CENTER);
+        gridLayout.setPadding(new Insets(0, 50, 50, 50));
+        gridLayout.setAlignment(Pos.TOP_CENTER);
 
         gridLayout.add(showOverview, 0, 1, 2, 1);
         gridLayout.add(showAllOverview, 0 ,2, 2, 1);
@@ -207,9 +203,9 @@ public class Main_UI extends Application
     public HBox bottomLine()
     {
         HBox hBox = new HBox();
-        hBox.setPadding(new Insets(15, 12, 15, 12));
+        hBox.setPadding(new Insets(15, 15, 15, 50));
         hBox.setSpacing(10);
-        hBox.setAlignment(Pos.CENTER);
+        hBox.setAlignment(Pos.CENTER_LEFT);
 
         exit = new Button("Exit");
         exit.setPrefSize(100, 20);
@@ -222,8 +218,8 @@ public class Main_UI extends Application
     public HBox bottomLine2()
     {
         HBox hBox = new HBox();
-        hBox.setPadding(new Insets(15, 12, 15, 12));
-        hBox.setSpacing(500);
+        hBox.setPadding(new Insets(15, 15, 15, 50));
+        hBox.setSpacing(450);
         hBox.setAlignment(Pos.CENTER_LEFT);
 
         exit = new Button("Exit");
@@ -241,7 +237,7 @@ public class Main_UI extends Application
     public VBox loginLine()
     {
         VBox vBox = new VBox();
-        vBox.setPadding(new Insets(15, 12, 15, 12));
+        vBox.setPadding(new Insets(15));
         vBox.setSpacing(10);
         vBox.setAlignment(Pos.CENTER_RIGHT);
 
@@ -257,7 +253,7 @@ public class Main_UI extends Application
     public VBox loginLine2()
     {
         VBox vBox = new VBox();
-        vBox.setPadding(new Insets(15, 12, 15, 12));
+        vBox.setPadding(new Insets(15));
         vBox.setSpacing(10);
         vBox.setAlignment(Pos.CENTER_RIGHT);
 
@@ -329,7 +325,7 @@ public class Main_UI extends Application
 
             if(passwordField.getText().equals("test") && usernameField.getText().equals("test")) {
 
-                System.out.println("Loggin in");
+                System.out.println("Login in");
 
             } else
             {
@@ -388,22 +384,23 @@ public class Main_UI extends Application
     {
         addClient = new Button("Add Client");
         addClient.setPrefSize(150, 20);
+        addClient.setOnAction(event -> addClientAction());
 
         addEmployee = new Button("Add Employee");
         addEmployee.setPrefSize(150, 20);
-        addEmployee.setOnAction(e -> addEmployeeAction());
+        addEmployee.setOnAction(event -> addEmployeeAction());
 
         addProject = new Button("Project Allocate");
         addProject.setPrefSize(150, 20);
+        addProject.setOnAction(event -> allocateEmployeeAction());
 
         addLogin = new Button("New Login");
         addLogin.setPrefSize(150, 20);
 
         gridLayout = new GridPane();
-        gridLayout.setHgap(200);
         gridLayout.setVgap(10);
-        gridLayout.setPadding(new Insets(50));
-        gridLayout.setAlignment(Pos.CENTER);
+        gridLayout.setPadding(new Insets(0, 50, 50 ,50));
+        gridLayout.setAlignment(Pos.TOP_CENTER);
 
         gridLayout.add(addProject, 0, 1, 2, 1);
         gridLayout.add(addEmployee, 0 ,2, 2, 1);
@@ -422,5 +419,17 @@ public class Main_UI extends Application
     public void addEmployeeAction() {
         AddNewEmployeeForm addNewEmployeeForm = new AddNewEmployeeForm();
         addNewEmployeeForm.show();
+    }
+
+    public void addClientAction()
+    {
+        AddNewClientForm addNewClientForm = new AddNewClientForm();
+        addNewClientForm.show();
+    }
+
+    public void allocateEmployeeAction()
+    {
+        AllocateEmployeeForm allocateEmployeeForm = new AllocateEmployeeForm();
+        allocateEmployeeForm.show();
     }
 }

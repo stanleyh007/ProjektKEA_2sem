@@ -1,4 +1,3 @@
-import javafx.application.Application;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -15,27 +14,23 @@ import java.sql.SQLException;
  * Created by peterzohdy on 30/11/2015.
  */
 
-public class AddNewClientForm {
+public class AddNewClientForm
+{
     Stage sceneStage = new Stage();
-
     Scene scene;
-
-
 
     TextField cvrTextField = new TextField();
     TextField companyNameTextField = new TextField();
     TextField phoneTextField = new TextField();
     TextField emailTextField = new TextField();
 
-    public AddNewClientForm() {
-
+    public AddNewClientForm()
+    {
         initialize();
     }
 
-    //@Override
-    //public void start(Stage primaryStage) throws Exception {
-    public void initialize() {
-
+    public void initialize()
+    {
         GridPane gridPane = new GridPane();
         gridPane.setPadding(new Insets(50, 0, 0, 35));
         gridPane.setHgap(10);
@@ -66,30 +61,25 @@ public class AddNewClientForm {
 
         Button cancelBtn = new Button("Cancel");
         gridPane.setHalignment(cancelBtn, HPos.RIGHT);
+        cancelBtn.setOnAction(event1 -> close());
 
-        submitBtn.setOnAction(event -> {
-
-            if (cvrTextField.getText().isEmpty() || companyNameTextField.getText().isEmpty()) {
-
+        submitBtn.setOnAction(event ->
+        {
+            if (cvrTextField.getText().isEmpty() || companyNameTextField.getText().isEmpty())
+            {
                 setAlert("Input error", "All mandatory fields must contain data");
-
-            } else if
-                    (isCVRValid(cvrTextField) && !companyNameTextField.getText().isEmpty())
+            }
+            else if (isCVRValid(cvrTextField) && !companyNameTextField.getText().isEmpty())
             {
                 setAlert("Saved", "Company has been stored");
-                try {
-                    submitBtnPressed();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-
-            } else if(isCVRValid(cvrTextField) == false) {
-
+                try {submitBtnPressed();}
+                catch (SQLException e) {e.printStackTrace();}
+            }
+            else if(isCVRValid(cvrTextField) == false)
+            {
                 setAlert("Input error", "CVR no must be in the correct format");
             }
-
         });
-
 
         gridPane.add(titleLbl, 0, 0);
         gridPane.add(companyRegNoLbl, 0, 5);
@@ -103,29 +93,21 @@ public class AddNewClientForm {
         gridPane.add(submitBtn, 1, 9);
         gridPane.add(cancelBtn, 2, 13);
 
-        /*
-        Scene scene = new Scene(gridPane, 400, 375);
-        primaryStage.setScene(scene);
-        */
-
         scene = new Scene(gridPane, 400, 375);
         sceneStage.setScene(scene);
 
         sceneStage.initModality(Modality.APPLICATION_MODAL);
-
-
         submitBtn.requestFocus(); // Workaround to disable focus default
-
-        /*
-        primaryStage.show();
-        primaryStage.setTitle("New Client");
-        primaryStage.setResizable(false);
-        */
     }
 
     public void show() {
         sceneStage.setResizable(false);
         sceneStage.show();
+    }
+
+    public void close()
+    {
+        sceneStage.close();
     }
 
     public boolean isCVRValid(TextField textField)
@@ -134,43 +116,35 @@ public class AddNewClientForm {
         Boolean isCvrLenghtValid;
         Boolean cvrValidation = false;
 
-        if(textField.getText().length() == 8) {
-
+        if(textField.getText().length() == 8)
+        {
             isCvrLenghtValid = true;
-
-        } else {
-
+        }
+        else
+        {
             isCvrLenghtValid = false;
         }
 
-        try {
-            Integer.parseInt(textField.getText());
-
-        } catch (Exception e) {
-
-            isCvrNumeric = false;
-        }
+        try {Integer.parseInt(textField.getText());}
+        catch (Exception e) {isCvrNumeric = false;}
 
         if(isCvrNumeric == true && isCvrLenghtValid == true)
         {
             cvrValidation = true;
         }
-
         return cvrValidation;
     }
 
     public static void setAlert(String titleText,String headerText)
     {
-
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(titleText);
         alert.setHeaderText(headerText);
         alert.show();
-
     }
 
-    public void submitBtnPressed() throws SQLException {
-
+    public void submitBtnPressed() throws SQLException
+    {
         int cvr = Integer.parseInt(cvrTextField.getText());
         String firstName = companyNameTextField.getText();
         int phone = Integer.parseInt(phoneTextField.getText());
