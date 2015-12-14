@@ -1,153 +1,166 @@
-import javafx.application.Application;
-import javafx.geometry.HPos;
-import javafx.geometry.Insets;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.layout.GridPane;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.stage.Stage;
-
-import java.sql.SQLException;
-
-/**
- * Created by peterzohdy on 28/11/2015.
- */
-
-public class AddNewEmployeeForm extends Application {
-
-    TextField cprTextField = new TextField();
-    TextField firstNameTextField = new TextField();
-    TextField lastNameTextField = new TextField();
-    TextField phoneTextFiled = new TextField();
-    TextField emailTextField = new TextField();
-
-
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-
-
-
-        GridPane gridPane = new GridPane();
-        gridPane.setPadding(new Insets(50, 0, 0, 65));
-        gridPane.setHgap(10);
-        gridPane.setVgap(10);
-
-        Label titleLbl = new Label("     Insert Employee Information");
-        gridPane.setHalignment(titleLbl, HPos.LEFT);
-        gridPane.setColumnSpan(titleLbl, 4);
-        titleLbl.setFont(Font.font("Verdana", FontWeight.BOLD, 14));
-
-        Label cprLbl = new Label("CPR No:");
-        gridPane.setHalignment(cprLbl, HPos.RIGHT);
-        cprTextField.setPromptText("DDMMYYYYXXXX");
-
-        Label firstNameLbl = new Label("Firstname:");
-        gridPane.setHalignment(firstNameLbl, HPos.RIGHT);
-
-
-        Label lastNameLbl = new Label("Lastname:");
-        gridPane.setHalignment(lastNameLbl, HPos.RIGHT);
-
-
-        Label phoneLbl = new Label("Phone:");
-        gridPane.setHalignment(phoneLbl, HPos.RIGHT);
-
-        Label emailLbl = new Label("Email:");
-        gridPane.setHalignment(emailLbl, HPos.RIGHT);
-
-        Button submitBtn = new Button("Submit");
-        gridPane.setHalignment(submitBtn, HPos.LEFT);
-        gridPane.setColumnSpan(submitBtn, 3);
-        submitBtn.setPrefWidth(166);
-
-        Button cancelBtn = new Button("Cancel");
-        gridPane.setHalignment(cancelBtn, HPos.RIGHT);
-
-
-        gridPane.add(titleLbl, 0, 0);
-        gridPane.add(cprLbl, 0, 5);
-        gridPane.add(cprTextField, 1, 5);
-        gridPane.add(firstNameLbl, 0, 6);
-        gridPane.add(firstNameTextField, 1,6);
-        gridPane.add(lastNameLbl, 0,7);
-        gridPane.add(lastNameTextField, 1,7);
-        gridPane.add(phoneLbl, 0, 8);
-        gridPane.add(phoneTextFiled, 1,8);
-        gridPane.add(emailLbl, 0, 9);
-        gridPane.add(emailTextField, 1, 9);
-        gridPane.add(submitBtn, 1, 10);
-        gridPane.add(cancelBtn, 3, 14);
-
-
-        Scene scene = new Scene(gridPane, 400, 410);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-        primaryStage.setTitle("Opret ny medarbejder");
-        primaryStage.setResizable(false);
-        firstNameLbl.requestFocus();
-
-        submitBtn.setOnAction(e -> {
-        if (    cprTextField.getText().isEmpty() ||
-                firstNameTextField.getText().isEmpty() ||
-                lastNameTextField.getText().isEmpty())
-        {
-            setAlert("Input error", "You need to fill out all mandatory fields");
-
-        } else if (isNumeric(cprTextField) == false) {
-
-            setAlert("Input error", "CPR must be numeric values");
-
-        } else {
-
-            try {
-                //If inputfields are entered correctly call submitbuttonpressed();
-                submitButtonPressed();
-            } catch (SQLException e1) {
-                e1.printStackTrace();
-            }
-        }
-    });
-
-
-    }
-
-    public static void setAlert(String titleText,String headerText)
-    {
-
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(titleText);
-        alert.setHeaderText(headerText);
-        alert.show();
-    }
-
-    public static boolean isNumeric(TextField textField)
-    {
-        boolean isNumeric = true;
-
-        try {
-            Integer.parseInt(textField.getText());
-
-        } catch (Exception e)
-
-        {
-            isNumeric = false;
-        }
-
-        return isNumeric;
-    }
-
-    public void submitButtonPressed() throws SQLException
-    {
-
-        int cpr = Integer.parseInt(cprTextField.getText());
-        String firstName = firstNameTextField.getText();
-        String lastName = lastNameTextField.getText();
-        int phone = Integer.parseInt(phoneTextFiled.getText());
-        String email = emailTextField.getText();
-
-        //Calls addEmployee method in DB class and inserts the entered input as parameters
-        DataBase.getInstance().addEmployeeToDb(cpr, firstName, lastName, phone, email);
-    }
-
-}
+//import javafx.application.Application;
+//import javafx.geometry.HPos;
+//import javafx.geometry.Insets;
+//import javafx.scene.Scene;
+//import javafx.scene.control.*;
+//import javafx.scene.layout.GridPane;
+//import javafx.scene.text.Font;
+//import javafx.scene.text.FontWeight;
+//import javafx.stage.Modality;
+//import javafx.stage.Stage;
+//
+//import java.sql.SQLException;
+//
+///**
+// * Created by peterzohdy on 28/11/2015.
+// */
+//
+//public class AddNewEmployeeForm extends Application
+//{
+//
+//    static TextField cprTextField = new TextField();
+//    static TextField firstNameTextField = new TextField();
+//    static TextField lastNameTextField = new TextField();
+//    static TextField phoneTextFiled = new TextField();
+//    static TextField emailTextField = new TextField();
+//    static Stage theStage;
+//
+//    @Override
+//    public void start(Stage primaryStage) throws Exception
+//    {
+//        theStage = primaryStage;
+//        newScene(addNewEmployeeScene());
+//
+//    }
+//
+//    public void newScene(Scene nextScene)
+//    {
+//        theStage.setScene(nextScene);
+//        theStage.show();
+//    }
+//
+//    public static Scene addNewEmployeeScene()
+//    {
+//        GridPane gridPane = new GridPane();
+//        gridPane.setPadding(new Insets(50, 0, 0, 65));
+//        gridPane.setHgap(10);
+//        gridPane.setVgap(10);
+//
+//        Label titleLbl = new Label("     Insert Employee Information");
+//        gridPane.setHalignment(titleLbl, HPos.LEFT);
+//        gridPane.setColumnSpan(titleLbl, 4);
+//        titleLbl.setFont(Font.font("Verdana", FontWeight.BOLD, 14));
+//
+//        Label cprLbl = new Label("CPR No:");
+//        gridPane.setHalignment(cprLbl, HPos.RIGHT);
+//        cprTextField.setPromptText("DDMMYYYYXXXX");
+//
+//        Label firstNameLbl = new Label("Firstname:");
+//        gridPane.setHalignment(firstNameLbl, HPos.RIGHT);
+//
+//
+//        Label lastNameLbl = new Label("Lastname:");
+//        gridPane.setHalignment(lastNameLbl, HPos.RIGHT);
+//
+//
+//        Label phoneLbl = new Label("Phone:");
+//        gridPane.setHalignment(phoneLbl, HPos.RIGHT);
+//
+//        Label emailLbl = new Label("Email:");
+//        gridPane.setHalignment(emailLbl, HPos.RIGHT);
+//
+//        Button submitBtn = new Button("Submit");
+//        gridPane.setHalignment(submitBtn, HPos.LEFT);
+//        gridPane.setColumnSpan(submitBtn, 3);
+//        submitBtn.setPrefWidth(166);
+//
+//        Button cancelBtn = new Button("Cancel");
+//        gridPane.setHalignment(cancelBtn, HPos.RIGHT);
+//
+//
+//        gridPane.add(titleLbl, 0, 0);
+//        gridPane.add(cprLbl, 0, 5);
+//        gridPane.add(cprTextField, 1, 5);
+//        gridPane.add(firstNameLbl, 0, 6);
+//        gridPane.add(firstNameTextField, 1, 6);
+//        gridPane.add(lastNameLbl, 0, 7);
+//        gridPane.add(lastNameTextField, 1, 7);
+//        gridPane.add(phoneLbl, 0, 8);
+//        gridPane.add(phoneTextFiled, 1, 8);
+//        gridPane.add(emailLbl, 0, 9);
+//        gridPane.add(emailTextField, 1, 9);
+//        gridPane.add(submitBtn, 1, 10);
+//        gridPane.add(cancelBtn, 3, 14);
+//
+//
+//        theStage.initModality(Modality.APPLICATION_MODAL);
+//        theStage.setTitle("Opret ny medarbejder");
+//        Scene scene = new Scene(gridPane, 400, 410);
+//        theStage.setScene(scene);
+//        theStage.show();
+//        theStage.setResizable(false);
+//        firstNameLbl.requestFocus();
+//
+//        submitBtn.setOnAction(e -> {
+//            if (cprTextField.getText().isEmpty() ||
+//                    firstNameTextField.getText().isEmpty() ||
+//                    lastNameTextField.getText().isEmpty()) {
+//                setAlert("Input error", "You need to fill out all mandatory fields");
+//
+//            } else if (isNumeric(cprTextField) == false) {
+//
+//                setAlert("Input error", "CPR must be numeric values");
+//
+//            } else {
+//
+//                try {
+//                    //If inputfields are entered correctly call submitbuttonpressed();
+//                    submitButtonPressed();
+//                } catch (SQLException e1) {
+//                    e1.printStackTrace();
+//                }
+//            }
+//        });
+//        return scene;
+//    }
+//
+//
+//    public static void setAlert(String titleText,String headerText)
+//    {
+//
+//        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//        alert.setTitle(titleText);
+//        alert.setHeaderText(headerText);
+//        alert.show();
+//    }
+//
+//    public static boolean isNumeric(TextField textField)
+//    {
+//        boolean isNumeric = true;
+//
+//        try {
+//            Integer.parseInt(textField.getText());
+//
+//        } catch (Exception e)
+//
+//        {
+//            isNumeric = false;
+//        }
+//
+//        return isNumeric;
+//    }
+//
+//    public static void submitButtonPressed() throws SQLException
+//    {
+//
+//        int cpr = Integer.parseInt(cprTextField.getText());
+//        String firstName = firstNameTextField.getText();
+//        String lastName = lastNameTextField.getText();
+//        int phone = Integer.parseInt(phoneTextFiled.getText());
+//        String email = emailTextField.getText();
+//
+//        //Calls addEmployee method in DB class and inserts the entered input as parameters
+//        DataBase.getInstance().addEmployeeToDb(cpr, firstName, lastName, phone, email);
+//    }
+//
+//}

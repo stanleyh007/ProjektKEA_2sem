@@ -22,9 +22,8 @@ public class AddNewClientForm extends Application {
     TextField emailTextField = new TextField();
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
-
-
+    public void start(Stage primaryStage) throws Exception
+    {
         GridPane gridPane = new GridPane();
         gridPane.setPadding(new Insets(50, 0, 0, 35));
         gridPane.setHgap(10);
