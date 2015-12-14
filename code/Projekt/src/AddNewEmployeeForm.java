@@ -6,6 +6,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.sql.SQLException;
@@ -14,7 +15,12 @@ import java.sql.SQLException;
  * Created by peterzohdy on 28/11/2015.
  */
 
-public class AddNewEmployeeForm extends Application {
+public class AddNewEmployeeForm {/*extends Application {*/
+
+    //Stage primaryStage;
+    Stage sceneStage = new Stage();
+
+    Scene scene;
 
     TextField cprTextField = new TextField();
     TextField firstNameTextField = new TextField();
@@ -22,10 +28,16 @@ public class AddNewEmployeeForm extends Application {
     TextField phoneTextFiled = new TextField();
     TextField emailTextField = new TextField();
 
+    public AddNewEmployeeForm(/*Stage primaryStage*/) {
+        //this.primaryStage = primaryStage;
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+        initializeScene();
 
+    }
+
+    //@Override
+    //public void start(Stage primaryStage) throws Exception {
+    public void initializeScene() {
 
 
         GridPane gridPane = new GridPane();
@@ -81,10 +93,18 @@ public class AddNewEmployeeForm extends Application {
 
 
         Scene scene = new Scene(gridPane, 400, 410);
+        sceneStage.setScene(scene);
+
+        sceneStage.initModality(Modality.APPLICATION_MODAL);
+
+        /*
         primaryStage.setScene(scene);
         primaryStage.show();
         primaryStage.setTitle("Opret ny medarbejder");
         primaryStage.setResizable(false);
+        */
+
+
         firstNameLbl.requestFocus();
 
         submitBtn.setOnAction(e -> {
@@ -110,6 +130,11 @@ public class AddNewEmployeeForm extends Application {
     });
 
 
+    }
+
+    public void show() {
+        sceneStage.setResizable(false);
+        sceneStage.show();
     }
 
     public static void setAlert(String titleText,String headerText)

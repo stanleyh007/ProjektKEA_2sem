@@ -9,7 +9,10 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.*;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -18,71 +21,38 @@ import javafx.stage.Stage;
 
 public class Main_UI extends Application
 {
-    //ListView<String> list;
+    ListView<String> list;
 
     // TableView and column objects
-    TableView<Allocation> allocationTable;
-    TableView<Employee> employeeTable;
-    TableView<Client> clientTable;
+    TableView<Allocation> table;
+
     TableColumn employeeFirstName = new TableColumn("First Name");
     TableColumn employeeLastName = new TableColumn("Last Name");
-    TableColumn employeeCPR = new TableColumn("CPR");
-    TableColumn clientName = new TableColumn("Company Name");
-    TableColumn clientCVR = new TableColumn("CVR");
-    TableColumn phone = new TableColumn("Phone");
-    TableColumn email = new TableColumn("Email");
     TableColumn client = new TableColumn("Client");
     TableColumn dateFrom = new TableColumn("Date from");
     TableColumn dateTo = new TableColumn("Date to");
     TableColumn notes = new TableColumn("Notes");
 
-    TabPane tabPane;
-    Tab employeeTab, clientTab, allocationTab;
-
     // ObservableList for TableView
     ObservableList<Allocation> allocationList = FXCollections.observableArrayList();
     Button showOverview, showAllOverview, login, exit;
 
-
-
     public static void main(String[] args)
     {
         launch(args);
-
     }
 
     public void start(final Stage primaryStage) throws Exception
     {
+
+        list = new ListView<>();
+        table = new TableView();
+
         DataBase dataBase = DataBase.getInstance();
         dataBase.createDB();
 
         // Load allocations from database into ObservableList
         dataBase.getAllocations(allocationList);
-
-        setAllocationTable();
-        setEmployeeTable();
-        setClientTable();
-
-        setTabPane();
-        setMainLayout();
-
-
-        Scene scene = new Scene(setMainLayout(), 1200, 800);
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("Projekt Allokerings System ");
-        primaryStage.show();
-
-
-    }
-
-    public Pane setMainLayout()
-    {
-        showOverview = new Button("Show Overview");
-        showOverview.setPrefSize(150, 20);
-
-        showAllOverview = new Button("Show Full Overview");
-        showAllOverview.setPrefSize(150, 20);
-
 
         GridPane gridLayout = new GridPane();
         gridLayout.setHgap(200);
@@ -90,97 +60,44 @@ public class Main_UI extends Application
         gridLayout.setPadding(new Insets(50));
         gridLayout.setAlignment(Pos.CENTER);
 
+        ObservableList<String> options = FXCollections.observableArrayList(
+                "Add Employee",
+                "Delete Employee",
+                "Edit Employee"
+        );
+        ComboBox comboBox = new ComboBox(options);
+        comboBox.setPrefSize(180, 20);
+
+        showOverview = new Button("Show Overview");
+        showOverview.setPrefSize(180, 20);
+//        showOverview.setOnAction();
+
+        showAllOverview = new Button("Show Full Overview");
+        showAllOverview.setPrefSize(180, 20);
+//        showAllOverview.setOnAction();
+
         gridLayout.add(showOverview, 0, 1, 2, 1);
         gridLayout.add(showAllOverview, 0 ,2, 2, 1);
+        gridLayout.add(comboBox, 0, 3, 2, 1);
 
         BorderPane bp = new BorderPane();
         bp.setStyle("-fx-background-color: dimgray");
-        bp.setCenter(tabPane);
+        //bp.setCenter(list);
+        bp.setCenter(table);
         bp.setLeft(gridLayout);
         bp.setTop(loginLine());
         bp.setBottom(bottomLine());
 
-        return bp;
-    }
-
-    public void setTabPane()
-    {
-        //TabPane Setup
-        tabPane = new TabPane();
-        employeeTab = new Tab("Employees");
-        allocationTab = new Tab("Allocations");
-        clientTab = new Tab("Clients");
-        //Add tabs to tabpane
-        tabPane.getTabs().addAll(allocationTab, employeeTab, clientTab);
-        //main views inside tabpane
-        allocationTab.setContent(allocationTable);
-        employeeTab.setContent(employeeTable);
-        clientTab.setContent(clientTable);
-    }
-
-    public void setClientTable()
-    {
-        clientTable = new TableView<>();
-
-        clientTable.getColumns().addAll(
-                clientCVR,
-                clientName,
-                phone,
-                email
-        );
-        clientName.setPrefWidth(150);
-        clientCVR.setPrefWidth(100);
-        phone.setPrefWidth(100);
-        email.setPrefWidth(200);
-
-        clientCVR.setCellValueFactory(new PropertyValueFactory<>("CPR"));
-        clientName.setCellValueFactory(new PropertyValueFactory<>("Company Name"));
-        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("Phone"));
-        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("Email"));
-    }
-
-    public void setEmployeeTable()
-    {
-        employeeTable = new TableView<>();
-
-        employeeTable.getColumns().addAll(
-                employeeCPR,
-                employeeFirstName,
-                employeeLastName,
-                phone,
-                email
-        );
-        email.setPrefWidth(200);
-        employeeCPR.setPrefWidth(100);
-        employeeFirstName.setPrefWidth(100);
-        employeeLastName.setPrefWidth(150);
-
-        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("CPR"));
-        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("First Name"));
-        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("Last Name"));
-        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("Phone"));
-        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("Email"));
-
-    }
-
-    public void setAllocationTable()
-    {
-        allocationTable = new TableView();
-
         // Add collumns to TableView
-        allocationTable.getColumns().add(employeeFirstName);
-        employeeFirstName.setPrefWidth(100);
-        allocationTable.getColumns().add(employeeLastName);
-        employeeLastName.setPrefWidth(150);
-        allocationTable.getColumns().add(client);
-        client.setPrefWidth(150);
-        allocationTable.getColumns().add(dateFrom);
-        dateFrom.setPrefWidth(100);
-        allocationTable.getColumns().add(dateTo);
-        dateTo.setPrefWidth(100);
-        allocationTable.getColumns().add(notes);
-        notes.setPrefWidth(300);
+        table.getColumns().add(employeeFirstName);
+        table.getColumns().add(employeeLastName);
+        table.getColumns().add(client);
+        table.getColumns().add(dateFrom);
+        table.getColumns().add(dateTo);
+        table.getColumns().add(notes);
 
+        // Set items for TableViev (ObservableList)
+        table.setItems(allocationList);
 
         // Set table columns to update from ObservableList
         employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("employeeFirstName"));
@@ -190,9 +107,10 @@ public class Main_UI extends Application
         dateTo.setCellValueFactory(new PropertyValueFactory<>("dateTo"));
         notes.setCellValueFactory(new PropertyValueFactory<>("notes"));
 
-        // Set items for TableViev (ObservableList)
-        allocationTable.setItems(allocationList);
-
+        Scene scene = new Scene(bp, 1000, 800);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Projekt Allokerings System ");
+        primaryStage.show();
 
     }
 

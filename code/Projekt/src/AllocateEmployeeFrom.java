@@ -11,6 +11,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -19,12 +20,23 @@ import java.util.List;
 /**
  * Created by peterzohdy on 26/11/2015.
  */
-public class AllocateEmployeeFrom extends Application
+public class AllocateEmployeeFrom
 {
+    Stage sceneStage = new Stage();
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+    Scene scene;
 
+    Pane root = new Pane();
+
+
+
+    public AllocateEmployeeFrom() {
+        initializeScene();
+    }
+
+   // @Override
+    // public void start(Stage primaryStage) throws Exception {
+    public void initializeScene() {
         List<String> list = new ArrayList<>();
         list.add("PROJECT ALLOCATION");
         list.add("---Vacation---");
@@ -150,7 +162,7 @@ public class AllocateEmployeeFrom extends Application
         vBoxText.setPadding(new Insets(350, 0,0,100));
         vBoxText.getChildren().addAll(textArea);
 
-        Pane root = new Pane();
+        //Pane root = new Pane();
         root.getChildren().addAll(
                 allocateLbl,
                 txtBoxLbl,
@@ -164,9 +176,24 @@ public class AllocateEmployeeFrom extends Application
                 clientLbl,
                 clientCBox
         );
+
+        scene = new Scene(root, 400, 500);
+        sceneStage.setScene(scene);
+
+        sceneStage.initModality(Modality.APPLICATION_MODAL);
+
+
+        /*
         primaryStage.setScene(new Scene(root, 400, 500));
         primaryStage.setResizable(false);
         primaryStage.show();
+        */
+    }
+
+    public void show() {
+        //primaryStage.setScene(new Scene(root, 400, 500));
+        sceneStage.setResizable(false);
+        sceneStage.show();
     }
 
     //Uses method in DB for getting all employee data. Takes the data and extracts the name of each employee and

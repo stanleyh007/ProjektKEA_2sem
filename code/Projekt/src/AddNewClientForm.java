@@ -6,6 +6,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.sql.SQLException;
@@ -14,16 +15,26 @@ import java.sql.SQLException;
  * Created by peterzohdy on 30/11/2015.
  */
 
-public class AddNewClientForm extends Application {
+public class AddNewClientForm {
+    Stage sceneStage = new Stage();
+
+    Scene scene;
+
+
 
     TextField cvrTextField = new TextField();
     TextField companyNameTextField = new TextField();
     TextField phoneTextField = new TextField();
     TextField emailTextField = new TextField();
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+    public AddNewClientForm() {
 
+        initialize();
+    }
+
+    //@Override
+    //public void start(Stage primaryStage) throws Exception {
+    public void initialize() {
 
         GridPane gridPane = new GridPane();
         gridPane.setPadding(new Insets(50, 0, 0, 35));
@@ -92,12 +103,29 @@ public class AddNewClientForm extends Application {
         gridPane.add(submitBtn, 1, 9);
         gridPane.add(cancelBtn, 2, 13);
 
+        /*
         Scene scene = new Scene(gridPane, 400, 375);
         primaryStage.setScene(scene);
+        */
+
+        scene = new Scene(gridPane, 400, 375);
+        sceneStage.setScene(scene);
+
+        sceneStage.initModality(Modality.APPLICATION_MODAL);
+
+
         submitBtn.requestFocus(); // Workaround to disable focus default
+
+        /*
         primaryStage.show();
         primaryStage.setTitle("New Client");
         primaryStage.setResizable(false);
+        */
+    }
+
+    public void show() {
+        sceneStage.setResizable(false);
+        sceneStage.show();
     }
 
     public boolean isCVRValid(TextField textField)
