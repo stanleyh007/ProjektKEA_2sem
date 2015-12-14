@@ -156,6 +156,36 @@ public class DataBase {
         }
     }
 
+    public void getEmployees(ObservableList<Employee> employeeList) {
+
+        try {
+            statement = con.prepareStatement("SELECT * FROM employee");
+            resultset = statement.executeQuery();
+
+            while (resultset.next()) {
+                employeeList.add(new Employee(resultset.getInt("cpr"), resultset.getString("firstname"), resultset.getString("lastname"), resultset.getInt("telephone"), resultset.getString("email")));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void getClients(ObservableList<Client> clientList) {
+
+        try {
+            statement = con.prepareStatement("SELECT * FROM client");
+            resultset = statement.executeQuery();
+
+            while (resultset.next()) {
+                clientList.add(new Client(resultset.getInt("cvr"), resultset.getString("companyname"), resultset.getInt("telephone"), resultset.getString("email")));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public ArrayList<Employee> employeesToArrayList()
     {
         ArrayList<Employee> employees = new ArrayList();
