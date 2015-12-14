@@ -18,6 +18,8 @@ import javafx.stage.Stage;
 
 public class Main_UI extends Application
 {
+    DataBase dataBase;
+
     // TableView and column objects
     TableView<Allocation> allocationTable;
     TableView<Employee> employeeTable;
@@ -64,7 +66,7 @@ public class Main_UI extends Application
 
     public Scene mainStage()
     {
-        DataBase dataBase = DataBase.getInstance();
+        dataBase = DataBase.getInstance();
         dataBase.createDB();
 
         // Load allocations from database into ObservableList
@@ -281,7 +283,21 @@ public class Main_UI extends Application
 
         logout = new Button("Log out");
         logout.setPrefSize(100, 20);
-        logout.setOnAction(event -> newScene(mainStage()));
+        logout.setOnAction(event ->
+        {
+            dataBase = DataBase.getInstance();
+            setAllocationTable();
+            setEmployeeTable();
+            setClientTable();
+
+            setTabPane();
+            setMainLayout();
+
+            scene = new Scene(setMainLayout(), 1200, 800);
+            theStage.setScene(scene);
+            theStage.setTitle("Project Allocation System");
+            theStage.show();
+        });
         vBox.getChildren().add(nameLine());
         vBox.getChildren().add(logout);
         return vBox;
@@ -338,6 +354,7 @@ public class Main_UI extends Application
 
         cancelBtn.setLayoutX(325);
         cancelBtn.setLayoutY(258);
+        cancelBtn.setOnAction(event1 -> loginBox.close());
 
         helpLbl.setLayoutX(15);
         helpLbl.setLayoutY(253);
@@ -384,10 +401,6 @@ public class Main_UI extends Application
 
     public Scene AdminStage()
     {
-        DataBase dataBase = DataBase.getInstance();
-
-        dataBase.getAllocations(allocationList);
-
         setAllocationTable();
         setEmployeeTable();
         setClientTable();
