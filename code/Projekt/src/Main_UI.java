@@ -63,8 +63,6 @@ public class Main_UI extends Application
 
     public Scene mainStage()
     {
-        table = new TableView();
-
         DataBase dataBase = DataBase.getInstance();
         dataBase.createDB();
 
@@ -80,11 +78,11 @@ public class Main_UI extends Application
 
 
         Scene scene = new Scene(setMainLayout(), 1200, 800);
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("Projekt Allokerings System ");
-        primaryStage.show();
+        theStage.setScene(scene);
+        theStage.setTitle("Projekt Allokerings System ");
+        theStage.show();
 
-
+        return scene;
     }
 
     public Pane setMainLayout()
