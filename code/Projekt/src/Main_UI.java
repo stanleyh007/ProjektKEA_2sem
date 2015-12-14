@@ -29,8 +29,10 @@ public class Main_UI extends Application
     TableColumn employeeCPR = new TableColumn("CPR");
     TableColumn clientName = new TableColumn("Company Name");
     TableColumn clientCVR = new TableColumn("CVR");
-    TableColumn phone = new TableColumn("Phone");
-    TableColumn email = new TableColumn("Email");
+    TableColumn clientPhone = new TableColumn("Phone");
+    TableColumn employeePhone = new TableColumn("Phone");
+    TableColumn clientEmail = new TableColumn("Email");
+    TableColumn employeeEmail = new TableColumn("Email");
     TableColumn client = new TableColumn("Client");
     TableColumn dateFrom = new TableColumn("Date from");
     TableColumn dateTo = new TableColumn("Date to");
@@ -41,6 +43,9 @@ public class Main_UI extends Application
 
     // ObservableList for TableView
     ObservableList<Allocation> allocationList = FXCollections.observableArrayList();
+    ObservableList<Employee> employeeList = FXCollections.observableArrayList();
+    ObservableList<Client> clientList = FXCollections.observableArrayList();
+
     Button showOverview, showAllOverview, login, exit;
 
 
@@ -58,6 +63,8 @@ public class Main_UI extends Application
 
         // Load allocations from database into ObservableList
         dataBase.getAllocations(allocationList);
+        dataBase.getClients(clientList);
+        dataBase.getEmployees(employeeList);
 
         setAllocationTable();
         setEmployeeTable();
@@ -93,14 +100,14 @@ public class Main_UI extends Application
         gridLayout.add(showOverview, 0, 1, 2, 1);
         gridLayout.add(showAllOverview, 0 ,2, 2, 1);
 
-        BorderPane bp = new BorderPane();
-        bp.setStyle("-fx-background-color: dimgray");
-        bp.setCenter(tabPane);
-        bp.setLeft(gridLayout);
-        bp.setTop(loginLine());
-        bp.setBottom(bottomLine());
+        BorderPane borderPane = new BorderPane();
+        borderPane.setStyle("-fx-background-color: dimgray");
+        borderPane.setCenter(tabPane);
+        borderPane.setLeft(gridLayout);
+        borderPane.setTop(loginLine());
+        borderPane.setBottom(bottomLine());
 
-        return bp;
+        return borderPane;
     }
 
     public void setTabPane()
@@ -125,18 +132,20 @@ public class Main_UI extends Application
         clientTable.getColumns().addAll(
                 clientCVR,
                 clientName,
-                phone,
-                email
+                clientPhone,
+                clientEmail
         );
         clientName.setPrefWidth(150);
         clientCVR.setPrefWidth(100);
-        phone.setPrefWidth(100);
-        email.setPrefWidth(200);
+        clientPhone.setPrefWidth(100);
+        clientEmail.setPrefWidth(200);
 
-        clientCVR.setCellValueFactory(new PropertyValueFactory<>("CPR"));
-        clientName.setCellValueFactory(new PropertyValueFactory<>("Company Name"));
-        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("Phone"));
-        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("Email"));
+        clientCVR.setCellValueFactory(new PropertyValueFactory<>("cvr"));
+        clientName.setCellValueFactory(new PropertyValueFactory<>("companyName"));
+        clientPhone.setCellValueFactory(new PropertyValueFactory<>("phone"));
+        clientEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+
+        clientTable.setItems(clientList);
     }
 
     public void setEmployeeTable()
@@ -147,19 +156,21 @@ public class Main_UI extends Application
                 employeeCPR,
                 employeeFirstName,
                 employeeLastName,
-                phone,
-                email
+                employeePhone,
+                employeeEmail
         );
-        email.setPrefWidth(200);
+        employeeEmail.setPrefWidth(200);
         employeeCPR.setPrefWidth(100);
         employeeFirstName.setPrefWidth(100);
         employeeLastName.setPrefWidth(150);
 
-        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("CPR"));
-        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("First Name"));
-        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("Last Name"));
-        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("Phone"));
-        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("Email"));
+        employeeCPR.setCellValueFactory(new PropertyValueFactory<>("cpr"));
+        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
+        employeeLastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+        employeePhone.setCellValueFactory(new PropertyValueFactory<>("phone"));
+        employeeEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+
+        employeeTable.setItems(employeeList);
 
     }
 

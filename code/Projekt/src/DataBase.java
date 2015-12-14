@@ -29,7 +29,7 @@ public class DataBase {
             String url = "jdbc:mysql://localhost:3306/";
 
             // Connect to database
-            con = DriverManager.getConnection(url, "root", "1024Krystal");
+            con = DriverManager.getConnection(url, "root", "root");
 
             System.out.println("URL: " + url);
 

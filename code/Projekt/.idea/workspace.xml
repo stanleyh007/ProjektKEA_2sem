@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f47adb9c-b1fb-490a-8673-5965c70b3e92" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Allocation.java" afterPath="$PROJECT_DIR$/src/Allocation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projekt.iml" afterPath="$PROJECT_DIR$/Projekt.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DataBase.java" afterPath="$PROJECT_DIR$/src/DataBase.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main_UI.java" afterPath="$PROJECT_DIR$/src/Main_UI.java" />
     </list>
@@ -48,41 +48,10 @@
       <file leaf-file-name="Main_UI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main_UI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.9448819">
-              <caret line="186" column="49" selection-start-line="186" selection-start-column="49" selection-end-line="186" selection-end-column="49" />
+            <state vertical-scroll-proportion="-7.897638">
+              <caret line="109" column="25" selection-start-line="109" selection-start-column="25" selection-end-line="109" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataBase.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DataBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="176" column="66" selection-start-line="176" selection-start-column="66" selection-end-line="176" selection-end-column="66" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1450098225000" expanded="true" signature="1537:1726" placeholder="CREATE TABLE..IF..." />
-                <marker date="1450098225000" expanded="true" signature="1858:2016" placeholder="CREATE TABLE..IF..." />
-                <marker date="1450098225000" expanded="true" signature="2155:2510" placeholder="CREATE TABLE..IF..." />
-                <marker date="1450098225000" expanded="true" signature="2644:2991" placeholder="CREATE TABLE..IF..." />
-                <marker date="1450098225000" expanded="true" signature="3417:3460" placeholder="INSERT INTO employee..." />
-                <marker date="1450098225000" expanded="true" signature="4170:4208" placeholder="INSERT INTO employee..." />
-                <marker date="1450098225000" expanded="true" signature="4730:4917" placeholder="SELECT * FRO..allocation_project..." />
-                <marker date="1450098225000" expanded="true" signature="5489:5502" placeholder="SELECT * FRO..." />
-                <marker date="1450098225000" expanded="true" signature="5489:5503" placeholder="SELECT * FRO..allocation_project..." />
-                <marker date="1450098225000" expanded="true" signature="5489:5507" placeholder="SELECT * FRO..empl..." />
-                <marker date="1450098225000" expanded="true" signature="5489:5511" placeholder="SELECT * FRO..employee..." />
-                <marker date="1450098225000" expanded="true" signature="6028:6042" placeholder="SELECT * FRO..employee..." />
-                <marker date="1450098225000" expanded="true" signature="6028:6048" placeholder="SELECT * FRO..clients..." />
-                <marker date="1450098225000" expanded="true" signature="6689:6702" placeholder="SELECT * FRO..." />
-                <marker date="1450098225000" expanded="true" signature="6689:6703" placeholder="SELECT * FRO..Employe..." />
-                <marker date="1450098225000" expanded="true" signature="6689:6708" placeholder="SELECT * FRO..emplo..." />
-                <marker date="1450098225000" expanded="true" signature="6689:6711" placeholder="SELECT * FRO..employee..." />
-                <marker date="1450098225000" expanded="true" signature="7499:7513" placeholder="SELECT * FRO..employee..." />
-                <marker date="1450098225000" expanded="true" signature="7499:7519" placeholder="SELECT * FRO..client..." />
               </folding>
             </state>
           </provider>
@@ -92,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/src/Employee.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+              <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -117,43 +86,29 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataBase.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DataBase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="31" column="64" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
               <folding>
-                <element signature="e#1089#1090#0" expanded="true" />
-                <element signature="e#1135#1136#0" expanded="true" />
-                <element signature="e#1198#1199#0" expanded="true" />
-                <element signature="e#1238#1239#0" expanded="true" />
-                <element signature="e#1304#1305#0" expanded="true" />
-                <element signature="e#1365#1366#0" expanded="true" />
-                <element signature="e#1408#1409#0" expanded="true" />
-                <element signature="e#1453#1454#0" expanded="true" />
-                <element signature="e#1515#1516#0" expanded="true" />
-                <element signature="e#1554#1555#0" expanded="true" />
-                <element signature="e#1618#1619#0" expanded="true" />
-                <element signature="e#1677#1678#0" expanded="true" />
-                <element signature="e#1710#1711#0" expanded="true" />
-                <element signature="e#1745#1746#0" expanded="true" />
-                <element signature="e#1797#1798#0" expanded="true" />
-                <element signature="e#1826#1827#0" expanded="true" />
-                <element signature="e#1870#1871#0" expanded="true" />
-                <element signature="e#1909#1910#0" expanded="true" />
-                <element signature="e#1944#1945#0" expanded="true" />
-                <element signature="e#1981#1982#0" expanded="true" />
-                <element signature="e#2035#2036#0" expanded="true" />
-                <element signature="e#2066#2067#0" expanded="true" />
-                <element signature="e#2114#2115#0" expanded="true" />
-                <element signature="e#2157#2158#0" expanded="true" />
-                <element signature="e#2190#2191#0" expanded="true" />
-                <element signature="e#2225#2226#0" expanded="true" />
-                <element signature="e#2277#2278#0" expanded="true" />
-                <element signature="e#2306#2307#0" expanded="true" />
-                <element signature="e#2350#2351#0" expanded="true" />
-                <element signature="e#2389#2390#0" expanded="true" />
-                <element signature="e#2421#2422#0" expanded="true" />
-                <element signature="e#2455#2456#0" expanded="true" />
-                <element signature="e#2506#2507#0" expanded="true" />
-                <element signature="e#2534#2535#0" expanded="true" />
-                <element signature="e#2576#2577#0" expanded="true" />
-                <element signature="e#2613#2614#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <marker date="1450115274000" expanded="true" signature="1537:1726" placeholder="CREATE TABLE..IF..." />
+                <marker date="1450115274000" expanded="true" signature="1858:2016" placeholder="CREATE TABLE..IF..." />
+                <marker date="1450115274000" expanded="true" signature="2155:2510" placeholder="CREATE TABLE..IF..." />
+                <marker date="1450115274000" expanded="true" signature="2644:2991" placeholder="CREATE TABLE..IF..." />
+                <marker date="1450115274000" expanded="true" signature="3417:3460" placeholder="INSERT INTO employee..." />
+                <marker date="1450115274000" expanded="true" signature="4170:4208" placeholder="INSERT INTO client..." />
+                <marker date="1450115274000" expanded="true" signature="4730:4917" placeholder="SELECT * FRO..allocation_project..." />
+                <marker date="1450115274000" expanded="true" signature="5489:5511" placeholder="SELECT * FRO..employee..." />
+                <marker date="1450115274000" expanded="true" signature="6028:6048" placeholder="SELECT * FRO..client..." />
+                <marker date="1450115274000" expanded="true" signature="6689:6711" placeholder="SELECT * FRO..employee..." />
+                <marker date="1450115274000" expanded="true" signature="7499:7519" placeholder="SELECT * FRO..client..." />
               </folding>
             </state>
           </provider>
@@ -175,6 +130,7 @@
         <option value="peterzohdy &lt;zohdy@me.com&gt;" />
       </list>
     </option>
+    <option name="UPDATE_CHANGES_POLICY" value="SHELVE" />
     <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
@@ -236,8 +192,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -280,7 +236,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -786,6 +742,7 @@
       <workItem from="1449838315849" duration="1222000" />
       <workItem from="1449926008587" duration="17262000" />
       <workItem from="1450024120753" duration="28269000" />
+      <workItem from="1450115161789" duration="2086000" />
     </task>
     <task id="LOCAL-00001" summary="hej venner">
       <created>1449745524129</created>
@@ -851,7 +808,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59585000" />
+    <option name="totallyTimeSpent" value="61671000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="29" width="1280" height="726" extended-state="6" />
@@ -941,10 +898,61 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/AllocateEmployeeFrom.java">
+    <entry file="file://$PROJECT_DIR$/src/Main_UI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="176" column="66" selection-start-line="176" selection-start-column="66" selection-end-line="176" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1450115274000" expanded="true" signature="1537:1726" placeholder="CREATE TABLE..IF..." />
+            <marker date="1450115274000" expanded="true" signature="1858:2016" placeholder="CREATE TABLE..IF..." />
+            <marker date="1450115274000" expanded="true" signature="2155:2510" placeholder="CREATE TABLE..IF..." />
+            <marker date="1450115274000" expanded="true" signature="2644:2991" placeholder="CREATE TABLE..IF..." />
+            <marker date="1450115274000" expanded="true" signature="3417:3460" placeholder="INSERT INTO employee..." />
+            <marker date="1450115274000" expanded="true" signature="4170:4208" placeholder="INSERT INTO client..." />
+            <marker date="1450115274000" expanded="true" signature="4730:4917" placeholder="SELECT * FRO..allocation_project..." />
+            <marker date="1450115274000" expanded="true" signature="5489:5511" placeholder="SELECT * FRO..employee..." />
+            <marker date="1450115274000" expanded="true" signature="6028:6048" placeholder="SELECT * FRO..client..." />
+            <marker date="1450115274000" expanded="true" signature="6689:6711" placeholder="SELECT * FRO..employee..." />
+            <marker date="1450115274000" expanded="true" signature="7499:7519" placeholder="SELECT * FRO..client..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Employee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Allocation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -982,14 +990,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllocateEmployeeFrom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1035,34 +1035,18 @@
           <caret line="76" column="76" selection-start-line="76" selection-start-column="76" selection-end-line="76" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1450098225000" expanded="true" signature="1537:1726" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450098225000" expanded="true" signature="1858:2016" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450098225000" expanded="true" signature="2155:2510" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450098225000" expanded="true" signature="2644:2991" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450098225000" expanded="true" signature="3417:3460" placeholder="INSERT INTO employee..." />
-            <marker date="1450098225000" expanded="true" signature="4170:4208" placeholder="INSERT INTO employee..." />
-            <marker date="1450098225000" expanded="true" signature="4730:4917" placeholder="SELECT * FRO..allocation_project..." />
-            <marker date="1450098225000" expanded="true" signature="5489:5502" placeholder="SELECT * FRO..." />
-            <marker date="1450098225000" expanded="true" signature="5489:5503" placeholder="SELECT * FRO..allocation_project..." />
-            <marker date="1450098225000" expanded="true" signature="5489:5507" placeholder="SELECT * FRO..empl..." />
-            <marker date="1450098225000" expanded="true" signature="5489:5511" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450098225000" expanded="true" signature="6028:6042" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450098225000" expanded="true" signature="6028:6048" placeholder="SELECT * FRO..clients..." />
-            <marker date="1450098225000" expanded="true" signature="6689:6702" placeholder="SELECT * FRO..." />
-            <marker date="1450098225000" expanded="true" signature="6689:6703" placeholder="SELECT * FRO..Employe..." />
-            <marker date="1450098225000" expanded="true" signature="6689:6708" placeholder="SELECT * FRO..emplo..." />
-            <marker date="1450098225000" expanded="true" signature="6689:6711" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450098225000" expanded="true" signature="7499:7513" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450098225000" expanded="true" signature="7499:7519" placeholder="SELECT * FRO..client..." />
+            <marker date="1450115274000" expanded="true" signature="1537:1726" placeholder="CREATE TABLE..IF..." />
+            <marker date="1450115274000" expanded="true" signature="1858:2016" placeholder="CREATE TABLE..IF..." />
+            <marker date="1450115274000" expanded="true" signature="2155:2510" placeholder="CREATE TABLE..IF..." />
+            <marker date="1450115274000" expanded="true" signature="2644:2991" placeholder="CREATE TABLE..IF..." />
+            <marker date="1450115274000" expanded="true" signature="3417:3460" placeholder="INSERT INTO employee..." />
+            <marker date="1450115274000" expanded="true" signature="4170:4208" placeholder="INSERT INTO client..." />
+            <marker date="1450115274000" expanded="true" signature="4730:4917" placeholder="SELECT * FRO..allocation_project..." />
+            <marker date="1450115274000" expanded="true" signature="5489:5511" placeholder="SELECT * FRO..employee..." />
+            <marker date="1450115274000" expanded="true" signature="6028:6048" placeholder="SELECT * FRO..client..." />
+            <marker date="1450115274000" expanded="true" signature="6689:6711" placeholder="SELECT * FRO..employee..." />
+            <marker date="1450115274000" expanded="true" signature="7499:7519" placeholder="SELECT * FRO..client..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllocateEmployeeFrom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1092,34 +1076,18 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1450098225000" expanded="true" signature="1537:1726" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450098225000" expanded="true" signature="1858:2016" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450098225000" expanded="true" signature="2155:2510" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450098225000" expanded="true" signature="2644:2991" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450098225000" expanded="true" signature="3417:3460" placeholder="INSERT INTO employee..." />
-            <marker date="1450098225000" expanded="true" signature="4170:4208" placeholder="INSERT INTO employee..." />
-            <marker date="1450098225000" expanded="true" signature="4730:4917" placeholder="SELECT * FRO..allocation_project..." />
-            <marker date="1450098225000" expanded="true" signature="5489:5502" placeholder="SELECT * FRO..." />
-            <marker date="1450098225000" expanded="true" signature="5489:5503" placeholder="SELECT * FRO..allocation_project..." />
-            <marker date="1450098225000" expanded="true" signature="5489:5507" placeholder="SELECT * FRO..empl..." />
-            <marker date="1450098225000" expanded="true" signature="5489:5511" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450098225000" expanded="true" signature="6028:6042" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450098225000" expanded="true" signature="6028:6048" placeholder="SELECT * FRO..clients..." />
-            <marker date="1450098225000" expanded="true" signature="6689:6702" placeholder="SELECT * FRO..." />
-            <marker date="1450098225000" expanded="true" signature="6689:6703" placeholder="SELECT * FRO..Employe..." />
-            <marker date="1450098225000" expanded="true" signature="6689:6708" placeholder="SELECT * FRO..emplo..." />
-            <marker date="1450098225000" expanded="true" signature="6689:6711" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450098225000" expanded="true" signature="7499:7513" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450098225000" expanded="true" signature="7499:7519" placeholder="SELECT * FRO..client..." />
+            <marker date="1450115274000" expanded="true" signature="1537:1726" placeholder="CREATE TABLE..IF..." />
+            <marker date="1450115274000" expanded="true" signature="1858:2016" placeholder="CREATE TABLE..IF..." />
+            <marker date="1450115274000" expanded="true" signature="2155:2510" placeholder="CREATE TABLE..IF..." />
+            <marker date="1450115274000" expanded="true" signature="2644:2991" placeholder="CREATE TABLE..IF..." />
+            <marker date="1450115274000" expanded="true" signature="3417:3460" placeholder="INSERT INTO employee..." />
+            <marker date="1450115274000" expanded="true" signature="4170:4208" placeholder="INSERT INTO client..." />
+            <marker date="1450115274000" expanded="true" signature="4730:4917" placeholder="SELECT * FRO..allocation_project..." />
+            <marker date="1450115274000" expanded="true" signature="5489:5511" placeholder="SELECT * FRO..employee..." />
+            <marker date="1450115274000" expanded="true" signature="6028:6048" placeholder="SELECT * FRO..client..." />
+            <marker date="1450115274000" expanded="true" signature="6689:6711" placeholder="SELECT * FRO..employee..." />
+            <marker date="1450115274000" expanded="true" signature="7499:7519" placeholder="SELECT * FRO..client..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllocateEmployeeFrom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1149,34 +1117,18 @@
           <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1450098225000" expanded="true" signature="1537:1726" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450098225000" expanded="true" signature="1858:2016" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450098225000" expanded="true" signature="2155:2510" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450098225000" expanded="true" signature="2644:2991" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450098225000" expanded="true" signature="3417:3460" placeholder="INSERT INTO employee..." />
-            <marker date="1450098225000" expanded="true" signature="4170:4208" placeholder="INSERT INTO employee..." />
-            <marker date="1450098225000" expanded="true" signature="4730:4917" placeholder="SELECT * FRO..allocation_project..." />
-            <marker date="1450098225000" expanded="true" signature="5489:5502" placeholder="SELECT * FRO..." />
-            <marker date="1450098225000" expanded="true" signature="5489:5503" placeholder="SELECT * FRO..allocation_project..." />
-            <marker date="1450098225000" expanded="true" signature="5489:5507" placeholder="SELECT * FRO..empl..." />
-            <marker date="1450098225000" expanded="true" signature="5489:5511" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450098225000" expanded="true" signature="6028:6042" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450098225000" expanded="true" signature="6028:6048" placeholder="SELECT * FRO..clients..." />
-            <marker date="1450098225000" expanded="true" signature="6689:6702" placeholder="SELECT * FRO..." />
-            <marker date="1450098225000" expanded="true" signature="6689:6703" placeholder="SELECT * FRO..Employe..." />
-            <marker date="1450098225000" expanded="true" signature="6689:6708" placeholder="SELECT * FRO..emplo..." />
-            <marker date="1450098225000" expanded="true" signature="6689:6711" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450098225000" expanded="true" signature="7499:7513" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450098225000" expanded="true" signature="7499:7519" placeholder="SELECT * FRO..client..." />
+            <marker date="1450115274000" expanded="true" signature="1537:1726" placeholder="CREATE TABLE..IF..." />
+            <marker date="1450115274000" expanded="true" signature="1858:2016" placeholder="CREATE TABLE..IF..." />
+            <marker date="1450115274000" expanded="true" signature="2155:2510" placeholder="CREATE TABLE..IF..." />
+            <marker date="1450115274000" expanded="true" signature="2644:2991" placeholder="CREATE TABLE..IF..." />
+            <marker date="1450115274000" expanded="true" signature="3417:3460" placeholder="INSERT INTO employee..." />
+            <marker date="1450115274000" expanded="true" signature="4170:4208" placeholder="INSERT INTO client..." />
+            <marker date="1450115274000" expanded="true" signature="4730:4917" placeholder="SELECT * FRO..allocation_project..." />
+            <marker date="1450115274000" expanded="true" signature="5489:5511" placeholder="SELECT * FRO..employee..." />
+            <marker date="1450115274000" expanded="true" signature="6028:6048" placeholder="SELECT * FRO..client..." />
+            <marker date="1450115274000" expanded="true" signature="6689:6711" placeholder="SELECT * FRO..employee..." />
+            <marker date="1450115274000" expanded="true" signature="7499:7519" placeholder="SELECT * FRO..client..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllocateEmployeeFrom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1206,34 +1158,18 @@
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1450098225000" expanded="true" signature="1537:1726" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450098225000" expanded="true" signature="1858:2016" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450098225000" expanded="true" signature="2155:2510" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450098225000" expanded="true" signature="2644:2991" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450098225000" expanded="true" signature="3417:3460" placeholder="INSERT INTO employee..." />
-            <marker date="1450098225000" expanded="true" signature="4170:4208" placeholder="INSERT INTO employee..." />
-            <marker date="1450098225000" expanded="true" signature="4730:4917" placeholder="SELECT * FRO..allocation_project..." />
-            <marker date="1450098225000" expanded="true" signature="5489:5502" placeholder="SELECT * FRO..." />
-            <marker date="1450098225000" expanded="true" signature="5489:5503" placeholder="SELECT * FRO..allocation_project..." />
-            <marker date="1450098225000" expanded="true" signature="5489:5507" placeholder="SELECT * FRO..empl..." />
-            <marker date="1450098225000" expanded="true" signature="5489:5511" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450098225000" expanded="true" signature="6028:6042" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450098225000" expanded="true" signature="6028:6048" placeholder="SELECT * FRO..clients..." />
-            <marker date="1450098225000" expanded="true" signature="6689:6702" placeholder="SELECT * FRO..." />
-            <marker date="1450098225000" expanded="true" signature="6689:6703" placeholder="SELECT * FRO..Employe..." />
-            <marker date="1450098225000" expanded="true" signature="6689:6708" placeholder="SELECT * FRO..emplo..." />
-            <marker date="1450098225000" expanded="true" signature="6689:6711" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450098225000" expanded="true" signature="7499:7513" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450098225000" expanded="true" signature="7499:7519" placeholder="SELECT * FRO..client..." />
+            <marker date="1450115274000" expanded="true" signature="1537:1726" placeholder="CREATE TABLE..IF..." />
+            <marker date="1450115274000" expanded="true" signature="1858:2016" placeholder="CREATE TABLE..IF..." />
+            <marker date="1450115274000" expanded="true" signature="2155:2510" placeholder="CREATE TABLE..IF..." />
+            <marker date="1450115274000" expanded="true" signature="2644:2991" placeholder="CREATE TABLE..IF..." />
+            <marker date="1450115274000" expanded="true" signature="3417:3460" placeholder="INSERT INTO employee..." />
+            <marker date="1450115274000" expanded="true" signature="4170:4208" placeholder="INSERT INTO client..." />
+            <marker date="1450115274000" expanded="true" signature="4730:4917" placeholder="SELECT * FRO..allocation_project..." />
+            <marker date="1450115274000" expanded="true" signature="5489:5511" placeholder="SELECT * FRO..employee..." />
+            <marker date="1450115274000" expanded="true" signature="6028:6048" placeholder="SELECT * FRO..client..." />
+            <marker date="1450115274000" expanded="true" signature="6689:6711" placeholder="SELECT * FRO..employee..." />
+            <marker date="1450115274000" expanded="true" signature="7499:7519" placeholder="SELECT * FRO..client..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllocateEmployeeFrom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1263,74 +1199,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllocateEmployeeFrom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-48.88889">
-          <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Allocation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-          <folding>
-            <element signature="e#1089#1090#0" expanded="true" />
-            <element signature="e#1135#1136#0" expanded="true" />
-            <element signature="e#1198#1199#0" expanded="true" />
-            <element signature="e#1238#1239#0" expanded="true" />
-            <element signature="e#1304#1305#0" expanded="true" />
-            <element signature="e#1365#1366#0" expanded="true" />
-            <element signature="e#1408#1409#0" expanded="true" />
-            <element signature="e#1453#1454#0" expanded="true" />
-            <element signature="e#1515#1516#0" expanded="true" />
-            <element signature="e#1554#1555#0" expanded="true" />
-            <element signature="e#1618#1619#0" expanded="true" />
-            <element signature="e#1677#1678#0" expanded="true" />
-            <element signature="e#1710#1711#0" expanded="true" />
-            <element signature="e#1745#1746#0" expanded="true" />
-            <element signature="e#1797#1798#0" expanded="true" />
-            <element signature="e#1826#1827#0" expanded="true" />
-            <element signature="e#1870#1871#0" expanded="true" />
-            <element signature="e#1909#1910#0" expanded="true" />
-            <element signature="e#1944#1945#0" expanded="true" />
-            <element signature="e#1981#1982#0" expanded="true" />
-            <element signature="e#2035#2036#0" expanded="true" />
-            <element signature="e#2066#2067#0" expanded="true" />
-            <element signature="e#2114#2115#0" expanded="true" />
-            <element signature="e#2157#2158#0" expanded="true" />
-            <element signature="e#2190#2191#0" expanded="true" />
-            <element signature="e#2225#2226#0" expanded="true" />
-            <element signature="e#2277#2278#0" expanded="true" />
-            <element signature="e#2306#2307#0" expanded="true" />
-            <element signature="e#2350#2351#0" expanded="true" />
-            <element signature="e#2389#2390#0" expanded="true" />
-            <element signature="e#2421#2422#0" expanded="true" />
-            <element signature="e#2455#2456#0" expanded="true" />
-            <element signature="e#2506#2507#0" expanded="true" />
-            <element signature="e#2534#2535#0" expanded="true" />
-            <element signature="e#2576#2577#0" expanded="true" />
-            <element signature="e#2613#2614#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/javafx-src.zip!/javafx/beans/property/ObjectProperty.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1338,7 +1210,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1346,7 +1217,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1368,49 +1238,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Employee.java">
+    <entry file="file://$PROJECT_DIR$/src/Allocation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DataBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="176" column="66" selection-start-line="176" selection-start-column="66" selection-end-line="176" selection-end-column="66" />
+          <caret line="31" column="64" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1450098225000" expanded="true" signature="1537:1726" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450098225000" expanded="true" signature="1858:2016" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450098225000" expanded="true" signature="2155:2510" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450098225000" expanded="true" signature="2644:2991" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450098225000" expanded="true" signature="3417:3460" placeholder="INSERT INTO employee..." />
-            <marker date="1450098225000" expanded="true" signature="4170:4208" placeholder="INSERT INTO employee..." />
-            <marker date="1450098225000" expanded="true" signature="4730:4917" placeholder="SELECT * FRO..allocation_project..." />
-            <marker date="1450098225000" expanded="true" signature="5489:5502" placeholder="SELECT * FRO..." />
-            <marker date="1450098225000" expanded="true" signature="5489:5503" placeholder="SELECT * FRO..allocation_project..." />
-            <marker date="1450098225000" expanded="true" signature="5489:5507" placeholder="SELECT * FRO..empl..." />
-            <marker date="1450098225000" expanded="true" signature="5489:5511" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450098225000" expanded="true" signature="6028:6042" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450098225000" expanded="true" signature="6028:6048" placeholder="SELECT * FRO..clients..." />
-            <marker date="1450098225000" expanded="true" signature="6689:6702" placeholder="SELECT * FRO..." />
-            <marker date="1450098225000" expanded="true" signature="6689:6703" placeholder="SELECT * FRO..Employe..." />
-            <marker date="1450098225000" expanded="true" signature="6689:6708" placeholder="SELECT * FRO..emplo..." />
-            <marker date="1450098225000" expanded="true" signature="6689:6711" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450098225000" expanded="true" signature="7499:7513" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450098225000" expanded="true" signature="7499:7519" placeholder="SELECT * FRO..client..." />
+            <marker date="1450115274000" expanded="true" signature="1537:1726" placeholder="CREATE TABLE..IF..." />
+            <marker date="1450115274000" expanded="true" signature="1858:2016" placeholder="CREATE TABLE..IF..." />
+            <marker date="1450115274000" expanded="true" signature="2155:2510" placeholder="CREATE TABLE..IF..." />
+            <marker date="1450115274000" expanded="true" signature="2644:2991" placeholder="CREATE TABLE..IF..." />
+            <marker date="1450115274000" expanded="true" signature="3417:3460" placeholder="INSERT INTO employee..." />
+            <marker date="1450115274000" expanded="true" signature="4170:4208" placeholder="INSERT INTO client..." />
+            <marker date="1450115274000" expanded="true" signature="4730:4917" placeholder="SELECT * FRO..allocation_project..." />
+            <marker date="1450115274000" expanded="true" signature="5489:5511" placeholder="SELECT * FRO..employee..." />
+            <marker date="1450115274000" expanded="true" signature="6028:6048" placeholder="SELECT * FRO..client..." />
+            <marker date="1450115274000" expanded="true" signature="6689:6711" placeholder="SELECT * FRO..employee..." />
+            <marker date="1450115274000" expanded="true" signature="7499:7519" placeholder="SELECT * FRO..client..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Employee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main_UI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.9448819">
-          <caret line="186" column="49" selection-start-line="186" selection-start-column="49" selection-end-line="186" selection-end-column="49" />
+        <state vertical-scroll-proportion="-7.897638">
+          <caret line="109" column="25" selection-start-line="109" selection-start-column="25" selection-end-line="109" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1474,7 +1354,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
