@@ -4,7 +4,7 @@ import javafx.beans.property.SimpleStringProperty;
 /**
  * Created by peterzohdy on 12/12/2015.
  */
-public class Client {
+public class Client extends Person {
 
     SimpleIntegerProperty cvr = new SimpleIntegerProperty();
     SimpleStringProperty companyName = new SimpleStringProperty();
@@ -13,6 +13,7 @@ public class Client {
 
     public Client (int cvr, String companyName, int phone, String email)
     {
+        super(email, phone);
         this.cvr = new SimpleIntegerProperty(cvr);
         this.companyName = new SimpleStringProperty(companyName);
         this.phone = new SimpleIntegerProperty(phone);

@@ -1,4 +1,3 @@
-import javafx.application.Application;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -6,6 +5,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.sql.SQLException;
@@ -14,7 +14,10 @@ import java.sql.SQLException;
  * Created by peterzohdy on 28/11/2015.
  */
 
-public class AddNewEmployeeForm extends Application {
+public class AddNewEmployeeForm
+{
+    Stage sceneStage = new Stage();
+    Scene scene;
 
     TextField cprTextField = new TextField();
     TextField firstNameTextField = new TextField();
@@ -22,12 +25,13 @@ public class AddNewEmployeeForm extends Application {
     TextField phoneTextFiled = new TextField();
     TextField emailTextField = new TextField();
 
+    public AddNewEmployeeForm()
+    {
+        initializeScene();
+    }
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-
-
-
+    public void initializeScene()
+    {
         GridPane gridPane = new GridPane();
         gridPane.setPadding(new Insets(50, 0, 0, 65));
         gridPane.setHgap(10);
@@ -63,7 +67,7 @@ public class AddNewEmployeeForm extends Application {
 
         Button cancelBtn = new Button("Cancel");
         gridPane.setHalignment(cancelBtn, HPos.RIGHT);
-
+        cancelBtn.setOnAction(event -> close());
 
         gridPane.add(titleLbl, 0, 0);
         gridPane.add(cprLbl, 0, 5);
@@ -79,37 +83,45 @@ public class AddNewEmployeeForm extends Application {
         gridPane.add(submitBtn, 1, 10);
         gridPane.add(cancelBtn, 3, 14);
 
+        scene = new Scene(gridPane, 400, 410);
+        sceneStage.setScene(scene);
 
-        Scene scene = new Scene(gridPane, 400, 410);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-        primaryStage.setTitle("Opret ny medarbejder");
-        primaryStage.setResizable(false);
+        sceneStage.initModality(Modality.APPLICATION_MODAL);
+
         firstNameLbl.requestFocus();
 
-        submitBtn.setOnAction(e -> {
-        if (    cprTextField.getText().isEmpty() ||
+        submitBtn.setOnAction(e ->
+        {
+            if (    cprTextField.getText().isEmpty() ||
                 firstNameTextField.getText().isEmpty() ||
                 lastNameTextField.getText().isEmpty())
-        {
-            setAlert("Input error", "You need to fill out all mandatory fields");
-
-        } else if (isNumeric(cprTextField) == false) {
-
-            setAlert("Input error", "CPR must be numeric values");
-
-        } else {
-
-            try {
-                //If inputfields are entered correctly call submitbuttonpressed();
-                submitButtonPressed();
-            } catch (SQLException e1) {
-                e1.printStackTrace();
+            {
+                setAlert("Input error", "You need to fill out all mandatory fields");
             }
-        }
-    });
+            else if (isNumeric(cprTextField) == false)
+            {
+                setAlert("Input error", "CPR must be numeric values");
+            }
+            else if (isNumeric(cprTextField) &&
+                !firstNameTextField.getText().isEmpty() &&
+                !lastNameTextField.getText().isEmpty())
+            {
+                setAlert("Saved", "Employee has been stored");
+                try {submitButtonPressed();}
+                catch (SQLException e1) {e1.printStackTrace();}
+            }
+        });
+    }
 
+    public void show()
+    {
+        sceneStage.setResizable(false);
+        sceneStage.show();
+    }
 
+    public void close()
+    {
+        sceneStage.close();
     }
 
     public static void setAlert(String titleText,String headerText)
@@ -139,7 +151,6 @@ public class AddNewEmployeeForm extends Application {
 
     public void submitButtonPressed() throws SQLException
     {
-
         int cpr = Integer.parseInt(cprTextField.getText());
         String firstName = firstNameTextField.getText();
         String lastName = lastNameTextField.getText();
@@ -149,5 +160,4 @@ public class AddNewEmployeeForm extends Application {
         //Calls addEmployee method in DB class and inserts the entered input as parameters
         DataBase.getInstance().addEmployeeToDb(cpr, firstName, lastName, phone, email);
     }
-
 }

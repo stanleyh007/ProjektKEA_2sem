@@ -1,6 +1,3 @@
-import javafx.application.Application;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -11,6 +8,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -19,12 +17,18 @@ import java.util.List;
 /**
  * Created by peterzohdy on 26/11/2015.
  */
-public class AllocateEmployeeFrom extends Application
+public class AllocateEmployeeForm
 {
+    Stage sceneStage = new Stage();
+    Scene scene;
+    Pane root = new Pane();
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+    public AllocateEmployeeForm() {
+        initializeScene();
+    }
 
+    public void initializeScene()
+    {
         List<String> list = new ArrayList<>();
         list.add("PROJECT ALLOCATION");
         list.add("---Vacation---");
@@ -33,7 +37,6 @@ public class AllocateEmployeeFrom extends Application
         list.add("---Other---");
 
         ObservableList<String> observableList = FXCollections.observableArrayList(list);
-
 
         Label allocateLbl = new Label();
         Label employeeLbl = new Label();
@@ -71,30 +74,26 @@ public class AllocateEmployeeFrom extends Application
         Button backBtn = new Button("Cancel");
         backBtn.setLayoutX(325);
         backBtn.setLayoutY(455);
-
+        backBtn.setOnAction(event1 -> close());
 
         ComboBox employeesCbox = new ComboBox();
         employeesCbox.getItems().addAll(getNamesOfEmployee());
-
 
         ComboBox clientCBox = new ComboBox();
         clientCBox.getItems().addAll(getClientsOfEmployee());
         clientCBox.setDisable(true);
 
-
         ComboBox<String> activityCbox = new ComboBox<String>(observableList);
         activityCbox.setPrefWidth(155);
 
-        activityCbox.valueProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                System.out.println(newValue);
-                if(newValue.equals("PROJECT ALLOCATION"))
-                {
-                    clientCBox.setDisable(false);
-                } else {
-                    clientCBox.setDisable(true);
-                }
+        activityCbox.valueProperty().addListener((observable, oldValue, newValue) ->
+        {
+            System.out.println(newValue);
+            if(newValue.equals("PROJECT ALLOCATION"))
+            {
+                clientCBox.setDisable(false);
+            } else {
+                clientCBox.setDisable(true);
             }
         });
 
@@ -106,7 +105,8 @@ public class AllocateEmployeeFrom extends Application
         DatePicker dateFromPicker = new DatePicker();
         dateFromPicker.setMinWidth(155);
         dateFromPicker.setPrefWidth(155);
-        dateFromPicker.setOnAction(event -> {
+        dateFromPicker.setOnAction(event ->
+        {
             LocalDate dateFrom = dateFromPicker.getValue();
             System.out.println(dateFrom);
         });
@@ -114,10 +114,10 @@ public class AllocateEmployeeFrom extends Application
         DatePicker dateToPicker = new DatePicker();
         dateToPicker.setMinWidth(155);
         dateToPicker.setPrefWidth(155);
-        dateToPicker.setOnAction(event -> {
+        dateToPicker.setOnAction(event ->
+        {
             LocalDate dateTo = dateToPicker.getValue();
             System.out.println(dateTo);
-
         });
 
         TextArea textArea = new TextArea();
@@ -150,7 +150,6 @@ public class AllocateEmployeeFrom extends Application
         vBoxText.setPadding(new Insets(350, 0,0,100));
         vBoxText.getChildren().addAll(textArea);
 
-        Pane root = new Pane();
         root.getChildren().addAll(
                 allocateLbl,
                 txtBoxLbl,
@@ -164,9 +163,22 @@ public class AllocateEmployeeFrom extends Application
                 clientLbl,
                 clientCBox
         );
-        primaryStage.setScene(new Scene(root, 400, 500));
-        primaryStage.setResizable(false);
-        primaryStage.show();
+
+        scene = new Scene(root, 400, 500);
+        sceneStage.setScene(scene);
+
+        sceneStage.initModality(Modality.APPLICATION_MODAL);
+    }
+
+    public void show()
+    {
+        sceneStage.setResizable(false);
+        sceneStage.show();
+    }
+
+    public void close()
+    {
+        sceneStage.close();
     }
 
     //Uses method in DB for getting all employee data. Takes the data and extracts the name of each employee and
@@ -180,7 +192,6 @@ public class AllocateEmployeeFrom extends Application
             employeeNames.add(employee.getFirstName() + " " + employee.getLastName());
         }
         return employeeNames;
-
     }
 
     //Uses method in DB for getting all client data. Takes the data and extracts the name of each client and
@@ -194,7 +205,6 @@ public class AllocateEmployeeFrom extends Application
             companyNames.add(client.getCompanyName());
         }
         return companyNames;
-
     }
 }
 

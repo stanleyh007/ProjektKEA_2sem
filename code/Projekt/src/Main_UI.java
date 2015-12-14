@@ -16,8 +16,6 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.util.Date;
-
 public class Main_UI extends Application
 {
     //ListView<String> list;
@@ -26,15 +24,13 @@ public class Main_UI extends Application
     TableView<Allocation> allocationTable;
     TableView<Employee> employeeTable;
     TableView<Client> clientTable;
-    TableColumn firstName = new TableColumn("First Name");
-    TableColumn lastName = new TableColumn("Last Name");
-    TableColumn clientName = new TableColumn("Company Name");
+    TableColumn employeeFirstName = new TableColumn("First Name");
+    TableColumn employeeLastName = new TableColumn("Last Name");
     TableColumn employeeCPR = new TableColumn("CPR");
-    TableColumn cvr = new TableColumn("CVR");
-    TableColumn clientPhone = new TableColumn("Phone");
-    TableColumn employeePhone = new TableColumn("Phone");
-    TableColumn clientEmail = new TableColumn("Email");
-    TableColumn employeeEmail = new TableColumn("Email");
+    TableColumn clientName = new TableColumn("Company Name");
+    TableColumn clientCVR = new TableColumn("CVR");
+    TableColumn phone = new TableColumn("Phone");
+    TableColumn email = new TableColumn("Email");
     TableColumn client = new TableColumn("Client");
     TableColumn dateFrom = new TableColumn("Date from");
     TableColumn dateTo = new TableColumn("Date to");
@@ -45,8 +41,6 @@ public class Main_UI extends Application
 
     // ObservableList for TableView
     ObservableList<Allocation> allocationList = FXCollections.observableArrayList();
-    ObservableList<Employee> employeeList = FXCollections.observableArrayList();
-    ObservableList<Client> clientList = FXCollections.observableArrayList();
     Button showOverview, showAllOverview, login, exit;
 
 
@@ -64,8 +58,6 @@ public class Main_UI extends Application
 
         // Load allocations from database into ObservableList
         dataBase.getAllocations(allocationList);
-        dataBase.getEmployees(employeeList);
-        dataBase.getClients(clientList);
 
         setAllocationTable();
         setEmployeeTable();
@@ -131,22 +123,20 @@ public class Main_UI extends Application
         clientTable = new TableView<>();
 
         clientTable.getColumns().addAll(
-                cvr,
+                clientCVR,
                 clientName,
-                clientPhone,
-                clientEmail
+                phone,
+                email
         );
         clientName.setPrefWidth(150);
-        cvr.setPrefWidth(100);
-        clientPhone.setPrefWidth(100);
-        clientEmail.setPrefWidth(200);
+        clientCVR.setPrefWidth(100);
+        phone.setPrefWidth(100);
+        email.setPrefWidth(200);
 
-        cvr.setCellValueFactory(new PropertyValueFactory<>("cvr"));
-        clientName.setCellValueFactory(new PropertyValueFactory<>("companyName"));
-        clientPhone.setCellValueFactory(new PropertyValueFactory<>("phone"));
-        clientEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
-
-        clientTable.setItems(clientList);
+        clientCVR.setCellValueFactory(new PropertyValueFactory<>("CPR"));
+        clientName.setCellValueFactory(new PropertyValueFactory<>("Company Name"));
+        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("Phone"));
+        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("Email"));
     }
 
     public void setEmployeeTable()
@@ -155,23 +145,21 @@ public class Main_UI extends Application
 
         employeeTable.getColumns().addAll(
                 employeeCPR,
-                firstName,
-                lastName,
-                employeePhone,
-                employeeEmail
+                employeeFirstName,
+                employeeLastName,
+                phone,
+                email
         );
-        employeeEmail.setPrefWidth(200);
+        email.setPrefWidth(200);
         employeeCPR.setPrefWidth(100);
-        firstName.setPrefWidth(100);
-        lastName.setPrefWidth(150);
+        employeeFirstName.setPrefWidth(100);
+        employeeLastName.setPrefWidth(150);
 
-        employeeCPR.setCellValueFactory(new PropertyValueFactory<>("cpr"));
-        firstName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
-        lastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
-        employeePhone.setCellValueFactory(new PropertyValueFactory<>("phone"));
-        employeeEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
-
-        employeeTable.setItems(employeeList);
+        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("CPR"));
+        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("First Name"));
+        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("Last Name"));
+        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("Phone"));
+        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("Email"));
 
     }
 
@@ -180,10 +168,10 @@ public class Main_UI extends Application
         allocationTable = new TableView();
 
         // Add collumns to TableView
-        allocationTable.getColumns().add(firstName);
-        firstName.setPrefWidth(100);
-        allocationTable.getColumns().add(lastName);
-        lastName.setPrefWidth(150);
+        allocationTable.getColumns().add(employeeFirstName);
+        employeeFirstName.setPrefWidth(100);
+        allocationTable.getColumns().add(employeeLastName);
+        employeeLastName.setPrefWidth(150);
         allocationTable.getColumns().add(client);
         client.setPrefWidth(150);
         allocationTable.getColumns().add(dateFrom);
@@ -195,12 +183,12 @@ public class Main_UI extends Application
 
 
         // Set table columns to update from ObservableList
-        firstName.setCellValueFactory(new PropertyValueFactory<Employee, String>("firstName"));
-        lastName.setCellValueFactory(new PropertyValueFactory<Employee, String>("lastName"));
-        client.setCellValueFactory(new PropertyValueFactory<Client, String>("client"));
-        dateFrom.setCellValueFactory(new PropertyValueFactory<Allocation, Date>("dateFrom"));
-        dateTo.setCellValueFactory(new PropertyValueFactory<Allocation, Date>("dateTo"));
-        notes.setCellValueFactory(new PropertyValueFactory<Allocation, String>("notes"));
+        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("employeeFirstName"));
+        employeeLastName.setCellValueFactory(new PropertyValueFactory<>("employeeLastName"));
+        client.setCellValueFactory(new PropertyValueFactory<>("client"));
+        dateFrom.setCellValueFactory(new PropertyValueFactory<>("dateFrom"));
+        dateTo.setCellValueFactory(new PropertyValueFactory<>("dateTo"));
+        notes.setCellValueFactory(new PropertyValueFactory<>("notes"));
 
         // Set items for TableViev (ObservableList)
         allocationTable.setItems(allocationList);
