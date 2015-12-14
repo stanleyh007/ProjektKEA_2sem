@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f47adb9c-b1fb-490a-8673-5965c70b3e92" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projekt.iml" afterPath="$PROJECT_DIR$/Projekt.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DataBase.java" afterPath="$PROJECT_DIR$/src/DataBase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main_UI.java" afterPath="$PROJECT_DIR$/src/Main_UI.java" />
     </list>
     <ignored path="Projekt.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,23 +42,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main_UI.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Main_UI.java">
+      <file leaf-file-name="SysAdmin.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SysAdmin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.897638">
-              <caret line="109" column="25" selection-start-line="109" selection-start-column="25" selection-end-line="109" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Employee.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Employee.java">
+      <file leaf-file-name="Main_UI.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Main_UI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.62601626">
+              <caret line="395" column="58" selection-start-line="395" selection-start-column="58" selection-end-line="395" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddNewEmployeeForm.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AddNewEmployeeForm.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+              <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataBase.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DataBase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,34 +96,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Allocation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Allocation.java">
+      <file leaf-file-name="Employee.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Employee.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataBase.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DataBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="64" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1450115274000" expanded="true" signature="1537:1726" placeholder="CREATE TABLE..IF..." />
-                <marker date="1450115274000" expanded="true" signature="1858:2016" placeholder="CREATE TABLE..IF..." />
-                <marker date="1450115274000" expanded="true" signature="2155:2510" placeholder="CREATE TABLE..IF..." />
-                <marker date="1450115274000" expanded="true" signature="2644:2991" placeholder="CREATE TABLE..IF..." />
-                <marker date="1450115274000" expanded="true" signature="3417:3460" placeholder="INSERT INTO employee..." />
-                <marker date="1450115274000" expanded="true" signature="4170:4208" placeholder="INSERT INTO client..." />
-                <marker date="1450115274000" expanded="true" signature="4730:4917" placeholder="SELECT * FRO..allocation_project..." />
-                <marker date="1450115274000" expanded="true" signature="5489:5511" placeholder="SELECT * FRO..employee..." />
-                <marker date="1450115274000" expanded="true" signature="6028:6048" placeholder="SELECT * FRO..client..." />
-                <marker date="1450115274000" expanded="true" signature="6689:6711" placeholder="SELECT * FRO..employee..." />
-                <marker date="1450115274000" expanded="true" signature="7499:7519" placeholder="SELECT * FRO..client..." />
               </folding>
             </state>
           </provider>
@@ -126,12 +120,9 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="Peter Patick Zohdy &lt;peterzohdy@Peters-MacBook-Air.local&gt;" />
         <option value="peterzohdy &lt;zohdy@me.com&gt;" />
       </list>
     </option>
-    <option name="UPDATE_CHANGES_POLICY" value="SHELVE" />
-    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="GradleLocalSettings">
@@ -147,12 +138,12 @@
         <option value="$PROJECT_DIR$/src/EmployeeForm.java" />
         <option value="$PROJECT_DIR$/src/NewClientForm.java" />
         <option value="$PROJECT_DIR$/src/Client.java" />
+        <option value="$PROJECT_DIR$/src/Allocation.java" />
+        <option value="$PROJECT_DIR$/src/Employee.java" />
         <option value="$PROJECT_DIR$/src/AddNewEmployeeForm.java" />
         <option value="$PROJECT_DIR$/src/AllocateEmployeeFrom.java" />
-        <option value="$PROJECT_DIR$/src/Employee.java" />
-        <option value="$PROJECT_DIR$/src/Allocation.java" />
-        <option value="$PROJECT_DIR$/src/DataBase.java" />
         <option value="$PROJECT_DIR$/src/Main_UI.java" />
+        <option value="$PROJECT_DIR$/src/DataBase.java" />
       </list>
     </option>
   </component>
@@ -162,10 +153,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="y" value="29" />
-    <option name="width" value="1280" />
-    <option name="height" value="726" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1616" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -192,8 +183,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -229,6 +218,8 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -239,6 +230,22 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="198" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="227" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="229" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="903" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="221" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="220" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="221" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="895" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
   <component name="RunManager" selected="Application.Main_UI">
     <configuration default="false" name="Main_UI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -389,133 +396,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="myFilePath" />
-      <option name="GLUE" />
-      <option name="myNameFilter" />
-      <option name="myGeneratedName" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
-      <option name="BCName" value="" />
-      <option name="IOSSimulatorSdkPath" value="" />
-      <option name="adlOptions" value="" />
-      <option name="airProgramParameters" value="" />
-      <option name="appDescriptorForEmulator" value="Android" />
-      <option name="debugTransport" value="USB" />
-      <option name="debuggerSdkRaw" value="BC SDK" />
-      <option name="emulator" value="NexusOne" />
-      <option name="emulatorAdlOptions" value="" />
-      <option name="fastPackaging" value="true" />
-      <option name="fullScreenHeight" value="0" />
-      <option name="fullScreenWidth" value="0" />
-      <option name="launchUrl" value="false" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="/Applications/Flash Player Debugger.app" />
-        </LauncherParameters>
-      </option>
-      <option name="mobileRunTarget" value="Emulator" />
-      <option name="moduleName" value="" />
-      <option name="overriddenMainClass" value="" />
-      <option name="overriddenOutputFileName" value="" />
-      <option name="overrideMainClass" value="false" />
-      <option name="runTrusted" value="true" />
-      <option name="screenDpi" value="0" />
-      <option name="screenHeight" value="0" />
-      <option name="screenWidth" value="0" />
-      <option name="url" value="http://" />
-      <option name="usbDebugPort" value="7936" />
-      <method />
-    </configuration>
-    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
-      <option name="BCName" value="" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="/Applications/Flash Player Debugger.app" />
-        </LauncherParameters>
-      </option>
-      <option name="moduleName" value="" />
-      <option name="trusted" value="true" />
-      <method />
-    </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -530,16 +410,6 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
-      <module name="" />
-      <setting name="vmparams" value="" />
-      <setting name="cmdLine" value="run-app" />
-      <setting name="depsClasspath" value="false" />
-      <setting name="passParentEnv" value="true" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <setting name="launchBrowser" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -605,9 +475,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
     <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -627,12 +494,6 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -691,26 +552,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run-script" />
-      <scripts />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
-      <method />
-    </configuration>
-    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
-      <method />
-    </configuration>
     <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Application.Main_UI" />
       <item index="1" class="java.lang.String" itemvalue="Application.AddNewClientForm" />
@@ -720,9 +561,9 @@
     <recent_temporary>
       <list size="4">
         <item index="0" class="java.lang.String" itemvalue="Application.Main_UI" />
-        <item index="1" class="java.lang.String" itemvalue="Application.AddNewClientForm" />
+        <item index="1" class="java.lang.String" itemvalue="Application.AllocateEmployeeFrom" />
         <item index="2" class="java.lang.String" itemvalue="Application.AddNewEmployeeForm" />
-        <item index="3" class="java.lang.String" itemvalue="Application.AllocateEmployeeFrom" />
+        <item index="3" class="java.lang.String" itemvalue="Application.AddNewClientForm" />
       </list>
     </recent_temporary>
   </component>
@@ -741,8 +582,7 @@
       <workItem from="1449788095235" duration="5451000" />
       <workItem from="1449838315849" duration="1222000" />
       <workItem from="1449926008587" duration="17262000" />
-      <workItem from="1450024120753" duration="28269000" />
-      <workItem from="1450115161789" duration="2086000" />
+      <workItem from="1450024120753" duration="7995000" />
     </task>
     <task id="LOCAL-00001" summary="hej venner">
       <created>1449745524129</created>
@@ -774,70 +614,64 @@
       <option name="project" value="LOCAL" />
       <updated>1449978271371</updated>
     </task>
-    <task id="LOCAL-00006" summary="Displays data fields in allocation form with data from DB... no more harcoding">
-      <created>1450032891256</created>
+    <task id="LOCAL-00006" summary="Added client class + minor changes">
+      <created>1450097055499</created>
       <option name="number" value="00006" />
       <option name="project" value="LOCAL" />
-      <updated>1450032891256</updated>
+      <updated>1450097055499</updated>
     </task>
-    <task id="LOCAL-00007" summary="New tableviews + tabpane added">
-      <created>1450093612513</created>
+    <task id="LOCAL-00007" summary="Added client class + minor changes">
+      <created>1450098453911</created>
       <option name="number" value="00007" />
       <option name="project" value="LOCAL" />
-      <updated>1450093612513</updated>
+      <updated>1450098453911</updated>
     </task>
-    <task id="LOCAL-00008" summary="New tableviews + tabpane added">
-      <created>1450093699767</created>
+    <task id="LOCAL-00008" summary="Added client class + minor changes">
+      <created>1450117031192</created>
       <option name="number" value="00008" />
       <option name="project" value="LOCAL" />
-      <updated>1450093699767</updated>
+      <updated>1450117031192</updated>
     </task>
-    <task id="LOCAL-00009" summary="New tableviews + tabpane added">
-      <created>1450095213919</created>
+    <task id="LOCAL-00009" summary="Added client class + minor changes">
+      <created>1450117768138</created>
       <option name="number" value="00009" />
       <option name="project" value="LOCAL" />
-      <updated>1450095213919</updated>
+      <updated>1450117768138</updated>
     </task>
-    <task id="LOCAL-00010" summary="New tableviews + tabpane added">
-      <created>1450096267869</created>
-      <option name="number" value="00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1450096267869</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61671000" />
+    <option name="totallyTimeSpent" value="39311000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="29" width="1280" height="726" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3256579" sideWeight="0.4951535" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32506528" sideWeight="0.4951535" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5048465" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32730263" sideWeight="0.49353796" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32730263" sideWeight="0.49353796" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32506528" sideWeight="0.49353796" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32784185" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24878837" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24875" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39967105" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32506528" sideWeight="0.49353796" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.49676898" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32906765" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39967105" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -883,13 +717,11 @@
     <MESSAGE value=" New employee + allocate gui forms" />
     <MESSAGE value="Når der oprettes clients eller employees i forms bliver de nu indsat i databasen" />
     <MESSAGE value="Added client class + minor changes" />
-    <MESSAGE value="Displays data fields in allocation form with data from DB... no more harcoding" />
-    <MESSAGE value="New tableviews + tabpane added" />
-    <option name="LAST_COMMIT_MESSAGE" value="New tableviews + tabpane added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added client class + minor changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="1" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -898,41 +730,34 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/SysAdmin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main_UI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AddNewEmployeeForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DataBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="176" column="66" selection-start-line="176" selection-start-column="66" selection-end-line="176" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1450115274000" expanded="true" signature="1537:1726" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450115274000" expanded="true" signature="1858:2016" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450115274000" expanded="true" signature="2155:2510" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450115274000" expanded="true" signature="2644:2991" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450115274000" expanded="true" signature="3417:3460" placeholder="INSERT INTO employee..." />
-            <marker date="1450115274000" expanded="true" signature="4170:4208" placeholder="INSERT INTO client..." />
-            <marker date="1450115274000" expanded="true" signature="4730:4917" placeholder="SELECT * FRO..allocation_project..." />
-            <marker date="1450115274000" expanded="true" signature="5489:5511" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450115274000" expanded="true" signature="6028:6048" placeholder="SELECT * FRO..client..." />
-            <marker date="1450115274000" expanded="true" signature="6689:6711" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450115274000" expanded="true" signature="7499:7519" placeholder="SELECT * FRO..client..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Employee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -949,11 +774,143 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Allocation.java">
+    <entry file="file://$PROJECT_DIR$/src/Employee.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main_UI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AddNewEmployeeForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="199" column="0" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Employee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main_UI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AddNewEmployeeForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="199" column="0" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Employee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AddNewEmployeeForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="199" column="0" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Employee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -977,9 +934,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1013,9 +968,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1035,17 +988,6 @@
           <caret line="76" column="76" selection-start-line="76" selection-start-column="76" selection-end-line="76" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1450115274000" expanded="true" signature="1537:1726" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450115274000" expanded="true" signature="1858:2016" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450115274000" expanded="true" signature="2155:2510" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450115274000" expanded="true" signature="2644:2991" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450115274000" expanded="true" signature="3417:3460" placeholder="INSERT INTO employee..." />
-            <marker date="1450115274000" expanded="true" signature="4170:4208" placeholder="INSERT INTO client..." />
-            <marker date="1450115274000" expanded="true" signature="4730:4917" placeholder="SELECT * FRO..allocation_project..." />
-            <marker date="1450115274000" expanded="true" signature="5489:5511" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450115274000" expanded="true" signature="6028:6048" placeholder="SELECT * FRO..client..." />
-            <marker date="1450115274000" expanded="true" signature="6689:6711" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450115274000" expanded="true" signature="7499:7519" placeholder="SELECT * FRO..client..." />
           </folding>
         </state>
       </provider>
@@ -1054,9 +996,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1076,17 +1016,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1450115274000" expanded="true" signature="1537:1726" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450115274000" expanded="true" signature="1858:2016" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450115274000" expanded="true" signature="2155:2510" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450115274000" expanded="true" signature="2644:2991" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450115274000" expanded="true" signature="3417:3460" placeholder="INSERT INTO employee..." />
-            <marker date="1450115274000" expanded="true" signature="4170:4208" placeholder="INSERT INTO client..." />
-            <marker date="1450115274000" expanded="true" signature="4730:4917" placeholder="SELECT * FRO..allocation_project..." />
-            <marker date="1450115274000" expanded="true" signature="5489:5511" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450115274000" expanded="true" signature="6028:6048" placeholder="SELECT * FRO..client..." />
-            <marker date="1450115274000" expanded="true" signature="6689:6711" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450115274000" expanded="true" signature="7499:7519" placeholder="SELECT * FRO..client..." />
           </folding>
         </state>
       </provider>
@@ -1095,9 +1024,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="120" column="5" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1117,17 +1044,6 @@
           <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1450115274000" expanded="true" signature="1537:1726" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450115274000" expanded="true" signature="1858:2016" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450115274000" expanded="true" signature="2155:2510" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450115274000" expanded="true" signature="2644:2991" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450115274000" expanded="true" signature="3417:3460" placeholder="INSERT INTO employee..." />
-            <marker date="1450115274000" expanded="true" signature="4170:4208" placeholder="INSERT INTO client..." />
-            <marker date="1450115274000" expanded="true" signature="4730:4917" placeholder="SELECT * FRO..allocation_project..." />
-            <marker date="1450115274000" expanded="true" signature="5489:5511" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450115274000" expanded="true" signature="6028:6048" placeholder="SELECT * FRO..client..." />
-            <marker date="1450115274000" expanded="true" signature="6689:6711" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450115274000" expanded="true" signature="7499:7519" placeholder="SELECT * FRO..client..." />
           </folding>
         </state>
       </provider>
@@ -1136,9 +1052,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1158,17 +1072,6 @@
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1450115274000" expanded="true" signature="1537:1726" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450115274000" expanded="true" signature="1858:2016" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450115274000" expanded="true" signature="2155:2510" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450115274000" expanded="true" signature="2644:2991" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450115274000" expanded="true" signature="3417:3460" placeholder="INSERT INTO employee..." />
-            <marker date="1450115274000" expanded="true" signature="4170:4208" placeholder="INSERT INTO client..." />
-            <marker date="1450115274000" expanded="true" signature="4730:4917" placeholder="SELECT * FRO..allocation_project..." />
-            <marker date="1450115274000" expanded="true" signature="5489:5511" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450115274000" expanded="true" signature="6028:6048" placeholder="SELECT * FRO..client..." />
-            <marker date="1450115274000" expanded="true" signature="6689:6711" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450115274000" expanded="true" signature="7499:7519" placeholder="SELECT * FRO..client..." />
           </folding>
         </state>
       </provider>
@@ -1177,9 +1080,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Allocation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1191,78 +1100,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AddNewEmployeeForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.062992">
-          <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/javafx-src.zip!/javafx/beans/property/ObjectProperty.java">
+    <entry file="file://$PROJECT_DIR$/src/Employee.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/javafx-src.zip!/javafx/beans/property/ObjectPropertyBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/javafx-src.zip!/javafx/beans/property/SimpleObjectProperty.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/javafx-src.zip!/javafx/scene/control/TableColumn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="386" column="0" selection-start-line="386" selection-start-column="0" selection-end-line="386" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/javafx-src.zip!/javafx/scene/control/cell/PropertyValueFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
-          <folding>
-            <element signature="e#4223#4224#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Allocation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="64" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1450115274000" expanded="true" signature="1537:1726" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450115274000" expanded="true" signature="1858:2016" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450115274000" expanded="true" signature="2155:2510" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450115274000" expanded="true" signature="2644:2991" placeholder="CREATE TABLE..IF..." />
-            <marker date="1450115274000" expanded="true" signature="3417:3460" placeholder="INSERT INTO employee..." />
-            <marker date="1450115274000" expanded="true" signature="4170:4208" placeholder="INSERT INTO client..." />
-            <marker date="1450115274000" expanded="true" signature="4730:4917" placeholder="SELECT * FRO..allocation_project..." />
-            <marker date="1450115274000" expanded="true" signature="5489:5511" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450115274000" expanded="true" signature="6028:6048" placeholder="SELECT * FRO..client..." />
-            <marker date="1450115274000" expanded="true" signature="6689:6711" placeholder="SELECT * FRO..employee..." />
-            <marker date="1450115274000" expanded="true" signature="7499:7519" placeholder="SELECT * FRO..client..." />
           </folding>
         </state>
       </provider>
@@ -1277,10 +1120,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Employee.java">
+    <entry file="file://$PROJECT_DIR$/src/AddNewEmployeeForm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+          <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SysAdmin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1289,11 +1148,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main_UI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.897638">
-          <caret line="109" column="25" selection-start-line="109" selection-start-column="25" selection-end-line="109" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.62601626">
+          <caret line="395" column="58" selection-start-line="395" selection-start-column="58" selection-end-line="395" selection-end-column="58" />
+          <folding />
         </state>
       </provider>
     </entry>
