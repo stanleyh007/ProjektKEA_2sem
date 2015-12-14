@@ -18,8 +18,6 @@ import javafx.stage.Stage;
 
 public class Main_UI extends Application
 {
-    //ListView<String> list;
-
     // TableView and column objects
     TableView<Allocation> allocationTable;
     TableView<Employee> employeeTable;
@@ -29,10 +27,8 @@ public class Main_UI extends Application
     TableColumn employeeCPR = new TableColumn("CPR");
     TableColumn clientName = new TableColumn("Company Name");
     TableColumn clientCVR = new TableColumn("CVR");
-    TableColumn clientPhone = new TableColumn("Phone");
-    TableColumn employeePhone = new TableColumn("Phone");
-    TableColumn clientEmail = new TableColumn("Email");
-    TableColumn employeeEmail = new TableColumn("Email");
+    TableColumn phone = new TableColumn("Phone");
+    TableColumn email = new TableColumn("Email");
     TableColumn client = new TableColumn("Client");
     TableColumn dateFrom = new TableColumn("Date from");
     TableColumn dateTo = new TableColumn("Date to");
@@ -43,28 +39,30 @@ public class Main_UI extends Application
 
     // ObservableList for TableView
     ObservableList<Allocation> allocationList = FXCollections.observableArrayList();
-    ObservableList<Employee> employeeList = FXCollections.observableArrayList();
-    ObservableList<Client> clientList = FXCollections.observableArrayList();
-
-    Button showOverview, showAllOverview, login, exit;
-
-
+    Button showOverview, showAllOverview, login, logout, exit, edit, addEmployee, addClient, addProject, addLogin;
+    GridPane gridLayout, blankLayout;
+    BorderPane bp;
+    Scene scene;
+    Stage theStage;
 
     public static void main(String[] args)
     {
         launch(args);
-
     }
 
     public void start(final Stage primaryStage) throws Exception
+    {
+        theStage = primaryStage;
+        newScene(mainStage());
+    }
+
+    public Scene mainStage()
     {
         DataBase dataBase = DataBase.getInstance();
         dataBase.createDB();
 
         // Load allocations from database into ObservableList
         dataBase.getAllocations(allocationList);
-        dataBase.getClients(clientList);
-        dataBase.getEmployees(employeeList);
 
         setAllocationTable();
         setEmployeeTable();
@@ -73,13 +71,11 @@ public class Main_UI extends Application
         setTabPane();
         setMainLayout();
 
-
-        Scene scene = new Scene(setMainLayout(), 1200, 800);
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("Projekt Allokerings System ");
-        primaryStage.show();
-
-
+        scene = new Scene(setMainLayout(), 1200, 800);
+        theStage.setScene(scene);
+        theStage.setTitle("Project Allocation System");
+        theStage.show();
+        return scene;
     }
 
     public Pane setMainLayout()
@@ -90,24 +86,30 @@ public class Main_UI extends Application
         showAllOverview = new Button("Show Full Overview");
         showAllOverview.setPrefSize(150, 20);
 
-
-        GridPane gridLayout = new GridPane();
-        gridLayout.setHgap(200);
+        gridLayout = new GridPane();
         gridLayout.setVgap(10);
-        gridLayout.setPadding(new Insets(50));
-        gridLayout.setAlignment(Pos.CENTER);
+        gridLayout.setPadding(new Insets(0, 50, 50, 50));
+        gridLayout.setAlignment(Pos.TOP_CENTER);
 
         gridLayout.add(showOverview, 0, 1, 2, 1);
         gridLayout.add(showAllOverview, 0 ,2, 2, 1);
 
-        BorderPane borderPane = new BorderPane();
-        borderPane.setStyle("-fx-background-color: dimgray");
-        borderPane.setCenter(tabPane);
-        borderPane.setLeft(gridLayout);
-        borderPane.setTop(loginLine());
-        borderPane.setBottom(bottomLine());
+        bp = new BorderPane();
+        bp.setStyle("-fx-background-color: dimgray");
+        bp.setCenter(tabPane);
+        bp.setLeft(gridLayout);
+        bp.setRight(setBlankPane());
+        bp.setTop(loginLine());
+        bp.setBottom(bottomLine());
+        return bp;
+    }
 
-        return borderPane;
+    public Pane setBlankPane()
+    {
+         blankLayout = new GridPane();
+        blankLayout.setPadding(new Insets(0, 15, 50, 0));
+        blankLayout.setAlignment(Pos.CENTER);
+        return blankLayout;
     }
 
     public void setTabPane()
@@ -132,20 +134,18 @@ public class Main_UI extends Application
         clientTable.getColumns().addAll(
                 clientCVR,
                 clientName,
-                clientPhone,
-                clientEmail
+                phone,
+                email
         );
         clientName.setPrefWidth(150);
         clientCVR.setPrefWidth(100);
-        clientPhone.setPrefWidth(100);
-        clientEmail.setPrefWidth(200);
+        phone.setPrefWidth(100);
+        email.setPrefWidth(200);
 
-        clientCVR.setCellValueFactory(new PropertyValueFactory<>("cvr"));
-        clientName.setCellValueFactory(new PropertyValueFactory<>("companyName"));
-        clientPhone.setCellValueFactory(new PropertyValueFactory<>("phone"));
-        clientEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
-
-        clientTable.setItems(clientList);
+        clientCVR.setCellValueFactory(new PropertyValueFactory<>("CPR"));
+        clientName.setCellValueFactory(new PropertyValueFactory<>("Company Name"));
+        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("Phone"));
+        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("Email"));
     }
 
     public void setEmployeeTable()
@@ -156,21 +156,19 @@ public class Main_UI extends Application
                 employeeCPR,
                 employeeFirstName,
                 employeeLastName,
-                employeePhone,
-                employeeEmail
+                phone,
+                email
         );
-        employeeEmail.setPrefWidth(200);
+        email.setPrefWidth(200);
         employeeCPR.setPrefWidth(100);
         employeeFirstName.setPrefWidth(100);
         employeeLastName.setPrefWidth(150);
 
-        employeeCPR.setCellValueFactory(new PropertyValueFactory<>("cpr"));
-        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
-        employeeLastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
-        employeePhone.setCellValueFactory(new PropertyValueFactory<>("phone"));
-        employeeEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
-
-        employeeTable.setItems(employeeList);
+        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("CPR"));
+        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("First Name"));
+        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("Last Name"));
+        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("Phone"));
+        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("Email"));
 
     }
 
@@ -203,16 +201,20 @@ public class Main_UI extends Application
 
         // Set items for TableViev (ObservableList)
         allocationTable.setItems(allocationList);
+    }
 
-
+    public void newScene(Scene nextScene)
+    {
+        theStage.setScene(nextScene);
+        theStage.show();
     }
 
     public HBox bottomLine()
     {
         HBox hBox = new HBox();
-        hBox.setPadding(new Insets(15, 12, 15, 12));
+        hBox.setPadding(new Insets(15, 15, 15, 50));
         hBox.setSpacing(10);
-        hBox.setAlignment(Pos.CENTER);
+        hBox.setAlignment(Pos.CENTER_LEFT);
 
         exit = new Button("Exit");
         exit.setPrefSize(100, 20);
@@ -222,10 +224,29 @@ public class Main_UI extends Application
         return hBox;
     }
 
+    public HBox bottomLine2()
+    {
+        HBox hBox = new HBox();
+        hBox.setPadding(new Insets(15, 15, 15, 50));
+        hBox.setSpacing(450);
+        hBox.setAlignment(Pos.CENTER_LEFT);
+
+        exit = new Button("Exit");
+        exit.setPrefSize(100, 20);
+        exit.setOnAction(e -> System.exit(0));
+
+        edit = new Button("Edit");
+        edit.setPrefSize(100, 20);
+//        edit.setOnAction();
+
+        hBox.getChildren().addAll(exit, edit);
+        return hBox;
+    }
+
     public VBox loginLine()
     {
         VBox vBox = new VBox();
-        vBox.setPadding(new Insets(15, 12, 15, 12));
+        vBox.setPadding(new Insets(15));
         vBox.setSpacing(10);
         vBox.setAlignment(Pos.CENTER_RIGHT);
 
@@ -235,6 +256,21 @@ public class Main_UI extends Application
 
         vBox.getChildren().add(nameLine());
         vBox.getChildren().add(login);
+        return vBox;
+    }
+
+    public VBox loginLine2()
+    {
+        VBox vBox = new VBox();
+        vBox.setPadding(new Insets(15));
+        vBox.setSpacing(10);
+        vBox.setAlignment(Pos.CENTER_RIGHT);
+
+        logout = new Button("Log out");
+        logout.setPrefSize(100, 20);
+        logout.setOnAction(event -> newScene(mainStage()));
+        vBox.getChildren().add(nameLine());
+        vBox.getChildren().add(logout);
         return vBox;
     }
 
@@ -254,7 +290,7 @@ public class Main_UI extends Application
 
     public void loginBox()
     {
-        final Stage loginBox = new Stage();
+        Stage loginBox = new Stage();
         loginBox.setTitle("Admin Login");
         loginBox.initModality(Modality.APPLICATION_MODAL);
 
@@ -298,7 +334,7 @@ public class Main_UI extends Application
 
             if(passwordField.getText().equals("test") && usernameField.getText().equals("test")) {
 
-                System.out.println("Loggin in");
+                System.out.println("Login in");
 
             } else
             {
@@ -322,8 +358,88 @@ public class Main_UI extends Application
                 cancelBtn,
                 helpLbl);
 
+        submitBtn.setOnAction(event ->
+        {
+            theStage.setScene(AdminStage());
+            loginBox.close();
+        });
+
         Scene scene = new Scene(root, 400, 300);
         loginBox.setScene(scene);
         loginBox.show();
+    }
+
+    public Scene AdminStage()
+    {
+        DataBase dataBase = DataBase.getInstance();
+
+        dataBase.getAllocations(allocationList);
+
+        setAllocationTable();
+        setEmployeeTable();
+        setClientTable();
+
+        setTabPane();
+        setAdminLayout();
+
+        scene = new Scene(bp, 1200, 800);
+        theStage.setScene(scene);
+        theStage.setTitle("Project Allocation System");
+        theStage.show();
+        return scene;
+    }
+
+    public Pane setAdminLayout()
+    {
+        addClient = new Button("Add Client");
+        addClient.setPrefSize(150, 20);
+        addClient.setOnAction(event -> addClientAction());
+
+        addEmployee = new Button("Add Employee");
+        addEmployee.setPrefSize(150, 20);
+        addEmployee.setOnAction(event -> addEmployeeAction());
+
+        addProject = new Button("Project Allocate");
+        addProject.setPrefSize(150, 20);
+        addProject.setOnAction(event -> allocateEmployeeAction());
+
+        addLogin = new Button("New Login");
+        addLogin.setPrefSize(150, 20);
+
+        gridLayout = new GridPane();
+        gridLayout.setVgap(10);
+        gridLayout.setPadding(new Insets(0, 50, 50 ,50));
+        gridLayout.setAlignment(Pos.TOP_CENTER);
+
+        gridLayout.add(addProject, 0, 1, 2, 1);
+        gridLayout.add(addEmployee, 0 ,2, 2, 1);
+        gridLayout.add(addClient, 0, 3, 2, 1);
+        gridLayout.add(addLogin, 0, 4, 2, 1);
+
+        bp = new BorderPane();
+        bp.setStyle("-fx-background-color: dimgray");
+        bp.setCenter(tabPane);
+        bp.setLeft(gridLayout);
+        bp.setRight(blankLayout);
+        bp.setTop(loginLine2());
+        bp.setBottom(bottomLine2());
+        return bp;
+    }
+
+    public void addEmployeeAction() {
+        AddNewEmployeeForm addNewEmployeeForm = new AddNewEmployeeForm();
+        addNewEmployeeForm.show();
+    }
+
+    public void addClientAction()
+    {
+        AddNewClientForm addNewClientForm = new AddNewClientForm();
+        addNewClientForm.show();
+    }
+
+    public void allocateEmployeeAction()
+    {
+        AllocateEmployeeForm allocateEmployeeForm = new AllocateEmployeeForm();
+        allocateEmployeeForm.show();
     }
 }
