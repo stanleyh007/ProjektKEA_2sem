@@ -64,7 +64,7 @@ public class Main_UI extends Application
 
         setAllocationTable();
         setEmployeeTable();
-        setClient();
+        setClientTable();
 
         //TabPane Setup
         tabPane = new TabPane();
@@ -122,7 +122,7 @@ public class Main_UI extends Application
 
     }
 
-    public void setClient()
+    public void setClientTable()
     {
         clientTable = new TableView<>();
 

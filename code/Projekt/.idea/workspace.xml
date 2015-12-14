@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f47adb9c-b1fb-490a-8673-5965c70b3e92" name="Default" comment="Displays data fields in allocation form with data from DB... no more harcoding">
+    <list default="true" id="f47adb9c-b1fb-490a-8673-5965c70b3e92" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DataBase.java" afterPath="$PROJECT_DIR$/src/DataBase.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main_UI.java" afterPath="$PROJECT_DIR$/src/Main_UI.java" />
     </list>
     <ignored path="Projekt.iws" />
@@ -57,8 +56,8 @@
       <file leaf-file-name="Main_UI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main_UI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7480315">
-              <caret line="108" column="31" selection-start-line="108" selection-start-column="31" selection-end-line="108" selection-end-column="31" />
+            <state vertical-scroll-proportion="-2.7952757">
+              <caret line="66" column="22" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -103,6 +102,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="Peter Patick Zohdy &lt;peterzohdy@Peters-MacBook-Air.local&gt;" />
         <option value="peterzohdy &lt;zohdy@me.com&gt;" />
       </list>
     </option>
@@ -137,8 +137,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="22" />
-    <option name="y" value="195" />
+    <option name="x" value="12" />
+    <option name="y" value="35" />
     <option name="width" value="1280" />
     <option name="height" value="726" />
   </component>
@@ -716,7 +716,7 @@
       <workItem from="1449788095235" duration="5451000" />
       <workItem from="1449838315849" duration="1222000" />
       <workItem from="1449926008587" duration="17262000" />
-      <workItem from="1450024120753" duration="20617000" />
+      <workItem from="1450024120753" duration="20748000" />
     </task>
     <task id="LOCAL-00001" summary="hej venner">
       <created>1449745524129</created>
@@ -754,14 +754,20 @@
       <option name="project" value="LOCAL" />
       <updated>1450032891256</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="New tableviews + tabpane added">
+      <created>1450093612513</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1450093612513</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51933000" />
+    <option name="totallyTimeSpent" value="52064000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="22" y="195" width="1280" height="726" extended-state="0" />
+    <frame x="12" y="35" width="1280" height="726" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -834,7 +840,8 @@
     <MESSAGE value="Når der oprettes clients eller employees i forms bliver de nu indsat i databasen" />
     <MESSAGE value="Added client class + minor changes" />
     <MESSAGE value="Displays data fields in allocation form with data from DB... no more harcoding" />
-    <option name="LAST_COMMIT_MESSAGE" value="Displays data fields in allocation form with data from DB... no more harcoding" />
+    <MESSAGE value="New tableviews + tabpane added" />
+    <option name="LAST_COMMIT_MESSAGE" value="New tableviews + tabpane added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1206,8 +1213,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main_UI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7480315">
-          <caret line="108" column="31" selection-start-line="108" selection-start-column="31" selection-end-line="108" selection-end-column="31" />
+        <state vertical-scroll-proportion="-2.7952757">
+          <caret line="66" column="22" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
