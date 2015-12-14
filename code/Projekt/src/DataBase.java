@@ -29,7 +29,7 @@ public class DataBase {
             String url = "jdbc:mysql://localhost:3306/";
 
             // Connect to database
-            con = DriverManager.getConnection(url, "root", "doggyspy");
+            con = DriverManager.getConnection(url, "root", "root");
 
             System.out.println("URL: " + url);
 
@@ -149,6 +149,36 @@ public class DataBase {
 
             while (resultset.next()) {
                 allocationList.add(new Allocation(resultset.getString("firstname"), resultset.getString("lastname"), resultset.getString("companyname"), resultset.getString("date_from"), resultset.getString("dateto"), resultset.getString("notes")));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void getEmployees(ObservableList<Employee> employeeList) {
+
+        try {
+            statement = con.prepareStatement("SELECT * FROM employee");
+            resultset = statement.executeQuery();
+
+            while (resultset.next()) {
+                employeeList.add(new Employee(resultset.getInt("cpr"), resultset.getString("firstname"), resultset.getString("lastname"), resultset.getInt("telephone"), resultset.getString("email")));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void getClients(ObservableList<Client> clientList) {
+
+        try {
+            statement = con.prepareStatement("SELECT * FROM client");
+            resultset = statement.executeQuery();
+
+            while (resultset.next()) {
+                clientList.add(new Client(resultset.getInt("cvr"), resultset.getString("companyname"), resultset.getInt("telephone"), resultset.getString("email")));
             }
 
         } catch (Exception e) {
