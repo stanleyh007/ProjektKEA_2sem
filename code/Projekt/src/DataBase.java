@@ -141,6 +141,7 @@ public class DataBase {
     }
 
     public void getAllocations(ObservableList<Allocation> allocationList) {
+
         try {
             statement = con.prepareStatement("SELECT * FROM allocation_project JOIN employee, client WHERE allocation_project.cpr=employee.cpr" +
                                                 " AND allocation_project.cvr=client.cvr");

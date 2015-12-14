@@ -9,10 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -66,6 +63,48 @@ public class Main_UI extends Application
         setEmployeeTable();
         setClientTable();
 
+        setTabPane();
+        setMainLayout();
+
+
+        Scene scene = new Scene(setMainLayout(), 1200, 800);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Projekt Allokerings System ");
+        primaryStage.show();
+
+
+    }
+
+    public Pane setMainLayout()
+    {
+        showOverview = new Button("Show Overview");
+        showOverview.setPrefSize(150, 20);
+
+        showAllOverview = new Button("Show Full Overview");
+        showAllOverview.setPrefSize(150, 20);
+
+
+        GridPane gridLayout = new GridPane();
+        gridLayout.setHgap(200);
+        gridLayout.setVgap(10);
+        gridLayout.setPadding(new Insets(50));
+        gridLayout.setAlignment(Pos.CENTER);
+
+        gridLayout.add(showOverview, 0, 1, 2, 1);
+        gridLayout.add(showAllOverview, 0 ,2, 2, 1);
+
+        BorderPane bp = new BorderPane();
+        bp.setStyle("-fx-background-color: dimgray");
+        bp.setCenter(tabPane);
+        bp.setLeft(gridLayout);
+        bp.setTop(loginLine());
+        bp.setBottom(bottomLine());
+
+        return bp;
+    }
+
+    public void setTabPane()
+    {
         //TabPane Setup
         tabPane = new TabPane();
         employeeTab = new Tab("Employees");
@@ -77,49 +116,6 @@ public class Main_UI extends Application
         allocationTab.setContent(allocationTable);
         employeeTab.setContent(employeeTable);
         clientTab.setContent(clientTable);
-
-        GridPane gridLayout = new GridPane();
-        gridLayout.setHgap(200);
-        gridLayout.setVgap(10);
-        gridLayout.setPadding(new Insets(50));
-        gridLayout.setAlignment(Pos.CENTER);
-
-        ObservableList<String> options = FXCollections.observableArrayList(
-                "Add Employee",
-                "Delete Employee",
-                "Edit Employee"
-        );
-        ComboBox comboBox = new ComboBox(options);
-        comboBox.setPrefSize(180, 20);
-
-        showOverview = new Button("Show Overview");
-        showOverview.setPrefSize(180, 20);
-
-        showAllOverview = new Button("Show Full Overview");
-        showAllOverview.setPrefSize(180, 20);
-
-        gridLayout.add(showOverview, 0, 1, 2, 1);
-        gridLayout.add(showAllOverview, 0 ,2, 2, 1);
-        gridLayout.add(comboBox, 0, 3, 2, 1);
-
-        BorderPane bp = new BorderPane();
-        bp.setStyle("-fx-background-color: dimgray");
-        bp.setCenter(tabPane);
-        bp.setLeft(gridLayout);
-        bp.setTop(loginLine());
-        bp.setBottom(bottomLine());
-
-
-        // Set items for TableViev (ObservableList)
-        allocationTable.setItems(allocationList);
-
-
-        Scene scene = new Scene(bp, 1200, 800);
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("Projekt Allokerings System ");
-        primaryStage.show();
-
-
     }
 
     public void setClientTable()
@@ -193,6 +189,9 @@ public class Main_UI extends Application
         dateFrom.setCellValueFactory(new PropertyValueFactory<>("dateFrom"));
         dateTo.setCellValueFactory(new PropertyValueFactory<>("dateTo"));
         notes.setCellValueFactory(new PropertyValueFactory<>("notes"));
+
+        // Set items for TableViev (ObservableList)
+        allocationTable.setItems(allocationList);
 
 
     }
