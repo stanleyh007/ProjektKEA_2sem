@@ -29,7 +29,7 @@ public class DataBase {
             String url = "jdbc:mysql://localhost:3306/";
 
             // Connect to database
-            con = DriverManager.getConnection(url, "root", "root");
+            con = DriverManager.getConnection(url, "root", "doggyspy");
 
             System.out.println("URL: " + url);
 
@@ -171,7 +171,6 @@ public class DataBase {
     }
 
     public void getEmployees(ObservableList<Employee> employeeList) {
-
         try {
             statement = con.prepareStatement("SELECT * FROM employee");
             resultset = statement.executeQuery();
@@ -248,6 +247,19 @@ public class DataBase {
         }
 
         return clients;
+    }
+
+    public void changeEmployee(int cpr, Employee employee) {
+        try {
+            statement = con.prepareStatement("UPDATE employee SET firstname='" + employee.getFirstname() +"',lastName='" + employee.getLastname() +
+                                            "',telephone=" + employee.getPhone() + ",email='" + employee.getEmail() + "'" +
+                                            " WHERE cpr=" + cpr);
+
+            statement.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

@@ -48,7 +48,7 @@ public class Main_UI extends Application
     ObservableList<Employee> employeeList = FXCollections.observableArrayList();
     ObservableList<Client> clientList = FXCollections.observableArrayList();
 
-    Button showOverview, showAllOverview, login, logout, exit, edit, addEmployee, addClient, addProject, addLogin;
+    Button showOverview, showAllOverview, login, logout, exit, editEmployee, editAllocation, editClient, addEmployee, addClient, addProject, addLogin;
     GridPane gridLayout, blankLayout;
     BorderPane bp;
     Scene scene;
@@ -249,17 +249,26 @@ public class Main_UI extends Application
         HBox hBox = new HBox();
         hBox.setPadding(new Insets(15, 15, 15, 50));
         hBox.setSpacing(450);
-        hBox.setAlignment(Pos.CENTER_LEFT);
+       // hBox.setAlignment(Pos.CENTER_LEFT);
 
         exit = new Button("Exit");
         exit.setPrefSize(100, 20);
         exit.setOnAction(e -> System.exit(0));
 
-        edit = new Button("Edit");
-        edit.setPrefSize(100, 20);
+        editEmployee = new Button("Edit Employee");
+        editEmployee.setPrefSize(100, 20);
+        editEmployee.setOnAction(e -> editEmployee());
+
+        editAllocation = new Button("Edit Allocation");
+        //editAllocation.setPrefSize(100, 20);
+        editAllocation.setOnAction(e -> editAllocation());
+
+        editClient = new Button("Edit Client");
+        //editClient.setPrefSize(100, 20);
+        editClient.setOnAction(e -> editClient());
 //        edit.setOnAction();
 
-        hBox.getChildren().addAll(exit, edit);
+        hBox.getChildren().addAll(exit, editEmployee, /*editAllocation*/ editClient);
         return hBox;
     }
 
@@ -472,5 +481,19 @@ public class Main_UI extends Application
     {
         AllocateEmployeeForm allocateEmployeeForm = new AllocateEmployeeForm();
         allocateEmployeeForm.show();
+    }
+
+    public void editEmployee() {
+        EditEmployeeForm editEmployeeForm = new EditEmployeeForm(employeeTable.getSelectionModel().getSelectedItem(), employeeList);
+        editEmployeeForm.show();
+    }
+
+    public void editClient() {
+        EditClientForm editClientForm = new EditClientForm();
+        editClientForm.show();
+    }
+
+    public void editAllocation() {
+
     }
 }
