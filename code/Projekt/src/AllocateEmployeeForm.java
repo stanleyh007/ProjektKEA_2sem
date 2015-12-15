@@ -10,6 +10,8 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +24,11 @@ public class AllocateEmployeeForm
     Stage sceneStage = new Stage();
     Scene scene;
     Pane root = new Pane();
+    ComboBox<Employee> employeesCbox;
+    ComboBox <Client> clientCBox;
+    DatePicker dateToPicker;
+    DatePicker dateFromPicker;
+    TextArea textArea;
 
     public AllocateEmployeeForm() {
         initializeScene();
@@ -76,12 +83,13 @@ public class AllocateEmployeeForm
         backBtn.setLayoutY(455);
         backBtn.setOnAction(event1 -> close());
 
-        ComboBox employeesCbox = new ComboBox();
-        employeesCbox.getItems().addAll(getNamesOfEmployee());
+        employeesCbox = new ComboBox();
+        employeesCbox.getItems().addAll(DataBase.getInstance().employeesToArrayList());
 
-        ComboBox clientCBox = new ComboBox();
-        clientCBox.getItems().addAll(getClientsOfEmployee());
+        clientCBox = new ComboBox();
+        clientCBox.getItems().addAll(DataBase.getInstance().clientsToArrayList());
         clientCBox.setDisable(true);
+
 
         ComboBox<String> activityCbox = new ComboBox<String>(observableList);
         activityCbox.setPrefWidth(155);
@@ -100,9 +108,9 @@ public class AllocateEmployeeForm
         clientCBox.setLayoutX(220);
         clientCBox.setLayoutY(160);
         clientCBox.setPrefWidth(155);
-        clientCBox.setValue("Not available");
+        clientCBox.setPromptText("Not available");
 
-        DatePicker dateFromPicker = new DatePicker();
+        dateFromPicker = new DatePicker();
         dateFromPicker.setMinWidth(155);
         dateFromPicker.setPrefWidth(155);
         dateFromPicker.setOnAction(event ->
@@ -111,7 +119,7 @@ public class AllocateEmployeeForm
             System.out.println(dateFrom);
         });
 
-        DatePicker dateToPicker = new DatePicker();
+        dateToPicker = new DatePicker();
         dateToPicker.setMinWidth(155);
         dateToPicker.setPrefWidth(155);
         dateToPicker.setOnAction(event ->
@@ -120,7 +128,7 @@ public class AllocateEmployeeForm
             System.out.println(dateTo);
         });
 
-        TextArea textArea = new TextArea();
+        textArea = new TextArea();
         textArea.setPadding(new Insets(0,0,0,0));
         textArea.setPrefWidth(200);
         textArea.setPrefHeight(100);
@@ -164,10 +172,32 @@ public class AllocateEmployeeForm
                 clientCBox
         );
 
+        submitBtn.setOnAction(e -> {
+            submitButtonPressed();
+        });
+
         scene = new Scene(root, 400, 500);
         sceneStage.setScene(scene);
 
         sceneStage.initModality(Modality.APPLICATION_MODAL);
+    }
+
+    public void submitButtonPressed()
+    {
+
+        int cpr = employeesCbox.getSelectionModel().getSelectedItem().getCpr();
+        int cvr = clientCBox.getSelectionModel().getSelectedItem().getCvr();
+        Date date_from = Date.valueOf(dateFromPicker.getValue());
+        Date dateto = Date.valueOf(dateToPicker.getValue());
+        String notes = textArea.getText();
+
+
+
+
+
+
+        //Calls addEmployee method in DB class and inserts the entered input as parameters
+        DataBase.getInstance().allocateEmployee(cpr, cvr, date_from, dateto, notes);
     }
 
     public void show()
@@ -181,32 +211,6 @@ public class AllocateEmployeeForm
         sceneStage.close();
     }
 
-    //Uses method in DB for getting all employee data. Takes the data and extracts the name of each employee and
-    //uses a new arraylist to store the names.
-    //To be used with comboboxes
-    public ArrayList<String> getNamesOfEmployee()
-    {
-        ArrayList<String> employeeNames = new ArrayList<>();
 
-        for (Employee employee : DataBase.getInstance().employeesToArrayList())
-        {
-            employeeNames.add(employee.getFirstname() + " " + employee.getLastname());
-        }
-        return employeeNames;
-    }
-
-    //Uses method in DB for getting all client data. Takes the data and extracts the name of each client and
-    //uses a new arraylist to store the names.
-    //To be used with comboboxes
-    public ArrayList<String> getClientsOfEmployee()
-    {
-        ArrayList<String> companyNames = new ArrayList<>();
-
-        for (Client client : DataBase.getInstance().clientsToArrayList())
-        {
-            companyNames.add(client.getCompanyName());
-        }
-        return companyNames;
-    }
 }
 

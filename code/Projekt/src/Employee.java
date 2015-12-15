@@ -23,6 +23,12 @@ public class Employee extends Person{
 
     }
 
+    //To be able to return a full object in our allocation combobox, but only have the name displayed.
+    public String toString()
+    {
+        return getFirstname() + " " + getLastname();
+    }
+
     public int getCpr() {
         return cpr.get();
     }

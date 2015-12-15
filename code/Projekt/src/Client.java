@@ -20,6 +20,12 @@ public class Client extends Person {
         this.email = new SimpleStringProperty(email);
     }
 
+    //To be able to return a full object in our allocation combobox, but only have the name displayed.
+    public String toString()
+    {
+        return getCompanyName();
+    }
+
     public int getCvr() {
         return cvr.get();
     }

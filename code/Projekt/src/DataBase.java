@@ -1,6 +1,7 @@
 import javafx.collections.ObservableList;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -90,20 +91,28 @@ public class DataBase {
         }
     }
 
-    /* TODO!!
-    public void allocateEmployee(String firstname, String lastname, String client, String datefrom, String dateto, String notes)
+    public void allocateEmployee(int cpr, int cvr, Date date_from, Date dateto, String notes)
     {
         try{
             statement = con.prepareStatement("USE appstract_db");
             statement.executeUpdate();
 
-            statement = con.prepareStatement("INSERT INTO allocation_project VALUES(firstname");
+            statement = con.prepareStatement("INSERT INTO allocation_project (cpr, cvr, date_from, dateto, notes) VALUES(?, ?, ?, ? , ?)");
+
+            statement.setInt(1, cpr);
+            statement.setInt(2, cvr);
+            statement.setDate(3, date_from);
+            statement.setDate(4, dateto);
+            statement.setString(5, notes);
+
+            statement.executeUpdate();
+
+            System.out.println("Allocation added");
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-    */
 
     public void addEmployeeToDb(int cpr, String firstname, String lastname, int phone, String email) throws SQLException
     {
