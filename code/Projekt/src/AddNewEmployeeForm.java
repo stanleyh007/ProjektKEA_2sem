@@ -107,7 +107,11 @@ public class AddNewEmployeeForm
                 !lastNameTextField.getText().isEmpty())
             {
                 setAlert("Saved", "Employee has been stored");
-                try {submitButtonPressed();}
+                try
+                {
+                    submitButtonPressed();
+
+                }
                 catch (SQLException e1) {e1.printStackTrace();}
             }
         });

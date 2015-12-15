@@ -7,8 +7,8 @@ import javafx.beans.property.SimpleStringProperty;
 public class Employee extends Person{
 
     SimpleIntegerProperty cpr = new SimpleIntegerProperty();
-    SimpleStringProperty firstName = new SimpleStringProperty();
-    SimpleStringProperty lastName = new SimpleStringProperty();
+    SimpleStringProperty firstname = new SimpleStringProperty();
+    SimpleStringProperty lastname = new SimpleStringProperty();
     SimpleIntegerProperty phone = new SimpleIntegerProperty();
     SimpleStringProperty email = new SimpleStringProperty();
 
@@ -16,8 +16,8 @@ public class Employee extends Person{
     {
         super(email, phone);
         this.cpr = new SimpleIntegerProperty(cpr);
-        this.firstName = new SimpleStringProperty(firstName);
-        this.lastName = new SimpleStringProperty(lastName);
+        this.firstname = new SimpleStringProperty(firstName);
+        this.lastname = new SimpleStringProperty(lastName);
         this.phone = new SimpleIntegerProperty(phone);
         this.email = new SimpleStringProperty(email);
 
@@ -35,30 +35,31 @@ public class Employee extends Person{
         this.cpr.set(cpr);
     }
 
-    public String getFirstName() {
-        return firstName.get();
+    public String getFirstname() {
+        return firstname.get();
     }
 
-    public SimpleStringProperty firstNameProperty() {
-        return firstName;
+    public SimpleStringProperty firstnameProperty() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName.set(firstName);
+    public void setFirstname(String firstname) {
+        this.firstname.set(firstname);
     }
 
-    public String getLastName() {
-        return lastName.get();
+    public String getLastname() {
+        return lastname.get();
     }
 
-    public SimpleStringProperty lastNameProperty() {
-        return lastName;
+    public SimpleStringProperty lastnameProperty() {
+        return lastname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName.set(lastName);
+    public void setLastname(String lastname) {
+        this.lastname.set(lastname);
     }
 
+    @Override
     public int getPhone() {
         return phone.get();
     }
@@ -71,6 +72,7 @@ public class Employee extends Person{
         this.phone.set(phone);
     }
 
+    @Override
     public String getEmail() {
         return email.get();
     }
@@ -82,5 +84,4 @@ public class Employee extends Person{
     public void setEmail(String email) {
         this.email.set(email);
     }
-
 }

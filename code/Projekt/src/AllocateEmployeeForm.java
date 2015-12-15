@@ -183,19 +183,21 @@ public class AllocateEmployeeForm
 
     //Uses method in DB for getting all employee data. Takes the data and extracts the name of each employee and
     //uses a new arraylist to store the names.
+    //To be used with comboboxes
     public ArrayList<String> getNamesOfEmployee()
     {
         ArrayList<String> employeeNames = new ArrayList<>();
 
         for (Employee employee : DataBase.getInstance().employeesToArrayList())
         {
-            employeeNames.add(employee.getFirstName() + " " + employee.getLastName());
+            employeeNames.add(employee.getFirstname() + " " + employee.getLastname());
         }
         return employeeNames;
     }
 
     //Uses method in DB for getting all client data. Takes the data and extracts the name of each client and
     //uses a new arraylist to store the names.
+    //To be used with comboboxes
     public ArrayList<String> getClientsOfEmployee()
     {
         ArrayList<String> companyNames = new ArrayList<>();

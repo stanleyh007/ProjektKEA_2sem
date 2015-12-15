@@ -26,6 +26,8 @@ public class Main_UI extends Application
     TableView<Client> clientTable;
     TableColumn employeeFirstName = new TableColumn("First Name");
     TableColumn employeeLastName = new TableColumn("Last Name");
+    TableColumn allocationFirstName = new TableColumn("First Name");
+    TableColumn allocationLastName = new TableColumn("Last Name");
     TableColumn employeeCPR = new TableColumn("CPR");
     TableColumn clientName = new TableColumn("Company Name");
     TableColumn clientCVR = new TableColumn("CVR");
@@ -45,7 +47,6 @@ public class Main_UI extends Application
     ObservableList<Allocation> allocationList = FXCollections.observableArrayList();
     ObservableList<Employee> employeeList = FXCollections.observableArrayList();
     ObservableList<Client> clientList = FXCollections.observableArrayList();
-
 
     Button showOverview, showAllOverview, login, logout, exit, edit, addEmployee, addClient, addProject, addLogin;
     GridPane gridLayout, blankLayout;
@@ -70,16 +71,18 @@ public class Main_UI extends Application
         dataBase.createDB();
 
         // Load allocations from database into ObservableList
-        dataBase.getAllocations(allocationList);
         dataBase.getEmployees(employeeList);
         dataBase.getClients(clientList);
+        dataBase.getAllocations(allocationList);
 
-        setAllocationTable();
-        setEmployeeTable();
+        //setAllocationTable() must be called last!
         setClientTable();
+        setEmployeeTable();
+        setAllocationTable();
 
         setTabPane();
         setMainLayout();
+
 
         scene = new Scene(setMainLayout(), 1200, 800);
         theStage.setScene(scene);
@@ -116,8 +119,8 @@ public class Main_UI extends Application
 
     public Pane setBlankPane()
     {
-         blankLayout = new GridPane();
-        blankLayout.setPadding(new Insets(0, 15, 50, 0));
+        blankLayout = new GridPane();
+        blankLayout.setPadding(new Insets(0, 150, 50, 0));
         blankLayout.setAlignment(Pos.CENTER);
         return blankLayout;
     }
@@ -163,6 +166,7 @@ public class Main_UI extends Application
 
     public void setEmployeeTable()
     {
+
         employeeTable = new TableView<>();
 
         employeeTable.getColumns().addAll(
@@ -178,12 +182,13 @@ public class Main_UI extends Application
         employeeLastName.setPrefWidth(150);
 
         employeeCPR.setCellValueFactory(new PropertyValueFactory<>("cpr"));
-        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
-        employeeLastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("firstname"));
+        employeeLastName.setCellValueFactory(new PropertyValueFactory<>("lastname"));
         employeePhone.setCellValueFactory(new PropertyValueFactory<>("phone"));
         employeeEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
 
         employeeTable.setItems(employeeList);
+
 
     }
 
@@ -192,9 +197,9 @@ public class Main_UI extends Application
         allocationTable = new TableView();
 
         // Add collumns to TableView
-        allocationTable.getColumns().add(employeeFirstName);
+        allocationTable.getColumns().add(allocationFirstName);
         employeeFirstName.setPrefWidth(100);
-        allocationTable.getColumns().add(employeeLastName);
+        allocationTable.getColumns().add(allocationLastName);
         employeeLastName.setPrefWidth(150);
         allocationTable.getColumns().add(client);
         client.setPrefWidth(150);
@@ -207,8 +212,8 @@ public class Main_UI extends Application
 
 
         // Set table columns to update from ObservableList
-        employeeFirstName.setCellValueFactory(new PropertyValueFactory<>("employeeFirstName"));
-        employeeLastName.setCellValueFactory(new PropertyValueFactory<>("employeeLastName"));
+        allocationFirstName.setCellValueFactory(new PropertyValueFactory<>("employeeFirstName"));
+        allocationLastName.setCellValueFactory(new PropertyValueFactory<>("employeeLastName"));
         client.setCellValueFactory(new PropertyValueFactory<>("client"));
         dateFrom.setCellValueFactory(new PropertyValueFactory<>("dateFrom"));
         dateTo.setCellValueFactory(new PropertyValueFactory<>("dateTo"));

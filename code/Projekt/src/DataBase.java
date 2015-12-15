@@ -90,6 +90,21 @@ public class DataBase {
         }
     }
 
+    /* TODO!!
+    public void allocateEmployee(String firstname, String lastname, String client, String datefrom, String dateto, String notes)
+    {
+        try{
+            statement = con.prepareStatement("USE appstract_db");
+            statement.executeUpdate();
+
+            statement = con.prepareStatement("INSERT INTO allocation_project VALUES(firstname");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    */
+
     public void addEmployeeToDb(int cpr, String firstname, String lastname, int phone, String email) throws SQLException
     {
 
@@ -121,7 +136,6 @@ public class DataBase {
         try {
 
             statement = con.prepareStatement("USE appstract_db");
-
             statement.executeUpdate();
 
             statement = con.prepareStatement("INSERT INTO client VALUES (?, ?, ?, ?)");
