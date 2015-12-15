@@ -1,6 +1,7 @@
 import javafx.collections.ObservableList;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -81,9 +82,14 @@ public class EditEmployeeForm {
         gridPane.setColumnSpan(changeBtn, 3);
         changeBtn.setPrefWidth(166);
 
+        Button deleteBtn = new Button("Delete");
+        gridPane.setHalignment(deleteBtn, HPos.LEFT);
+        gridPane.setColumnSpan(deleteBtn, 3);
+        deleteBtn.setPrefWidth(166);
+
         Button cancelBtn = new Button("Cancel");
-        gridPane.setHalignment(cancelBtn, HPos.RIGHT);
         cancelBtn.setOnAction(event -> close());
+
 
         gridPane.add(titleLbl, 0, 0);
         gridPane.add(cprLbl, 0, 5);
@@ -97,9 +103,10 @@ public class EditEmployeeForm {
         gridPane.add(emailLbl, 0, 9);
         gridPane.add(emailTextField, 1, 9);
         gridPane.add(changeBtn, 1, 10);
+        gridPane.add(deleteBtn, 1, 11);
         gridPane.add(cancelBtn, 3, 14);
 
-        scene = new Scene(gridPane, 400, 410);
+        scene = new Scene(gridPane, 400, 435);
         sceneStage.setScene(scene);
 
         sceneStage.initModality(Modality.APPLICATION_MODAL);
@@ -131,7 +138,15 @@ public class EditEmployeeForm {
                 catch (SQLException e1) {e1.printStackTrace();}
             }
         });
+
+        deleteBtn.setOnAction(e ->{
+
+            deleteBtnPressed();
+    });
+
     }
+
+
 
     public void show()
     {
@@ -191,6 +206,15 @@ public class EditEmployeeForm {
         DataBase.getInstance().getEmployees(employeeList);
 
         close();
+    }
+
+    public void deleteBtnPressed()
+    {
+        int cpr = Integer.parseInt(cprTextField.getText());
+
+        DataBase.getInstance().deleteEmployee(cpr);
+
+        setAlert("Deleted", "Entry has been deleted");
     }
 }
 

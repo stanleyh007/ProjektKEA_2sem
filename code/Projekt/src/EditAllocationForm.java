@@ -17,10 +17,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by peterzohdy on 26/11/2015.
+ * Created by peterzohdy on 15/12/2015.
  */
-public class AllocateEmployeeForm
-{
+public class EditAllocationForm {
+
     Stage sceneStage = new Stage();
     Scene scene;
     Pane root = new Pane();
@@ -30,7 +30,14 @@ public class AllocateEmployeeForm
     DatePicker dateFromPicker;
     TextArea textArea;
 
-    public AllocateEmployeeForm() {
+    Allocation allocation;
+
+    ObservableList<Allocation> allocationList;
+
+    public EditAllocationForm(Allocation allocation, ObservableList<Allocation> allocationList)
+    {
+        this.allocation = allocation;
+        this.allocationList = allocationList;
 
         initializeScene();
     }
@@ -77,15 +84,23 @@ public class AllocateEmployeeForm
 
         Button submitBtn = new Button("Submit");
         submitBtn.setLayoutX(100);
-        submitBtn.setLayoutY(455);
-        submitBtn.setPrefWidth(200);
+        submitBtn.setLayoutY(425);
+        submitBtn.setPrefWidth(100);
         Button backBtn = new Button("Cancel");
         backBtn.setLayoutX(325);
-        backBtn.setLayoutY(455);
+        backBtn.setLayoutY(460);
         backBtn.setOnAction(event1 -> close());
+        Button deleteBtn = new Button("Delete Allocation");
+        deleteBtn.setLayoutX(150);
+        deleteBtn.setLayoutY(460);
+        deleteBtn.setPrefWidth(200);
+        deleteBtn.setOnAction(event -> {
+            deleteBtnPressed();
+        });
 
         employeesCbox = new ComboBox();
         employeesCbox.getItems().addAll(DataBase.getInstance().employeesToArrayList());
+
 
         clientCBox = new ComboBox();
         clientCBox.getItems().addAll(DataBase.getInstance().clientsToArrayList());
@@ -114,25 +129,18 @@ public class AllocateEmployeeForm
         dateFromPicker = new DatePicker();
         dateFromPicker.setMinWidth(155);
         dateFromPicker.setPrefWidth(155);
-        dateFromPicker.setOnAction(event ->
-        {
-            LocalDate dateFrom = dateFromPicker.getValue();
-            System.out.println(dateFrom);
-        });
+        dateFromPicker.setValue(LocalDate.parse(allocation.getDateFrom()));
 
         dateToPicker = new DatePicker();
         dateToPicker.setMinWidth(155);
         dateToPicker.setPrefWidth(155);
-        dateToPicker.setOnAction(event ->
-        {
-            LocalDate dateTo = dateToPicker.getValue();
-            System.out.println(dateTo);
-        });
+        dateToPicker.setValue(LocalDate.parse(allocation.getDateTo()));
 
         textArea = new TextArea();
         textArea.setPadding(new Insets(0,0,0,0));
         textArea.setPrefWidth(200);
-        textArea.setPrefHeight(100);
+        textArea.setPrefHeight(70);
+        textArea.setText(allocation.getNotes());
 
         HBox hBoxLbls = new HBox();
         hBoxLbls.setSpacing(100);
@@ -167,6 +175,7 @@ public class AllocateEmployeeForm
                 hBoxLbls,
                 hboxDatePickers,
                 hBoxCboxs,
+                deleteBtn,
                 submitBtn,
                 backBtn,
                 clientLbl,
@@ -197,6 +206,14 @@ public class AllocateEmployeeForm
         DataBase.getInstance().allocateEmployee(cpr, cvr, date_from, dateto, notes);
     }
 
+    public static void setAlert(String titleText,String headerText)
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(titleText);
+        alert.setHeaderText(headerText);
+        alert.show();
+    }
+
     public void show()
     {
         sceneStage.setResizable(false);
@@ -205,7 +222,18 @@ public class AllocateEmployeeForm
 
     public void close()
     {
+
         sceneStage.close();
+    }
+
+    public void deleteBtnPressed()
+    {
+        int cpr = employeesCbox.getSelectionModel().getSelectedItem().getCpr();
+        int cvr = clientCBox.getSelectionModel().getSelectedItem().getCvr();
+
+        DataBase.getInstance().deleteAllocation(cpr, cvr);
+
+        setAlert("Deleted", "Entry has been deleted");
     }
 
 }

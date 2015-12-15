@@ -13,9 +13,10 @@ public class DataBase {
     private ResultSet resultset;
 
 
-
     public static DataBase getInstance() {
 
+        if(dataBaseInstance == null)
+            dataBaseInstance = new DataBase();
         return dataBaseInstance;
     }
 
@@ -30,7 +31,7 @@ public class DataBase {
             String url = "jdbc:mysql://localhost:3306/";
 
             // Connect to database
-            con = DriverManager.getConnection(url, "root", "doggyspy");
+            con = DriverManager.getConnection(url, "root", "root");
 
             System.out.println("URL: " + url);
 
@@ -45,7 +46,6 @@ public class DataBase {
     //Method creates appstract database with all of its tables and constraints.
     public void createDB()
     {
-
         try {
 
             //Creates database appstract_db
@@ -267,6 +267,47 @@ public class DataBase {
             statement.executeUpdate();
 
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteEmployee(int cpr)
+    {
+        try{
+           statement = con.prepareStatement("DELETE from employee WHERE cpr = ('"+cpr+"')");
+           statement.executeUpdate();
+
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteClient(int cvr)
+    {
+        try{
+            statement = con.prepareStatement("DELETE from client WHERE cvr = ('"+cvr+"')");
+            statement.executeUpdate();
+
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteAllocation(int cpr, int cvr)
+    {
+        try {
+            String SQL = "DELETE from allocation_project WHERE cpr = ? AND cvr = ?";
+
+            statement = con.prepareStatement(SQL);
+            statement.setInt(1, cpr);
+            statement.setInt(2, cvr);
+
+            statement.executeUpdate();
+
+        } catch (Exception e)
+        {
             e.printStackTrace();
         }
     }

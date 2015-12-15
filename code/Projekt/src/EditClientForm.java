@@ -1,3 +1,4 @@
+import javafx.collections.ObservableList;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -26,8 +27,15 @@ public class EditClientForm
     TextField phoneTextField = new TextField();
     TextField emailTextField = new TextField();
 
-    public EditClientForm()
+    Client client;
+
+    ObservableList<Client> clientList;
+
+    public EditClientForm(Client client, ObservableList<Client> clientList)
     {
+        this.client = client;
+        this.clientList = clientList;
+
         initialize();
     }
 
@@ -45,16 +53,20 @@ public class EditClientForm
 
         Label companyRegNoLbl = new Label("Company CVR:");
         gridPane.setHalignment(companyRegNoLbl, HPos.RIGHT);
-        cvrTextField.setPromptText("12345678");
+        //cvrTextField.setPromptText("12345678");
+        cvrTextField.setText(Integer.toString(client.getCvr()));
 
         Label companyNameLbl = new Label("Company Name:");
         gridPane.setHalignment(companyNameLbl, HPos.RIGHT);
+        companyNameTextField.setText(client.getCompanyName());
 
         Label phoneLbl = new Label("Phone:");
         gridPane.setHalignment(phoneLbl, HPos.RIGHT);
+        phoneTextField.setText(Integer.toString(client.getPhone()));
 
         Label emailLbl = new Label("Email:");
         gridPane.setHalignment(emailLbl, HPos.RIGHT);
+        emailTextField.setText(client.getEmail());
 
         Button submitBtn = new Button("Submit");
         gridPane.setHalignment(submitBtn, HPos.LEFT);
@@ -63,7 +75,16 @@ public class EditClientForm
 
         Button cancelBtn = new Button("Cancel");
         gridPane.setHalignment(cancelBtn, HPos.RIGHT);
-        cancelBtn.setOnAction(event1 -> close());
+        cancelBtn.setOnAction(e -> close());
+
+        Button deleteBtn = new Button("Delete");
+        gridPane.setHalignment(deleteBtn, HPos.LEFT);
+        gridPane.setColumnSpan(deleteBtn, 3);
+        deleteBtn.setPrefWidth(166);
+
+        deleteBtn.setOnAction(e -> {
+            deleteBtnPressed();
+        });
 
         submitBtn.setOnAction(event ->
         {
@@ -93,9 +114,10 @@ public class EditClientForm
         gridPane.add(emailLbl, 0, 8);
         gridPane.add(emailTextField, 1, 8);
         gridPane.add(submitBtn, 1, 9);
-        gridPane.add(cancelBtn, 2, 13);
+        gridPane.add(deleteBtn, 1, 10);
+        gridPane.add(cancelBtn, 4, 16);
 
-        scene = new Scene(gridPane, 400, 375);
+        scene = new Scene(gridPane, 420, 430);
         sceneStage.setScene(scene);
 
         sceneStage.initModality(Modality.APPLICATION_MODAL);
@@ -154,5 +176,14 @@ public class EditClientForm
 
         //Calls addEmployee method in DB class and inserts the entered input as parameters
         DataBase.getInstance().addClientToDb(cvr, firstName, phone, email);
+    }
+
+    public void deleteBtnPressed()
+    {
+        int cvr = Integer.parseInt(cvrTextField.getText());
+
+        DataBase.getInstance().deleteClient(cvr);
+
+        setAlert("Deleted", "Entry has been deleted");
     }
 }

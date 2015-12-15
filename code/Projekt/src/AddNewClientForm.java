@@ -26,6 +26,7 @@ public class AddNewClientForm
 
     public AddNewClientForm()
     {
+
         initialize();
     }
 
