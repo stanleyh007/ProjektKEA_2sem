@@ -194,7 +194,6 @@ public class EditAllocationForm {
 
     public void submitButtonPressed()
     {
-
         int cpr = employeesCbox.getSelectionModel().getSelectedItem().getCpr();
         int cvr = clientCBox.getSelectionModel().getSelectedItem().getCvr();
         Date date_from = Date.valueOf(dateFromPicker.getValue());
