@@ -82,8 +82,8 @@ public class EditAllocationForm {
         dateToLbl.setPadding(new Insets(0, 0, 0, 30));
         txtBoxLbl.setPadding(new Insets(330, 0, 0, 100));
 
-        Button submitBtn = new Button("Submit");
-        submitBtn.setLayoutX(100);
+        Button submitBtn = new Button("Change");
+        submitBtn.setLayoutX(150);
         submitBtn.setLayoutY(425);
         submitBtn.setPrefWidth(100);
         Button backBtn = new Button("Cancel");
@@ -91,9 +91,9 @@ public class EditAllocationForm {
         backBtn.setLayoutY(460);
         backBtn.setOnAction(event1 -> close());
         Button deleteBtn = new Button("Delete Allocation");
-        deleteBtn.setLayoutX(150);
+        deleteBtn.setLayoutX(125);
         deleteBtn.setLayoutY(460);
-        deleteBtn.setPrefWidth(200);
+        deleteBtn.setPrefWidth(150);
         deleteBtn.setOnAction(event -> {
             deleteBtnPressed();
         });
@@ -139,7 +139,7 @@ public class EditAllocationForm {
         textArea = new TextArea();
         textArea.setPadding(new Insets(0,0,0,0));
         textArea.setPrefWidth(200);
-        textArea.setPrefHeight(70);
+        textArea.setPrefHeight(100);
         textArea.setText(allocation.getNotes());
 
         HBox hBoxLbls = new HBox();
@@ -164,7 +164,7 @@ public class EditAllocationForm {
 
         VBox vBoxText = new VBox();
         vBoxText.setSpacing(0);
-        vBoxText.setPadding(new Insets(350, 0,0,100));
+        vBoxText.setPadding(new Insets(315, 0,0,100));
         vBoxText.getChildren().addAll(textArea);
 
         root.getChildren().addAll(

@@ -68,7 +68,7 @@ public class EditClientForm
         gridPane.setHalignment(emailLbl, HPos.RIGHT);
         emailTextField.setText(client.getEmail());
 
-        Button submitBtn = new Button("Submit");
+        Button submitBtn = new Button("Change");
         gridPane.setHalignment(submitBtn, HPos.LEFT);
         gridPane.setColumnSpan(submitBtn, 3);
         submitBtn.setPrefWidth(166);
