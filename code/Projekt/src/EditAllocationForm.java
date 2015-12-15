@@ -194,15 +194,23 @@ public class EditAllocationForm {
 
     public void submitButtonPressed()
     {
+        int eventId = allocation.getEventId();
         int cpr = employeesCbox.getSelectionModel().getSelectedItem().getCpr();
         int cvr = clientCBox.getSelectionModel().getSelectedItem().getCvr();
-        Date date_from = Date.valueOf(dateFromPicker.getValue());
-        Date dateto = Date.valueOf(dateToPicker.getValue());
+        String dateFrom = dateFromPicker.getValue().toString();
+        String dateTo = dateToPicker.getValue().toString();
         String notes = textArea.getText();
 
 
-        //Calls addEmployee method in DB class and inserts the entered input as parameters
-        DataBase.getInstance().allocateEmployee(cpr, cvr, date_from, dateto, notes);
+        Allocation changedAllocation = new Allocation(1, cpr, cvr, "", "", "", dateFrom, dateTo, notes);
+
+        allocationList.clear();
+
+        DataBase.getInstance().changeAllocation(eventId, changedAllocation);
+
+        DataBase.getInstance().getAllocations(allocationList);
+
+        close();
     }
 
     public static void setAlert(String titleText,String headerText)

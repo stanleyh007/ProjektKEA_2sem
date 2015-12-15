@@ -174,8 +174,17 @@ public class EditClientForm
         int phone = Integer.parseInt(phoneTextField.getText());
         String email = emailTextField.getText();
 
+        Client changedClient = new Client(cvr, firstName, phone, email);
+
         //Calls addEmployee method in DB class and inserts the entered input as parameters
-        DataBase.getInstance().addClientToDb(cvr, firstName, phone, email);
+        //DataBase.getInstance().addClientToDb(cvr, firstName, phone, email);
+        clientList.clear();
+
+        DataBase.getInstance().changeClient(cvr, changedClient);
+
+        DataBase.getInstance().getClients(clientList);
+
+
     }
 
     public void deleteBtnPressed()

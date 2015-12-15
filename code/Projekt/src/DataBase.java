@@ -31,7 +31,7 @@ public class DataBase {
             String url = "jdbc:mysql://localhost:3306/";
 
             // Connect to database
-            con = DriverManager.getConnection(url, "root", "root");
+            con = DriverManager.getConnection(url, "root", "doggyspy");
 
             System.out.println("URL: " + url);
 
@@ -171,7 +171,7 @@ public class DataBase {
             resultset = statement.executeQuery();
 
             while (resultset.next()) {
-                allocationList.add(new Allocation(resultset.getString("firstname"), resultset.getString("lastname"), resultset.getString("companyname"), resultset.getString("date_from"), resultset.getString("dateto"), resultset.getString("notes")));
+                allocationList.add(new Allocation(Integer.parseInt(resultset.getString("event_id")), Integer.parseInt(resultset.getString("cpr")), Integer.parseInt(resultset.getString("cvr")), resultset.getString("firstname"), resultset.getString("lastname"), resultset.getString("companyname"), resultset.getString("date_from"), resultset.getString("dateto"), resultset.getString("notes")));
             }
 
         } catch (Exception e) {
@@ -270,6 +270,33 @@ public class DataBase {
             e.printStackTrace();
         }
     }
+
+    public void changeClient(int cvr, Client client) {
+        try {
+            statement = con.prepareStatement("UPDATE client SET companyname='" + client.getCompanyName() + "', telephone=" + client.getPhone() +
+                                            ", email='" + client.getEmail() + "' WHERE cvr=" + cvr);
+
+            statement.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void changeAllocation(int eventId, Allocation allocation) {
+        try {
+            statement = con.prepareStatement("UPDATE allocation_project SET cpr=" + allocation.getCpr() + ", cvr=" + allocation.getCvr() +
+                                            ", date_from='" + allocation.getDateFrom() + "', dateto='" + allocation.getDateTo() + "', notes='" + allocation.getNotes() +
+                                            "' WHERE event_id=" + eventId);
+
+            statement.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
     public void deleteEmployee(int cpr)
     {

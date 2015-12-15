@@ -5,6 +5,11 @@ import javafx.beans.property.SimpleStringProperty;
  */
 public class Allocation {
 
+    int eventId;
+    int cpr;
+    int cvr;
+
+
     SimpleStringProperty employeeFirstName = new SimpleStringProperty();
     SimpleStringProperty employeeLastName = new SimpleStringProperty();
     SimpleStringProperty client = new SimpleStringProperty();
@@ -12,7 +17,10 @@ public class Allocation {
     SimpleStringProperty dateTo = new SimpleStringProperty();
     SimpleStringProperty notes = new SimpleStringProperty();
 
-    public Allocation(String employeeFirstName, String employeeLastName, String client, String dateFrom, String dateTo, String notes) {
+    public Allocation(int eventId, int cpr, int cvr, String employeeFirstName, String employeeLastName, String client, String dateFrom, String dateTo, String notes) {
+        this.eventId = eventId;
+        this.cpr = cpr;
+        this.cvr = cvr;
 
         this.employeeFirstName = new SimpleStringProperty(employeeFirstName);
         this.employeeLastName = new SimpleStringProperty(employeeLastName);
@@ -20,6 +28,18 @@ public class Allocation {
         this.dateFrom = new SimpleStringProperty(dateFrom);
         this.dateTo = new SimpleStringProperty(dateTo);
         this.notes = new SimpleStringProperty(notes);
+    }
+
+    public int getEventId() {
+        return eventId;
+    }
+
+    public int getCpr() {
+        return cpr;
+    }
+
+    public int getCvr() {
+        return cvr;
     }
 
     public String getEmployeeFirstName() {

@@ -195,6 +195,8 @@ public class AllocateEmployeeForm
 
         //Calls addEmployee method in DB class and inserts the entered input as parameters
         DataBase.getInstance().allocateEmployee(cpr, cvr, date_from, dateto, notes);
+
+        close();
     }
 
     public void show()

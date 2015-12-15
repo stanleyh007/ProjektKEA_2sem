@@ -163,5 +163,7 @@ public class AddNewEmployeeForm
 
         //Calls addEmployee method in DB class and inserts the entered input as parameters
         DataBase.getInstance().addEmployeeToDb(cpr, firstName, lastName, phone, email);
+
+        close();
     }
 }
