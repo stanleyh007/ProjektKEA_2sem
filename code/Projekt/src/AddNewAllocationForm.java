@@ -10,7 +10,6 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -19,8 +18,9 @@ import java.util.List;
 /**
  * Created by peterzohdy on 26/11/2015.
  */
-public class AllocateEmployeeForm implements Inputforms
+public class AddNewAllocationForm implements Inputforms
 {
+    //Instance variables
     Stage sceneStage = new Stage();
     Scene scene;
     Pane root = new Pane();
@@ -29,18 +29,20 @@ public class AllocateEmployeeForm implements Inputforms
     DatePicker dateToPicker;
     DatePicker dateFromPicker;
     TextArea textArea;
-
     ObservableList<Allocation> allocationList;
 
-    public AllocateEmployeeForm(ObservableList<Allocation> allocationList) {
 
+    //Constructer - takes in the observable allocationList
+    public AddNewAllocationForm(ObservableList<Allocation> allocationList)
+    {
         this.allocationList = allocationList;
-
         initializeScene();
     }
 
     public void initializeScene()
     {
+
+        //Hardcoded list values to be displayed in combobox
         List<String> list = new ArrayList<>();
         list.add("PROJECT ALLOCATION");
         list.add("---Vacation---");
@@ -48,7 +50,12 @@ public class AllocateEmployeeForm implements Inputforms
         list.add("---Maternity leave---");
         list.add("---Other---");
 
+        //Uses the added values in "list" in observablelist (to be used in combobox)
         ObservableList<String> observableList = FXCollections.observableArrayList(list);
+
+        //Takes the hardcorded values from "list" -> "observableList"
+        ComboBox<String> activityCbox = new ComboBox<String>(observableList);
+        activityCbox.setPrefWidth(155);
 
         Label allocateLbl = new Label();
         Label employeeLbl = new Label();
@@ -88,6 +95,7 @@ public class AllocateEmployeeForm implements Inputforms
         backBtn.setLayoutY(455);
         backBtn.setOnAction(event1 -> close());
 
+        //Method in Database class to convert all employees and clients to an arraylist.
         employeesCbox = new ComboBox();
         employeesCbox.getItems().addAll(DataBase.getInstance().employeesToArrayList());
 
@@ -95,10 +103,7 @@ public class AllocateEmployeeForm implements Inputforms
         clientCBox.getItems().addAll(DataBase.getInstance().clientsToArrayList());
         clientCBox.setDisable(true);
 
-
-        ComboBox<String> activityCbox = new ComboBox<String>(observableList);
-        activityCbox.setPrefWidth(155);
-
+        //If Project Allocation is choosed from actititybox then the client combobox becomes active
         activityCbox.valueProperty().addListener((observable, oldValue, newValue) ->
         {
             System.out.println(newValue);
@@ -189,15 +194,16 @@ public class AllocateEmployeeForm implements Inputforms
 
     public void submitButtonPressed()
     {
-
+        //converts and gets the chosen input from user
         int cpr = employeesCbox.getSelectionModel().getSelectedItem().getCpr();
         int cvr = clientCBox.getSelectionModel().getSelectedItem().getCvr();
         Date date_from = Date.valueOf(dateFromPicker.getValue());
         Date dateto = Date.valueOf(dateToPicker.getValue());
         String notes = textArea.getText();
 
-
+        //clears the allocationList to avoid the list being dublicated when inserting a new value
         allocationList.clear();
+
         //Calls addEmployee method in DB class and inserts the entered input as parameters
         DataBase.getInstance().allocateEmployee(cpr, cvr, date_from, dateto, notes);
 

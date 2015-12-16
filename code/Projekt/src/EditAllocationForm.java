@@ -18,7 +18,13 @@ import java.util.List;
 /**
  * Created by peterzohdy on 15/12/2015.
  */
+
+/*
+       For comments refer to AddNewAllocationForm
+ */
+
 public class EditAllocationForm implements Inputforms {
+
     Stage sceneStage = new Stage();
     Scene scene;
     Pane root = new Pane();
@@ -235,6 +241,7 @@ public class EditAllocationForm implements Inputforms {
 
         int cpr = employeesCbox.getSelectionModel().getSelectedItem().getCpr();
         int cvr = clientCBox.getSelectionModel().getSelectedItem().getCvr();
+
 
         DataBase.getInstance().deleteAllocation(cpr, cvr);
 

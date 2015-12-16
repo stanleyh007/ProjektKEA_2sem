@@ -473,7 +473,7 @@ public class Main_UI extends Application
 
         public void allocateEmployeeAction()
         {
-            AllocateEmployeeForm allocateEmployeeForm = new AllocateEmployeeForm(allocationList);
+            AddNewAllocationForm allocateEmployeeForm = new AddNewAllocationForm(allocationList);
             allocateEmployeeForm.show();
         }
 

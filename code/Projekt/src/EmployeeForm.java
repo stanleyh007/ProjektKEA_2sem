@@ -18,6 +18,7 @@ import java.sql.SQLException;
  * Created by peterzohdy on 28/11/2015.
  */
 
+
 public class EmployeeForm implements Inputforms
 {
     Stage sceneStage = new Stage();
@@ -33,13 +34,14 @@ public class EmployeeForm implements Inputforms
 
     ObservableList<Employee> employeeList;
 
+    //Takes the employeeList in constructor
     public EmployeeForm(ObservableList<Employee> employeeList)
     {
         this.employeeList = employeeList;
-
         initializeScene();
     }
 
+    //Sets up the UI scene for employee form
     public void initializeScene()
     {
         gridPane = new GridPane();
@@ -100,29 +102,34 @@ public class EmployeeForm implements Inputforms
 
         submitBtn.setOnAction(e ->
         {
-            if (    cprTextField.getText().isEmpty() ||
-                    firstNameTextField.getText().isEmpty() ||
-                    lastNameTextField.getText().isEmpty())
-            {
-                setAlert("Input error", "You need to fill out all mandatory fields");
-            }
-            else if (isNumeric(cprTextField) == false)
-            {
-                setAlert("Input error", "CPR must be numeric values");
-            }
-            else if (isNumeric(cprTextField) &&
-                    !firstNameTextField.getText().isEmpty() &&
-                    !lastNameTextField.getText().isEmpty())
-            {
-                setAlert("Saved", "Employee has been stored");
-                try
-                {
-                    submitButtonPressed();
-
-                }
-                catch (Exception exception) {exception.printStackTrace();}
-            }
+            checkInput();
         });
+    }
+
+    public void checkInput()
+    {
+        if (    cprTextField.getText().isEmpty() ||
+                firstNameTextField.getText().isEmpty() ||
+                lastNameTextField.getText().isEmpty())
+        {
+            setAlert("Input error", "You need to fill out all mandatory fields");
+        }
+        else if (isNumeric(cprTextField) == false)
+        {
+            setAlert("Input error", "CPR must be numeric values");
+        }
+        else if (isNumeric(cprTextField) &&
+                !firstNameTextField.getText().isEmpty() &&
+                !lastNameTextField.getText().isEmpty())
+        {
+            setAlert("Saved", "Employee has been stored");
+            try
+            {
+                submitButtonPressed();
+
+            }
+            catch (Exception exception) {exception.printStackTrace();}
+        }
     }
 
     public void show()
@@ -144,6 +151,7 @@ public class EmployeeForm implements Inputforms
         alert.show();
     }
 
+    //Validates the user input
     public static boolean isNumeric(TextField textField)
     {
         boolean isNumeric = true;
@@ -160,16 +168,20 @@ public class EmployeeForm implements Inputforms
         return isNumeric;
     }
 
+
+
     public void submitButtonPressed()  {
+
         int cpr = Integer.parseInt(cprTextField.getText());
         String firstName = firstNameTextField.getText();
         String lastName = lastNameTextField.getText();
         int phone = Integer.parseInt(phoneTextFiled.getText());
         String email = emailTextField.getText();
 
-        //Calls addEmployee method in DB class and inserts the entered input as parameters
+        //Clears the list before the list with new data is inserted
         employeeList.clear();
 
+        //Calls addEmployee method in DB class and inserts the entered input as parameters
         try {
             DataBase.getInstance().addEmployeeToDb(cpr, firstName, lastName, phone, email);
         } catch (SQLException e) {

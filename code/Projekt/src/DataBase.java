@@ -7,11 +7,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataBase {
+
+    //*Singleton* makes a new instance of itself in the same class
     private static DataBase dataBaseInstance = new DataBase();
     private Connection con;   // Connection for database
     private PreparedStatement statement;
     private ResultSet resultset;
 
+    //*Singleton* returns the instance of itself and a new can only be made if it doesn't exist.
     public static DataBase getInstance() {
 
         if(dataBaseInstance == null)
@@ -19,6 +22,7 @@ public class DataBase {
         return dataBaseInstance;
     }
 
+    //Setting up the database connection in constructor
     private DataBase() {
 
         try {
@@ -29,8 +33,7 @@ public class DataBase {
 
             String url = "jdbc:mysql://localhost:3306/";
 
-            // Connect to database
-            con = DriverManager.getConnection(url, "root", "doggyspy");
+            con = DriverManager.getConnection(url, "root", "root");
 
             System.out.println("URL: " + url);
 
@@ -42,7 +45,7 @@ public class DataBase {
         }
     }
 
-    //Method creates appstract database with all of its tables and constraints.
+    //If the databse doesn't exist this method creates the "appstract_db" database with all of its tables.
     public void createDB()
     {
         try {
@@ -90,6 +93,7 @@ public class DataBase {
         }
     }
 
+    //SQL statement to insert an allocation into database. This method is called from AddNewAllocationForm class.
     public void allocateEmployee(int cpr, int cvr, Date date_from, Date dateto, String notes)
     {
         try{
@@ -109,10 +113,11 @@ public class DataBase {
             System.out.println("Allocation added");
 
         } catch (SQLException e) {
-            setAlert("Error", "Something went wrong - try again");
+            e.printStackTrace();
         }
     }
 
+    //SQL statement to insert an employee into database. This method is called from AddNewEmployeeForm.
     public void addEmployeeToDb(int cpr, String firstname, String lastname, int phone, String email) throws SQLException
     {
         try {
@@ -137,6 +142,7 @@ public class DataBase {
             System.out.println("Employee :" + firstname + " " + lastname + " inserted into database");
     }
 
+    //SQL statement to insert a client into database. This method is called from AddNewClientForm.
     public void addClientToDb(int cvr, String companyname, int phone, String email)
     {
         try {
@@ -160,14 +166,19 @@ public class DataBase {
         System.out.println("Client : " + companyname + " inserted into database");
     }
 
+    //SQL Query to get all the allocations from database.
     public void getAllocations(ObservableList<Allocation> allocationList) {
         try {
-            statement = con.prepareStatement("SELECT * FROM allocation_project JOIN employee, client WHERE allocation_project.cpr=employee.cpr" +
-                                                " AND allocation_project.cvr=client.cvr");
+            statement = con.prepareStatement("SELECT * FROM allocation_project JOIN employee, client WHERE " +
+                    "allocation_project.cpr=employee.cpr AND allocation_project.cvr=client.cvr");
             resultset = statement.executeQuery();
 
+            //ResultSet is added to the observable list "allocationList" and used in Main_UI class to setup the tables
             while (resultset.next()) {
-                allocationList.add(new Allocation(Integer.parseInt(resultset.getString("event_id")), Integer.parseInt(resultset.getString("cpr")), Integer.parseInt(resultset.getString("cvr")), resultset.getString("firstname"), resultset.getString("lastname"), resultset.getString("companyname"), resultset.getString("date_from"), resultset.getString("dateto"), resultset.getString("notes")));
+                allocationList.add(new Allocation(Integer.parseInt(resultset.getString("event_id")),
+                        Integer.parseInt(resultset.getString("cpr")), Integer.parseInt(resultset.getString("cvr")),
+                        resultset.getString("firstname"), resultset.getString("lastname"), resultset.getString("companyname"),
+                        resultset.getString("date_from"), resultset.getString("dateto"), resultset.getString("notes")));
             }
 
         } catch (Exception e) {
@@ -175,13 +186,16 @@ public class DataBase {
         }
     }
 
+    //SQL Query to get all the employees from database.
     public void getEmployees(ObservableList<Employee> employeeList) {
         try {
             statement = con.prepareStatement("SELECT * FROM employee");
             resultset = statement.executeQuery();
 
+            //ResultSet is added to the observable list "employeeList" and used in Main_UI class to setup the tables
             while (resultset.next()) {
-                employeeList.add(new Employee(resultset.getInt("cpr"), resultset.getString("firstname"), resultset.getString("lastname"), resultset.getInt("telephone"), resultset.getString("email")));
+                employeeList.add(new Employee(resultset.getInt("cpr"), resultset.getString("firstname"),
+                        resultset.getString("lastname"), resultset.getInt("telephone"), resultset.getString("email")));
             }
 
         } catch (Exception e) {
@@ -189,13 +203,16 @@ public class DataBase {
         }
     }
 
+    //SQL Query to get all the clients from database.
     public void getClients(ObservableList<Client> clientList) {
         try {
             statement = con.prepareStatement("SELECT * FROM client");
             resultset = statement.executeQuery();
 
+            //ResultSet is added to the observable list "clientList" and used in Main_UI class to setup the tables
             while (resultset.next()) {
-                clientList.add(new Client(resultset.getInt("cvr"), resultset.getString("companyname"), resultset.getInt("telephone"), resultset.getString("email")));
+                clientList.add(new Client(resultset.getInt("cvr"), resultset.getString("companyname"),
+                        resultset.getInt("telephone"), resultset.getString("email")));
             }
 
         } catch (Exception e) {
@@ -203,6 +220,8 @@ public class DataBase {
         }
     }
 
+    //The resultset is added to the "employee" arraylist of type <Employee>. This is used in the combobox for employees
+    //in "AddNewAllocationForm" class.
     public ArrayList<Employee> employeesToArrayList()
     {
         ArrayList<Employee> employees = new ArrayList();
@@ -216,7 +235,6 @@ public class DataBase {
 
             while (resultset.next())
             {
-                //add all employees from DB to arraylist
                 employees.add(new Employee(resultset.getInt("cpr"), resultset.getString("firstname"), resultset.getString("lastname"),
                         resultset.getInt("telephone"), resultset.getString("email")));
             }
@@ -228,6 +246,8 @@ public class DataBase {
         return employees;
     }
 
+    //The resultset is added to the "client" arraylist of type <Client>. This is used in the combobox for clients.
+    //in "AddNewAllocationForm" class.
     public ArrayList<Client> clientsToArrayList()
     {
         ArrayList<Client> clients = new ArrayList();
@@ -241,7 +261,6 @@ public class DataBase {
 
             while (resultset.next())
             {
-                //add all clients from DB to arraylist
                 clients.add(new Client(resultset.getInt("cvr"), resultset.getString("companyname"),
                         resultset.getInt("telephone"), resultset.getString("email")));
             }
@@ -253,6 +272,7 @@ public class DataBase {
         return clients;
     }
 
+    //SQL Statement to change the values of an existing employee - used in "EditEmployeeForm" class.
     public void changeEmployee(int cpr, Employee employee) {
         try {
             statement = con.prepareStatement("UPDATE employee SET firstname='" + employee.getFirstname() +"',lastName='" + employee.getLastname() +
@@ -266,6 +286,7 @@ public class DataBase {
         }
     }
 
+    //SQL Statment to change the values of an existing client- used in "EditClientForm" class.
     public void changeClient(int cvr, Client client) {
         try {
             statement = con.prepareStatement("UPDATE client SET companyname='" + client.getCompanyName() + "', telephone=" + client.getPhone() +
@@ -278,6 +299,7 @@ public class DataBase {
         }
     }
 
+    //SQL Statement to change the values of an existing allocation - used in "EditAllocationForm" class.
     public void changeAllocation(int eventId, Allocation allocation) {
         try {
             statement = con.prepareStatement("UPDATE allocation_project SET cpr=" + allocation.getCpr() + ", cvr=" + allocation.getCvr() +
@@ -291,6 +313,7 @@ public class DataBase {
         }
     }
 
+    //SQL Statement to delete an employee from databse. Called from "EditEmployeeForm" class
     public void deleteEmployee(int cpr)
     {
         try{
@@ -303,6 +326,7 @@ public class DataBase {
         }
     }
 
+    //SQL Statement to delete a client from database. Called from "EditClientForm" class
     public void deleteClient(int cvr)
     {
         try{
@@ -315,6 +339,7 @@ public class DataBase {
         }
     }
 
+    //SQL Statement to delete an allocation from database. Called from "EditAllocationForm" class
     public void deleteAllocation(int cpr, int cvr)
     {
         try {
@@ -328,16 +353,9 @@ public class DataBase {
 
         } catch (Exception e)
         {
-            e.printStackTrace();
+
         }
     }
 
-    public static void setAlert(String titleText,String headerText)
-    {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(titleText);
-        alert.setHeaderText(headerText);
-        alert.show();
-    }
 
 }

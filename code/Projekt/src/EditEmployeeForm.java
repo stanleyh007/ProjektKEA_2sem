@@ -17,16 +17,15 @@ import java.sql.SQLException;
 /**
  * Created by Lasse Jensen on 15-12-2015.
  */
-public class EditEmployeeForm extends EmployeeForm /*implements Inputforms*/ {
+public class EditEmployeeForm extends EmployeeForm  {
+
     Employee employee;
 
-    ObservableList<Employee> employeeList;
-
+    //employee gets passed from editEmployeeForm method in "Main_UI" class
     public EditEmployeeForm(Employee employee, ObservableList<Employee> employeeList) {
-        super(employeeList);
 
+        super(employeeList);
         this.employee = employee;
-        this.employeeList = employeeList;
 
         setFields();
         initializeScene();
@@ -34,6 +33,7 @@ public class EditEmployeeForm extends EmployeeForm /*implements Inputforms*/ {
     }
 
     public void setFields() {
+
         cprTextField.setText(Integer.toString(employee.getCpr()));
         firstNameTextField.setText(employee.getFirstname());
         lastNameTextField.setText(employee.getLastname());
@@ -48,29 +48,28 @@ public class EditEmployeeForm extends EmployeeForm /*implements Inputforms*/ {
         deleteBtn.setPrefWidth(166);
         gridPane.add(deleteBtn, 1, 11);
 
-
         deleteBtn.setOnAction(e -> {
             int cpr = Integer.parseInt(cprTextField.getText());
-            DataBase.getInstance().deleteClient(cpr);
+            DataBase.getInstance().deleteEmployee(cpr);
             setAlert("Deleted", "Entry has been deleted");
         });
     }
 
+    //Overrides the submitButtonPressed function from EmployeeForm in order to use the right method in Database.
     @Override
     public void submitButtonPressed()  {
+
         int cpr = Integer.parseInt(cprTextField.getText());
         String firstName = firstNameTextField.getText();
         String lastName = lastNameTextField.getText();
         int phone = Integer.parseInt(phoneTextFiled.getText());
         String email = emailTextField.getText();
 
-
         employeeList.clear();
 
         Employee employeeChanged = new Employee(cpr, firstName, lastName, phone, email);
 
         DataBase.getInstance().changeEmployee(cpr, employeeChanged);
-
         DataBase.getInstance().getEmployees(employeeList);
 
         close();
