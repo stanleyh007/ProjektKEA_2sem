@@ -14,7 +14,7 @@ import java.sql.SQLException;
  * Created by peterzohdy on 28/11/2015.
  */
 
-public class AddNewEmployeeForm
+public class AddNewEmployeeForm implements Inputforms
 {
     Stage sceneStage = new Stage();
     Scene scene;
@@ -112,7 +112,7 @@ public class AddNewEmployeeForm
                     submitButtonPressed();
 
                 }
-                catch (SQLException e1) {e1.printStackTrace();}
+                catch (Exception exception) {exception.printStackTrace();}
             }
         });
     }
@@ -128,7 +128,7 @@ public class AddNewEmployeeForm
         sceneStage.close();
     }
 
-    public static void setAlert(String titleText,String headerText)
+    public void setAlert(String titleText,String headerText)
     {
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -153,8 +153,8 @@ public class AddNewEmployeeForm
         return isNumeric;
     }
 
-    public void submitButtonPressed() throws SQLException
-    {
+    public void submitButtonPressed()  {
+
         int cpr = Integer.parseInt(cprTextField.getText());
         String firstName = firstNameTextField.getText();
         String lastName = lastNameTextField.getText();
@@ -162,7 +162,11 @@ public class AddNewEmployeeForm
         String email = emailTextField.getText();
 
         //Calls addEmployee method in DB class and inserts the entered input as parameters
-        DataBase.getInstance().addEmployeeToDb(cpr, firstName, lastName, phone, email);
+        try {
+            DataBase.getInstance().addEmployeeToDb(cpr, firstName, lastName, phone, email);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         close();
     }

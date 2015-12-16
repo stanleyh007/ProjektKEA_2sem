@@ -328,6 +328,7 @@ public class Main_UI extends Application
             return vBox;
         }
 
+
         public void loginBox()
         {
             Stage loginBox = new Stage();
@@ -410,6 +411,7 @@ public class Main_UI extends Application
             loginBox.show();
         }
 
+
         public Scene AdminStage()
         {
             setAllocationTable();
@@ -440,7 +442,7 @@ public class Main_UI extends Application
             addProject.setPrefSize(150, 20);
             addProject.setOnAction(event -> allocateEmployeeAction());
 
-            addLogin = new Button("New Login");
+            addLogin = new Button("Add New Admin");
             addLogin.setPrefSize(150, 20);
 
             gridLayout = new GridPane();
@@ -462,6 +464,7 @@ public class Main_UI extends Application
             bp.setBottom(bottomLine());
             return bp;
         }
+
 
         public void addEmployeeAction() {
             AddNewEmployeeForm addNewEmployeeForm = new AddNewEmployeeForm();
@@ -497,4 +500,5 @@ public class Main_UI extends Application
             EditAllocationForm editAllocationForm = new EditAllocationForm(allocationTable.getSelectionModel().getSelectedItem(), allocationList);
             editAllocationForm.show();
         }
+
 }

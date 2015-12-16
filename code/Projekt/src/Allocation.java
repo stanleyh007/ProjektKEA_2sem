@@ -18,6 +18,7 @@ public class Allocation {
     SimpleStringProperty notes = new SimpleStringProperty();
 
     public Allocation(int eventId, int cpr, int cvr, String employeeFirstName, String employeeLastName, String client, String dateFrom, String dateTo, String notes) {
+
         this.eventId = eventId;
         this.cpr = cpr;
         this.cvr = cvr;
@@ -29,6 +30,7 @@ public class Allocation {
         this.dateTo = new SimpleStringProperty(dateTo);
         this.notes = new SimpleStringProperty(notes);
     }
+
 
     public int getEventId() {
         return eventId;

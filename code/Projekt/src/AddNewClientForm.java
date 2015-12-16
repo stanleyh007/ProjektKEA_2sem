@@ -8,13 +8,11 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.sql.SQLException;
-
 /**
  * Created by peterzohdy on 30/11/2015.
  */
 
-public class AddNewClientForm
+public class AddNewClientForm implements Inputforms
 {
     Stage sceneStage = new Stage();
     Scene scene;
@@ -27,10 +25,10 @@ public class AddNewClientForm
     public AddNewClientForm()
     {
 
-        initialize();
+        initializeScene();
     }
 
-    public void initialize()
+    public void initializeScene()
     {
         GridPane gridPane = new GridPane();
         gridPane.setPadding(new Insets(50, 0, 0, 35));
@@ -73,8 +71,13 @@ public class AddNewClientForm
             else if (isCVRValid(cvrTextField) && !companyNameTextField.getText().isEmpty())
             {
                 setAlert("Saved", "Company has been stored");
-                try {submitBtnPressed();}
-                catch (SQLException e) {e.printStackTrace();}
+
+                try {submitButtonPressed();
+
+                } catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
             }
             else if(isCVRValid(cvrTextField) == false)
             {
@@ -136,7 +139,7 @@ public class AddNewClientForm
         return cvrValidation;
     }
 
-    public static void setAlert(String titleText,String headerText)
+    public void setAlert(String titleText,String headerText)
     {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(titleText);
@@ -144,8 +147,9 @@ public class AddNewClientForm
         alert.show();
     }
 
-    public void submitBtnPressed() throws SQLException
+    public void submitButtonPressed()
     {
+
         int cvr = Integer.parseInt(cvrTextField.getText());
         String firstName = companyNameTextField.getText();
         int phone = Integer.parseInt(phoneTextField.getText());
@@ -153,6 +157,7 @@ public class AddNewClientForm
 
         //Calls addEmployee method in DB class and inserts the entered input as parameters
         DataBase.getInstance().addClientToDb(cvr, firstName, phone, email);
+
 
         close();
     }

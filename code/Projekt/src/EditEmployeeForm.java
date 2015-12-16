@@ -1,7 +1,6 @@
 import javafx.collections.ObservableList;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -13,12 +12,11 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.sql.SQLException;
-
 /**
  * Created by Lasse Jensen on 15-12-2015.
  */
-public class EditEmployeeForm {
+public class EditEmployeeForm implements Inputforms {
+
     Stage sceneStage = new Stage();
     Scene scene;
 
@@ -38,12 +36,13 @@ public class EditEmployeeForm {
         this.employeeList = employeeList;
 
         initializeScene();
-
         System.out.println("Allocation name = " + employee.getFirstname());
     }
 
+
     public void initializeScene()
     {
+
         GridPane gridPane = new GridPane();
         gridPane.setPadding(new Insets(50, 0, 0, 65));
         gridPane.setHgap(10);
@@ -135,7 +134,7 @@ public class EditEmployeeForm {
                     submitButtonPressed();
 
                 }
-                catch (SQLException e1) {e1.printStackTrace();}
+                catch (Exception exception) {exception.printStackTrace();}
             }
         });
 
@@ -159,7 +158,8 @@ public class EditEmployeeForm {
         sceneStage.close();
     }
 
-    public static void setAlert(String titleText,String headerText)
+
+    public void setAlert(String titleText,String headerText)
     {
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -184,7 +184,7 @@ public class EditEmployeeForm {
         return isNumeric;
     }
 
-    public void submitButtonPressed() throws SQLException
+    public void submitButtonPressed()
     {
         System.out.println("Submitting");
 
@@ -216,5 +216,6 @@ public class EditEmployeeForm {
 
         setAlert("Deleted", "Entry has been deleted");
     }
+
 }
 

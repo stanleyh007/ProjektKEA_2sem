@@ -4,7 +4,7 @@ import javafx.beans.property.SimpleStringProperty;
 /**
  * Created by Lasse Jensen on 10-12-2015.
  */
-public class Employee extends Person{
+public class Employee {
 
     SimpleIntegerProperty cpr = new SimpleIntegerProperty();
     SimpleStringProperty firstname = new SimpleStringProperty();
@@ -14,13 +14,11 @@ public class Employee extends Person{
 
     public Employee(int cpr, String firstName, String lastName, int phone, String email)
     {
-        super(email, phone);
         this.cpr = new SimpleIntegerProperty(cpr);
         this.firstname = new SimpleStringProperty(firstName);
         this.lastname = new SimpleStringProperty(lastName);
         this.phone = new SimpleIntegerProperty(phone);
         this.email = new SimpleStringProperty(email);
-
     }
 
     //To be able to return a full object in our allocation combobox, but only have the name displayed.
@@ -65,7 +63,6 @@ public class Employee extends Person{
         this.lastname.set(lastname);
     }
 
-    @Override
     public int getPhone() {
         return phone.get();
     }
@@ -78,7 +75,6 @@ public class Employee extends Person{
         this.phone.set(phone);
     }
 
-    @Override
     public String getEmail() {
         return email.get();
     }

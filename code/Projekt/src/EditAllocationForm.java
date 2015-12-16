@@ -11,7 +11,6 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +18,7 @@ import java.util.List;
 /**
  * Created by peterzohdy on 15/12/2015.
  */
-public class EditAllocationForm {
+public class EditAllocationForm implements Inputforms {
 
     Stage sceneStage = new Stage();
     Scene scene;
@@ -213,7 +212,7 @@ public class EditAllocationForm {
         close();
     }
 
-    public static void setAlert(String titleText,String headerText)
+    public void setAlert(String titleText,String headerText)
     {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(titleText);
@@ -241,6 +240,8 @@ public class EditAllocationForm {
         DataBase.getInstance().deleteAllocation(cpr, cvr);
 
         setAlert("Deleted", "Entry has been deleted");
+
+
     }
 
 }

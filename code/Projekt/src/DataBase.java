@@ -1,4 +1,5 @@
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -31,7 +32,7 @@ public class DataBase {
             String url = "jdbc:mysql://localhost:3306/";
 
             // Connect to database
-            con = DriverManager.getConnection(url, "root", "doggyspy");
+            con = DriverManager.getConnection(url, "root", "root");
 
             System.out.println("URL: " + url);
 
@@ -110,7 +111,7 @@ public class DataBase {
             System.out.println("Allocation added");
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            setAlert("Error", "Something went wrong - try again");
         }
     }
 
@@ -337,6 +338,14 @@ public class DataBase {
         {
             e.printStackTrace();
         }
+    }
+
+    public static void setAlert(String titleText,String headerText)
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(titleText);
+        alert.setHeaderText(headerText);
+        alert.show();
     }
 
 }

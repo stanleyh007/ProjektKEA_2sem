@@ -12,12 +12,10 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.sql.SQLException;
-
 /**
  * Created by Lasse Jensen on 15-12-2015.
  */
-public class EditClientForm
+public class EditClientForm implements Inputforms
 {
     Stage sceneStage = new Stage();
     Scene scene;
@@ -36,10 +34,10 @@ public class EditClientForm
         this.client = client;
         this.clientList = clientList;
 
-        initialize();
+        initializeScene();
     }
 
-    public void initialize()
+    public void initializeScene()
     {
         GridPane gridPane = new GridPane();
         gridPane.setPadding(new Insets(50, 0, 0, 35));
@@ -95,8 +93,8 @@ public class EditClientForm
             else if (isCVRValid(cvrTextField) && !companyNameTextField.getText().isEmpty())
             {
                 setAlert("Saved", "Company has been stored");
-                try {submitBtnPressed();}
-                catch (SQLException e) {e.printStackTrace();}
+                try {submitButtonPressed();}
+                catch (Exception e) {e.printStackTrace();}
             }
             else if(isCVRValid(cvrTextField) == false)
             {
@@ -159,7 +157,7 @@ public class EditClientForm
         return cvrValidation;
     }
 
-    public static void setAlert(String titleText,String headerText)
+    public void setAlert(String titleText,String headerText)
     {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(titleText);
@@ -167,7 +165,7 @@ public class EditClientForm
         alert.show();
     }
 
-    public void submitBtnPressed() throws SQLException
+    public void submitButtonPressed()
     {
         int cvr = Integer.parseInt(cvrTextField.getText());
         String firstName = companyNameTextField.getText();

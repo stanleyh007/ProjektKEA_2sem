@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * Created by peterzohdy on 26/11/2015.
  */
-public class AllocateEmployeeForm
+public class AllocateEmployeeForm implements Inputforms
 {
     Stage sceneStage = new Stage();
     Scene scene;
@@ -196,6 +196,9 @@ public class AllocateEmployeeForm
         //Calls addEmployee method in DB class and inserts the entered input as parameters
         DataBase.getInstance().allocateEmployee(cpr, cvr, date_from, dateto, notes);
 
+        setAlert("Allocation added", "Allocation successful!\n\n" + employeesCbox.getSelectionModel().getSelectedItem() +
+        " is now allocated to " + clientCBox.getSelectionModel().getSelectedItem());
+
         close();
     }
 
@@ -203,6 +206,14 @@ public class AllocateEmployeeForm
     {
         sceneStage.setResizable(false);
         sceneStage.show();
+    }
+
+    public void setAlert(String titleText,String headerText)
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(titleText);
+        alert.setHeaderText(headerText);
+        alert.show();
     }
 
     public void close()
