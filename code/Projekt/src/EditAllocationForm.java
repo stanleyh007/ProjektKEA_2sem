@@ -19,7 +19,6 @@ import java.util.List;
  * Created by peterzohdy on 15/12/2015.
  */
 public class EditAllocationForm implements Inputforms {
-
     Stage sceneStage = new Stage();
     Scene scene;
     Pane root = new Pane();
@@ -99,13 +98,10 @@ public class EditAllocationForm implements Inputforms {
 
         employeesCbox = new ComboBox();
         employeesCbox.getItems().addAll(DataBase.getInstance().employeesToArrayList());
-        //employeesCbox.setItems();
-
 
         clientCBox = new ComboBox();
         clientCBox.getItems().addAll(DataBase.getInstance().clientsToArrayList());
         clientCBox.setDisable(true);
-
 
         ComboBox<String> activityCbox = new ComboBox<String>(observableList);
         activityCbox.setPrefWidth(155);
@@ -235,6 +231,8 @@ public class EditAllocationForm implements Inputforms {
 
     public void deleteBtnPressed()
     {
+        System.out.println("Deleting");
+
         int cpr = employeesCbox.getSelectionModel().getSelectedItem().getCpr();
         int cvr = clientCBox.getSelectionModel().getSelectedItem().getCvr();
 
@@ -244,6 +242,5 @@ public class EditAllocationForm implements Inputforms {
 
 
     }
-
 }
 

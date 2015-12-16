@@ -15,12 +15,10 @@ import javafx.stage.Stage;
 /**
  * Created by Lasse Jensen on 15-12-2015.
  */
-public class EditClientForm extends ClientForm implements Inputforms {
-
+public class EditClientForm extends ClientForm {
     Client client;
 
     ObservableList<Client> clientList;
-
 
     public EditClientForm(Client client, ObservableList<Client> clientList) {
         super(clientList);
@@ -32,8 +30,6 @@ public class EditClientForm extends ClientForm implements Inputforms {
 
         initializeScene();
         setDeleteBtn();
-
-
     }
 
     public void setFields() {
@@ -58,7 +54,24 @@ public class EditClientForm extends ClientForm implements Inputforms {
             DataBase.getInstance().deleteClient(cvr);
             setAlert("Deleted", "Entry has been deleted");
         });
+    }
 
+    @Override
+    public void submitButtonPressed()
+    {
+        int cvr = Integer.parseInt(cvrTextField.getText());
+        String firstName = companyNameTextField.getText();
+        int phone = Integer.parseInt(phoneTextField.getText());
+        String email = emailTextField.getText();
 
+        Client changedClient = new Client(cvr, firstName, phone, email);
+
+        clientList.clear();
+
+        DataBase.getInstance().changeClient(cvr, changedClient);
+
+        DataBase.getInstance().getClients(clientList);
+
+        close();
     }
 }

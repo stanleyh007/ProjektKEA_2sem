@@ -7,12 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataBase {
-
     private static DataBase dataBaseInstance = new DataBase();
     private Connection con;   // Connection for database
     private PreparedStatement statement;
     private ResultSet resultset;
-
 
     public static DataBase getInstance() {
 
@@ -117,7 +115,6 @@ public class DataBase {
 
     public void addEmployeeToDb(int cpr, String firstname, String lastname, int phone, String email) throws SQLException
     {
-
         try {
             statement = con.prepareStatement("USE appstract_db");
 
@@ -142,7 +139,6 @@ public class DataBase {
 
     public void addClientToDb(int cvr, String companyname, int phone, String email)
     {
-
         try {
 
             statement = con.prepareStatement("USE appstract_db");
@@ -165,7 +161,6 @@ public class DataBase {
     }
 
     public void getAllocations(ObservableList<Allocation> allocationList) {
-
         try {
             statement = con.prepareStatement("SELECT * FROM allocation_project JOIN employee, client WHERE allocation_project.cpr=employee.cpr" +
                                                 " AND allocation_project.cvr=client.cvr");
@@ -195,7 +190,6 @@ public class DataBase {
     }
 
     public void getClients(ObservableList<Client> clientList) {
-
         try {
             statement = con.prepareStatement("SELECT * FROM client");
             resultset = statement.executeQuery();
@@ -296,8 +290,6 @@ public class DataBase {
             e.printStackTrace();
         }
     }
-
-
 
     public void deleteEmployee(int cpr)
     {

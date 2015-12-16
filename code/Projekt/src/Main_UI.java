@@ -20,7 +20,7 @@ public class Main_UI extends Application
 {
         DataBase dataBase;
 
-        // TableView and column objects
+        // TableViews and columns objects
         TableView<Allocation> allocationTable;
         TableView<Employee> employeeTable;
         TableView<Client> clientTable;
@@ -43,7 +43,7 @@ public class Main_UI extends Application
         TabPane tabPane;
         Tab employeeTab, clientTab, allocationTab;
 
-        // ObservableList for TableView
+        // ObservableLists for TableViews
         ObservableList<Allocation> allocationList = FXCollections.observableArrayList();
         ObservableList<Employee> employeeList = FXCollections.observableArrayList();
         ObservableList<Client> clientList = FXCollections.observableArrayList();
@@ -55,20 +55,20 @@ public class Main_UI extends Application
         Stage theStage;
 
 
-
     public static void main(String[] args)
         {
             launch(args);
         }
 
-        public void start(final Stage primaryStage) throws Exception
+        public void start(final Stage primaryStage)
         {
             theStage = primaryStage;
-            newScene(mainStage());
+            mainStage();
         }
 
-        public Scene mainStage()
+        public void  mainStage()
         {
+            // Get DataBase singleton instance and create database if it doesnt exist
             dataBase = DataBase.getInstance();
             dataBase.createDB();
 
@@ -77,6 +77,7 @@ public class Main_UI extends Application
             dataBase.getEmployees(employeeList);
             dataBase.getClients(clientList);
 
+            // Initialize the TableViews
             setClientTable();
             setEmployeeTable();
             setAllocationTable();
@@ -84,11 +85,11 @@ public class Main_UI extends Application
             setTabPane();
             setMainLayout();
 
+            // Set the stage to scene and show it
             scene = new Scene(setMainLayout(), 1200, 800);
             theStage.setScene(scene);
             theStage.setTitle("Project Allocation System");
             theStage.show();
-            return scene;
         }
 
         public Pane setMainLayout()
@@ -274,7 +275,6 @@ public class Main_UI extends Application
             allocationTable.getColumns().add(notes);
             notes.setPrefWidth(250);
 
-
             // Set table columns to update from ObservableList
             allocationFirstName.setCellValueFactory(new PropertyValueFactory<>("employeeFirstName"));
             allocationLastName.setCellValueFactory(new PropertyValueFactory<>("employeeLastName"));
@@ -285,12 +285,6 @@ public class Main_UI extends Application
 
             // Set items for TableViev (ObservableList)
             allocationTable.setItems(allocationList);
-        }
-
-        public void newScene(Scene nextScene)
-        {
-            theStage.setScene(nextScene);
-            theStage.show();
         }
 
         public HBox bottomLine()

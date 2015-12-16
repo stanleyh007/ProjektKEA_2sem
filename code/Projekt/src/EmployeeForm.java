@@ -29,7 +29,7 @@ public class EmployeeForm implements Inputforms
     TextField phoneTextFiled = new TextField();
     TextField emailTextField = new TextField();
 
-    GridPane gridPane; // = new GridPane();
+    GridPane gridPane;
 
     ObservableList<Employee> employeeList;
 
@@ -59,10 +59,8 @@ public class EmployeeForm implements Inputforms
         Label firstNameLbl = new Label("Firstname:");
         gridPane.setHalignment(firstNameLbl, HPos.RIGHT);
 
-
         Label lastNameLbl = new Label("Lastname:");
         gridPane.setHalignment(lastNameLbl, HPos.RIGHT);
-
 
         Label phoneLbl = new Label("Phone:");
         gridPane.setHalignment(phoneLbl, HPos.RIGHT);
@@ -78,8 +76,6 @@ public class EmployeeForm implements Inputforms
         Button cancelBtn = new Button("Cancel");
         gridPane.setHalignment(cancelBtn, HPos.RIGHT);
         cancelBtn.setOnAction(event -> close());
-
-
 
         gridPane.add(titleLbl, 0, 0);
         gridPane.add(cprLbl, 0, 5);
@@ -142,7 +138,6 @@ public class EmployeeForm implements Inputforms
 
     public void setAlert(String titleText,String headerText)
     {
-
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(titleText);
         alert.setHeaderText(headerText);
@@ -166,7 +161,6 @@ public class EmployeeForm implements Inputforms
     }
 
     public void submitButtonPressed()  {
-
         int cpr = Integer.parseInt(cprTextField.getText());
         String firstName = firstNameTextField.getText();
         String lastName = lastNameTextField.getText();

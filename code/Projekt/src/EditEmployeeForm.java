@@ -12,11 +12,12 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.sql.SQLException;
+
 /**
  * Created by Lasse Jensen on 15-12-2015.
  */
-public class EditEmployeeForm extends EmployeeForm implements Inputforms {
-
+public class EditEmployeeForm extends EmployeeForm /*implements Inputforms*/ {
     Employee employee;
 
     ObservableList<Employee> employeeList;
@@ -28,13 +29,8 @@ public class EditEmployeeForm extends EmployeeForm implements Inputforms {
         this.employeeList = employeeList;
 
         setFields();
-
         initializeScene();
-
         setDeleteBtn();
-
-
-        System.out.println("Allocation name = " + employee.getFirstname());
     }
 
     public void setFields() {
@@ -43,8 +39,6 @@ public class EditEmployeeForm extends EmployeeForm implements Inputforms {
         lastNameTextField.setText(employee.getLastname());
         phoneTextFiled.setText(Integer.toString(employee.getPhone()));
         emailTextField.setText(employee.getEmail());
-
-
     }
 
     public void setDeleteBtn() {
@@ -60,7 +54,25 @@ public class EditEmployeeForm extends EmployeeForm implements Inputforms {
             DataBase.getInstance().deleteClient(cpr);
             setAlert("Deleted", "Entry has been deleted");
         });
+    }
+
+    @Override
+    public void submitButtonPressed()  {
+        int cpr = Integer.parseInt(cprTextField.getText());
+        String firstName = firstNameTextField.getText();
+        String lastName = lastNameTextField.getText();
+        int phone = Integer.parseInt(phoneTextFiled.getText());
+        String email = emailTextField.getText();
 
 
+        employeeList.clear();
+
+        Employee employeeChanged = new Employee(cpr, firstName, lastName, phone, email);
+
+        DataBase.getInstance().changeEmployee(cpr, employeeChanged);
+
+        DataBase.getInstance().getEmployees(employeeList);
+
+        close();
     }
 }
