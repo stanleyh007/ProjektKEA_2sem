@@ -32,7 +32,7 @@ public class DataBase {
             String url = "jdbc:mysql://localhost:3306/";
 
             // Connect to database
-            con = DriverManager.getConnection(url, "root", "root");
+            con = DriverManager.getConnection(url, "root", "doggyspy");
 
             System.out.println("URL: " + url);
 

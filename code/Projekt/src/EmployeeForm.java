@@ -1,3 +1,6 @@
+/**
+ * Created by Lasse Jensen on 16-12-2015.
+ */
 import javafx.collections.ObservableList;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -15,7 +18,7 @@ import java.sql.SQLException;
  * Created by peterzohdy on 28/11/2015.
  */
 
-public class AddNewEmployeeForm extends EmployeeForm implements Inputforms
+public class EmployeeForm implements Inputforms
 {
     Stage sceneStage = new Stage();
     Scene scene;
@@ -26,20 +29,20 @@ public class AddNewEmployeeForm extends EmployeeForm implements Inputforms
     TextField phoneTextFiled = new TextField();
     TextField emailTextField = new TextField();
 
+    GridPane gridPane; // = new GridPane();
+
     ObservableList<Employee> employeeList;
 
-    public AddNewEmployeeForm(ObservableList<Employee> employeeList)
+    public EmployeeForm(ObservableList<Employee> employeeList)
     {
-        super(employeeList);
         this.employeeList = employeeList;
 
         initializeScene();
     }
 
-    /*
     public void initializeScene()
     {
-        GridPane gridPane = new GridPane();
+        gridPane = new GridPane();
         gridPane.setPadding(new Insets(50, 0, 0, 65));
         gridPane.setHgap(10);
         gridPane.setVgap(10);
@@ -76,6 +79,8 @@ public class AddNewEmployeeForm extends EmployeeForm implements Inputforms
         gridPane.setHalignment(cancelBtn, HPos.RIGHT);
         cancelBtn.setOnAction(event -> close());
 
+
+
         gridPane.add(titleLbl, 0, 0);
         gridPane.add(cprLbl, 0, 5);
         gridPane.add(cprTextField, 1, 5);
@@ -100,8 +105,8 @@ public class AddNewEmployeeForm extends EmployeeForm implements Inputforms
         submitBtn.setOnAction(e ->
         {
             if (    cprTextField.getText().isEmpty() ||
-                firstNameTextField.getText().isEmpty() ||
-                lastNameTextField.getText().isEmpty())
+                    firstNameTextField.getText().isEmpty() ||
+                    lastNameTextField.getText().isEmpty())
             {
                 setAlert("Input error", "You need to fill out all mandatory fields");
             }
@@ -110,8 +115,8 @@ public class AddNewEmployeeForm extends EmployeeForm implements Inputforms
                 setAlert("Input error", "CPR must be numeric values");
             }
             else if (isNumeric(cprTextField) &&
-                !firstNameTextField.getText().isEmpty() &&
-                !lastNameTextField.getText().isEmpty())
+                    !firstNameTextField.getText().isEmpty() &&
+                    !lastNameTextField.getText().isEmpty())
             {
                 setAlert("Saved", "Employee has been stored");
                 try
@@ -181,5 +186,4 @@ public class AddNewEmployeeForm extends EmployeeForm implements Inputforms
 
         close();
     }
-    */
 }

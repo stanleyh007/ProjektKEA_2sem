@@ -13,7 +13,7 @@ import javafx.stage.Stage;
  * Created by peterzohdy on 30/11/2015.
  */
 
-public class AddNewClientForm extends ClientForm implements Inputforms
+public class ClientForm implements Inputforms
 {
     Stage sceneStage = new Stage();
     Scene scene;
@@ -23,21 +23,20 @@ public class AddNewClientForm extends ClientForm implements Inputforms
     TextField phoneTextField = new TextField();
     TextField emailTextField = new TextField();
 
+    GridPane gridPane; // = new GridPane();
+
     ObservableList<Client> clientList;
 
-    public AddNewClientForm(ObservableList<Client> clientList)
+    public ClientForm(ObservableList<Client> clientList)
     {
-        super(clientList);
-
         this.clientList = clientList;
 
         initializeScene();
     }
 
-    /*
     public void initializeScene()
     {
-        GridPane gridPane = new GridPane();
+        gridPane = new GridPane();
         gridPane.setPadding(new Insets(50, 0, 0, 35));
         gridPane.setHgap(10);
         gridPane.setVgap(10);
@@ -173,6 +172,4 @@ public class AddNewClientForm extends ClientForm implements Inputforms
 
         close();
     }
-
-    */
 }

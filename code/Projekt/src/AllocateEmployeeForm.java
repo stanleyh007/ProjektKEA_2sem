@@ -30,7 +30,11 @@ public class AllocateEmployeeForm implements Inputforms
     DatePicker dateFromPicker;
     TextArea textArea;
 
-    public AllocateEmployeeForm() {
+    ObservableList<Allocation> allocationList;
+
+    public AllocateEmployeeForm(ObservableList<Allocation> allocationList) {
+
+        this.allocationList = allocationList;
 
         initializeScene();
     }
@@ -193,11 +197,14 @@ public class AllocateEmployeeForm implements Inputforms
         String notes = textArea.getText();
 
 
+        allocationList.clear();
         //Calls addEmployee method in DB class and inserts the entered input as parameters
         DataBase.getInstance().allocateEmployee(cpr, cvr, date_from, dateto, notes);
 
         setAlert("Allocation added", "Allocation successful!\n\n" + employeesCbox.getSelectionModel().getSelectedItem() +
         " is now allocated to " + clientCBox.getSelectionModel().getSelectedItem());
+
+        DataBase.getInstance().getAllocations(allocationList);
 
         close();
     }

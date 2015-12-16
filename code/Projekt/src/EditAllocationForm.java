@@ -99,6 +99,7 @@ public class EditAllocationForm implements Inputforms {
 
         employeesCbox = new ComboBox();
         employeesCbox.getItems().addAll(DataBase.getInstance().employeesToArrayList());
+        //employeesCbox.setItems();
 
 
         clientCBox = new ComboBox();

@@ -467,19 +467,19 @@ public class Main_UI extends Application
 
 
         public void addEmployeeAction() {
-            AddNewEmployeeForm addNewEmployeeForm = new AddNewEmployeeForm();
+            AddNewEmployeeForm addNewEmployeeForm = new AddNewEmployeeForm(employeeList);
             addNewEmployeeForm.show();
         }
 
         public void addClientAction()
         {
-            AddNewClientForm addNewClientForm = new AddNewClientForm();
+            AddNewClientForm addNewClientForm = new AddNewClientForm(clientList);
             addNewClientForm.show();
         }
 
         public void allocateEmployeeAction()
         {
-            AllocateEmployeeForm allocateEmployeeForm = new AllocateEmployeeForm();
+            AllocateEmployeeForm allocateEmployeeForm = new AllocateEmployeeForm(allocationList);
             allocateEmployeeForm.show();
         }
 
