@@ -9,7 +9,7 @@ public class Allocation {
     int cpr;
     int cvr;
 
-
+    //Properties to be used with TableViews in UI.
     SimpleStringProperty employeeFirstName = new SimpleStringProperty();
     SimpleStringProperty employeeLastName = new SimpleStringProperty();
     SimpleStringProperty client = new SimpleStringProperty();

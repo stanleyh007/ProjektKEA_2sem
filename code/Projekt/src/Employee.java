@@ -6,6 +6,7 @@ import javafx.beans.property.SimpleStringProperty;
  */
 public class Employee {
 
+    //Properties to be used
     SimpleIntegerProperty cpr = new SimpleIntegerProperty();
     SimpleStringProperty firstname = new SimpleStringProperty();
     SimpleStringProperty lastname = new SimpleStringProperty();

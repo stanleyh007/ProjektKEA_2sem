@@ -15,12 +15,12 @@ import java.sql.SQLException;
  * Created by peterzohdy on 28/11/2015.
  */
 
-public class AddNewEmployeeForm extends EmployeeForm implements Inputforms
-{
-    ObservableList<Employee> employeeList;
+public class AddNewEmployeeForm extends EmployeeForm {
 
-    public AddNewEmployeeForm(ObservableList<Employee> employeeList)
-    {
+
+    public AddNewEmployeeForm(ObservableList<Employee> employeeList) {
+
+        //Calls the list of the inherited class ClientForm
         super(employeeList);
         this.employeeList = employeeList;
 

@@ -23,17 +23,18 @@ public class ClientForm implements Inputforms
     TextField phoneTextField = new TextField();
     TextField emailTextField = new TextField();
 
-    GridPane gridPane; // = new GridPane();
+    GridPane gridPane;
 
     ObservableList<Client> clientList;
 
+    //Takes the clientList with Client object in constructor
     public ClientForm(ObservableList<Client> clientList)
     {
         this.clientList = clientList;
-
         initializeScene();
     }
 
+    //sets the UI scene
     public void initializeScene()
     {
         gridPane = new GridPane();
@@ -70,25 +71,7 @@ public class ClientForm implements Inputforms
 
         submitBtn.setOnAction(event ->
         {
-            if (cvrTextField.getText().isEmpty() || companyNameTextField.getText().isEmpty())
-            {
-                setAlert("Input error", "All mandatory fields must contain data");
-            }
-            else if (isCVRValid(cvrTextField) && !companyNameTextField.getText().isEmpty())
-            {
-                setAlert("Saved", "Company has been stored");
-
-                try {submitButtonPressed();
-
-                } catch (Exception e)
-                {
-                    e.printStackTrace();
-                }
-            }
-            else if(isCVRValid(cvrTextField) == false)
-            {
-                setAlert("Input error", "CVR no must be in the correct format");
-            }
+            checkInput();
         });
 
         gridPane.add(titleLbl, 0, 0);
@@ -106,8 +89,33 @@ public class ClientForm implements Inputforms
         scene = new Scene(gridPane, 400, 375);
         sceneStage.setScene(scene);
 
+        //To be able to have the window as a popup and not a new scene
         sceneStage.initModality(Modality.APPLICATION_MODAL);
         submitBtn.requestFocus(); // Workaround to disable focus default
+    }
+
+    //Validates the user input
+    public void checkInput()
+    {
+        if (cvrTextField.getText().isEmpty() || companyNameTextField.getText().isEmpty())
+        {
+            setAlert("Input error", "All mandatory fields must contain data");
+        }
+        else if (isCVRValid(cvrTextField) && !companyNameTextField.getText().isEmpty())
+        {
+            setAlert("Saved", "Company has been stored");
+
+            try {submitButtonPressed();
+
+            } catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+        }
+        else if(isCVRValid(cvrTextField) == false)
+        {
+            setAlert("Input error", "CVR no must be in the correct format");
+        }
     }
 
     public void show() {
@@ -120,6 +128,7 @@ public class ClientForm implements Inputforms
         sceneStage.close();
     }
 
+    //Validates the input
     public boolean isCVRValid(TextField textField)
     {
         Boolean isCvrNumeric = true;
@@ -135,8 +144,16 @@ public class ClientForm implements Inputforms
             isCvrLenghtValid = false;
         }
 
-        try {Integer.parseInt(textField.getText());}
-        catch (Exception e) {isCvrNumeric = false;}
+        try {
+            //Tries to converts the textfield to an Integer. Exception is caught if the program fails to convert
+            //and sets the boolean variable to false.
+
+            Integer.parseInt(textField.getText());
+        }
+        catch (Exception e)
+        {
+            isCvrNumeric = false;
+        }
 
         if(isCvrNumeric == true && isCvrLenghtValid == true)
         {
@@ -161,14 +178,14 @@ public class ClientForm implements Inputforms
         int phone = Integer.parseInt(phoneTextField.getText());
         String email = emailTextField.getText();
 
-        //Calls addEmployee method in DB class and inserts the entered input as parameters
-
+        //clears the clientList to avoid the list being dublicated when a new value is inserted and the
+        //method with the list is called again
         clientList.clear();
 
         DataBase.getInstance().addClientToDb(cvr, firstName, phone, email);
 
+        //Needs to be called To be able to view the change directly without having to open and close the program
         DataBase.getInstance().getClients(clientList);
-
 
         close();
     }

@@ -13,16 +13,13 @@ import javafx.stage.Stage;
  * Created by peterzohdy on 30/11/2015.
  */
 
-public class AddNewClientForm extends ClientForm implements Inputforms
-{
-    ObservableList<Client> clientList;
+public class AddNewClientForm extends ClientForm {
 
-    public AddNewClientForm(ObservableList<Client> clientList)
-    {
+
+    public AddNewClientForm(ObservableList<Client> clientList) {
+
+        //Calls the list of the inherited class ClientForm
         super(clientList);
-
-        this.clientList = clientList;
-
         initializeScene();
     }
 }

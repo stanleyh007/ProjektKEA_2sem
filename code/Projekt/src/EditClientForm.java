@@ -1,26 +1,16 @@
 import javafx.collections.ObservableList;
 import javafx.geometry.HPos;
-import javafx.geometry.Insets;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 /**
  * Created by Lasse Jensen on 15-12-2015.
  */
-public class EditClientForm extends ClientForm implements Inputforms {
+
+
+public class EditClientForm extends ClientForm {
 
     Client client;
-
     ObservableList<Client> clientList;
-
 
     public EditClientForm(Client client, ObservableList<Client> clientList) {
         super(clientList);
@@ -32,12 +22,10 @@ public class EditClientForm extends ClientForm implements Inputforms {
 
         initializeScene();
         setDeleteBtn();
-
-
     }
 
+    //Setting these fields j
     public void setFields() {
-        System.out.println("Setting fields");
 
         cvrTextField.setText(Integer.toString(client.getCvr()));
         phoneTextField.setText(Integer.toString(client.getPhone()));
@@ -58,7 +46,25 @@ public class EditClientForm extends ClientForm implements Inputforms {
             DataBase.getInstance().deleteClient(cvr);
             setAlert("Deleted", "Entry has been deleted");
         });
+    }
 
+    //Overriding the submitButtonPressed method to be able to call a different method in Database class.
+    @Override
+    public void submitButtonPressed()
+    {
+        int cvr = Integer.parseInt(cvrTextField.getText());
+        String firstName = companyNameTextField.getText();
+        int phone = Integer.parseInt(phoneTextField.getText());
+        String email = emailTextField.getText();
 
+        Client changedClient = new Client(cvr, firstName, phone, email);
+
+        clientList.clear();
+
+        DataBase.getInstance().changeClient(cvr, changedClient);
+
+        DataBase.getInstance().getClients(clientList);
+
+        close();
     }
 }

@@ -6,6 +6,7 @@ import javafx.beans.property.SimpleStringProperty;
  */
 public class Client {
 
+    //Properties to be used with TableView
     SimpleIntegerProperty cvr = new SimpleIntegerProperty();
     SimpleStringProperty companyName = new SimpleStringProperty();
     SimpleIntegerProperty phone = new SimpleIntegerProperty();

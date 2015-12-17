@@ -3,7 +3,7 @@
  */
 public interface Inputforms {
 
-    //all inputform classes should implement these methods
+    //all classes that implements this interface should have these methods in order to compile
     void submitButtonPressed();
     void initializeScene();
     void show();
