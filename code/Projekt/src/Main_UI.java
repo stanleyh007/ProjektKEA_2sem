@@ -268,9 +268,9 @@ public class Main_UI extends Application
             allocationTable.getColumns().add(client);
             client.setPrefWidth(150);
             allocationTable.getColumns().add(dateFrom);
-            dateFrom.setPrefWidth(80);
+            dateFrom.setPrefWidth(100);
             allocationTable.getColumns().add(dateTo);
-            dateTo.setPrefWidth(80);
+            dateTo.setPrefWidth(100);
             allocationTable.getColumns().add(notes);
             notes.setPrefWidth(250);
 
