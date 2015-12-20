@@ -93,7 +93,7 @@ public class EmployeeForm implements Inputforms
         gridPane.add(submitBtn, 1, 10);
         gridPane.add(cancelBtn, 3, 14);
 
-        scene = new Scene(gridPane, 400, 410);
+        scene = new Scene(gridPane, 400, 450);
         sceneStage.setScene(scene);
 
         sceneStage.initModality(Modality.APPLICATION_MODAL);

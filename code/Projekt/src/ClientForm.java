@@ -86,7 +86,7 @@ public class ClientForm implements Inputforms
         gridPane.add(submitBtn, 1, 9);
         gridPane.add(cancelBtn, 2, 13);
 
-        scene = new Scene(gridPane, 400, 375);
+        scene = new Scene(gridPane, 400, 400);
         sceneStage.setScene(scene);
 
         //To be able to have the window as a popup and not a new scene
